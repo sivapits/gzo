@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 Aug, 2014, 9:45:47 AM
+    Author     : hoja.ma
+*/
+
+.jobdetail-2 {
+  border-collapse: collapse !important;
+  border-spacing: 0;
+}
+
+#powermail_field_jobbezeichnung{
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	-o-user-select: none !important;
+	user-select: none !important;
+}
+
+.formError {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  margin-top: 14px !important;
+  opacity: 0.87;
+  padding: 6px;
+}

@@ -1,0 +1,33 @@
+include mixin
+doctype
+html.no-js
+	include header
+	body
+		#wrapper
+			include header-info
+			.container
+				.col-md-9.col-sm-6
+					include quick-link
+				.pull-right
+					a(href="#").logo
+						img(src="images/logo.png", title="GZO" alt="")
+
+			//- include nav-main
+			include navbar-fixed
+			include spotlight
+			.container
+				.content-wrapper.clearfix
+					.col-md-4
+						include mod-news
+						include mod-generic
+					.col-md-4
+						include mod-generic-1
+						include mod-widgetlist
+						include mod-widgetlist-1
+					.col-md-4
+						include mod-generic-2
+						include mod-widget-tabbed
+						include mod-widget-tabbed-1
+						include mod-widget-documents
+			include footer
+			include footer-script

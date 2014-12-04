@@ -1,0 +1,26 @@
+<article class="Kontakt">
+	<h1 class="inhalt_header"><f:translate key="teamhead">Team</f:translate></h1>
+	<div class="row">
+		<f:for each="{data.result}" as="employee">
+			<f:if condition="{employee.first_name} != ''">
+				<div class="col-md-3">
+					<div class="box-gallery">
+						<a href="{employee.detailPage}">
+							<f:image class="doc-img-crop" src="{employee.defaultImg}" width="150" height="220" alt="{employee.emp_title}  {employee.first_name} {employee.last_name}" />
+							<f:image class="hidden-colour-image" style="display:none;" title="{employee.emp_title}  {employee.first_name} {employee.last_name}" alt="{employee.emp_title}  {employee.first_name} {employee.last_name}" src="{employee.colourImg}" width="150" height="220" />
+						</a>
+						<div class="personaldetails">
+							<a href="{employee.detailPage}">{employee.emp_title}  {employee.first_name} {employee.last_name}</a><span class="designation"> <f:format.htmlentitiesDecode> {employee.function} </f:format.htmlentitiesDecode></span></div>
+						</div>
+				</div>
+			</f:if>
+		</f:for>
+		<f:if condition="{data.hasData} >0">
+			<f:else>				
+				<div class="alert alert-default fade in " role="alert">
+					Keine Ergebnisse gefunden
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+</article> 

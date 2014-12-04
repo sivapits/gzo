@@ -1,0 +1,99 @@
+<f:layout name="Default" />
+
+<f:section name="main">     
+    <input type="hidden" id="page_id" value="{pages.id}"/>
+    <input type="hidden" id="page_lang" value="{pages.lang}"/>
+    <div class="downloadcenter">
+        <h1>{pages.headerLabel}</h1>
+        <p><f:format.html parseFuncTSPath="">{pages.headerText}</f:format.html></p>
+        <form action="#" onsubmit="return false;">
+            <fieldset>
+                <div class="col-sm-11">
+                    <select class="selectpicker form-control" id="thema_selector" title='<f:translate key="empty_thema">1. Hauptrubrik auswählen</f:translate>'>
+                        <option value=""><f:translate key="empty_thema">1. Hauptrubrik auswählen</f:translate></option>
+                        <f:for each="{categories}" as="category" iteration="itemIteration">
+                            <f:if condition="{category.selected}">
+                                <f:then>
+                                    <option selected value="{category.parentId}">{category.category_title}</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="{category.parentId}">{category.category_title}</option>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <a href='javascript:void(0);' onclick='resetData(0, this)' class="reset" id='resetDb'>
+                        <span class="icon reset-lrg-this {f:if(condition:permaOptions.parent,then:'active',else:'deactive')}" id='reset-0'>x</span></a>                    
+                </div>                  
+            </fieldset>
+            <div id='step2'>
+                <fieldset>
+                    <div class="col-sm-11">
+                        <select class="selectpicker form-control" id = "thema_subcat" onChange='load(1)' title='<f:translate key="empty_subcat">2. Thema auswählen</f:translate>'>
+                            <option value=""><f:translate key="empty_subcat">2. Thema auswählen</f:translate></option>
+                            <f:for each="{subCategories}" as="category" iteration="itemIteration">
+                                <f:if condition="{category.selected}">
+                                    <f:then>
+                                        <option selected value="{category.parentId}">{category.category_title}</option>
+                                    </f:then>
+                                    <f:else>
+                                        <option value="{category.parentId}">{category.category_title}</option>
+                                    </f:else>
+                                </f:if>
+                            </f:for>
+                        </select>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href='javascript:void(0);' onclick='resetData(1, this)' class="reset">
+                            <span class="icon reset-lrg-this {f:if(condition:permaOptions.child,then:'active',else:'deactive')}" id='reset-1'>x</span></a>                    
+                    </div> 
+                </fieldset>
+            </div>
+            <fieldset>
+                <div class="input-group col-sm-11">
+                    <input type="search" class="form-control bdr-rgt-none" title="Suche" placeholder='<f:translate key="text_filter">Suchbegriff</f:translate>' id ="filter_text" value="{permaOptions.filterText}">
+                    <i class="icon-search"></i>
+                </div>
+                <div class="col-sm-1">
+                    <a href='javascript:void(0);' onclick='resetData(2, this)' class="reset">
+                        <span class="icon reset-lrg-this {f:if(condition:permaOptions.filterText,then:'active',else:'deactive')}" id='reset-2'>x</span></a>
+                </div>
+            </fieldset>
+                <span class="ajaxLoadingIndicator" style="display: none;"></span>
+        </form>
+    </div>
+    <div id="documnets" class="documnets">
+        <f:format.html parseFuncTSPath="">{downloadModule.pageNation}</f:format.html>
+        <f:if condition="{downloadModule.data}">
+            <f:then>
+                <section class="mod data-list downloadData">
+                    <div class="result-data download">
+                        <h2 class="datadownload">Nützliche Dokumente</h2>
+                        <ul>
+                            <f:for each="{downloadModule.data}" as="downloadFile" iteration="itemIteration">
+                                <li><f:link.action action="file" controller="DownloadModule" arguments="{fileId: downloadFile.identifier}">
+                                    <span class="file-title">{downloadFile.document_title}</span>
+                                    <span class="file-info">
+                                        <span class="size">{downloadFile.size}</span>
+                                        <span class="icon icon-{downloadFile.extension}"></span>
+                                    </span>
+                                </f:link.action>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </div>
+                </section>
+                <f:format.html parseFuncTSPath="">{downloadModule.pageNation}</f:format.html>
+            </f:then>
+            <f:else>
+                <p class="info"><f:translate key="docTableNodata">Die gegenw�rtige Filterung ergibt keine Treffer.</f:translate></p>
+            </f:else>
+        </f:if>	
+
+    </div>
+</f:section>
+
+
+

@@ -1,0 +1,10 @@
+<f:layout name="Default" />
+<f:section name="main">
+    <f:if condition="{tntTeaserMangerCE}">
+            <f:for each="{tntTeaserMangerCE}" as="singleData" key="number" iteration="itemIteration">
+                <f:for each="{singleData}" as="singleTeaser" key="number2" iteration="itemIteration2">
+                    <div id = 'teaser-{number}-{itemIteration2.cycle}' class="teaser-content"> <f:format.htmlentitiesDecode>{singleTeaser.contents}</f:format.htmlentitiesDecode></div>
+                </f:for>
+            </f:for>
+    </f:if>
+</f:section>

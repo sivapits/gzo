@@ -1,0 +1,369 @@
+/*!
+ * Overrides for IE8
+ * 
+ * 
+ */
+
+.row-fluid.home {
+	overflow: hidden;
+}
+/*-------Added by Amruth Raj-------*/
+* {
+	outline: none
+}
+h1, h2, h3, h4, .info h2, .mod.info p a, .urologie .link, .mod-details p a, .mod-details p b, .mod-details strong, form#builder fieldset select, .downloadcenter fieldset select, form#builder .btn.btn-primary, .bootstrap-select.btn-group .btn .filter-option, .tx-solr-search-form input[type="text"], .tx-solr-search-form input[type="submit"], .highlighted, .mod.generic .mod-details .data-list .scroll-pane p.teaser-date, .mod.generic .mod-details .scroll-pane p.teaser-date, .news-date {
+	font-family: Georgia, serif !important;
+	font-weight: bold !important;
+}
+.info p, .mod.info p, article.builder p, .spotlight .carousel-caption span, .mod-details p, .urologie .mod-details p, section.mod.generic5 .mod-details p, .mod-details .contact-info p, .mod.generic .mod-details.theme-blue .data-list p, .mod.data-list.tabbed .mod-details p, #mod-Kontakt .address li, article summary, article .summary, .teaser-text p, .contact-info p, footer .contact-info a, footer.innerpage .address li, footer.innerpage .contact li, .downloadcenter p, section.mod.schritt h3, .row.mod-detail h2, table.jobdetail caption {
+	font-family: Georgia, serif !important;
+	font-weight: lighter !important;
+}
+.nav-main ul > li > a, .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .mod-details h2, .builder-tooltip, .btn-imagemap, .bootstrap-select.btn-group .dropdown-menu li a, footer.innerpage .address li span, footer.innerpage .contact li span, .downloadcenter .col-sm-11 .form-control, article.mitarbeiter .col-sm-12 .form-control, .downloadcenter .col-sm-11 .form-control, article.mitarbeiter .col-sm-12 .form-control, .downloadcenter .col-sm-11 .form-control, article.mitarbeiter .col-sm-12 .form-control, .mitarbeiter .btn-primary, .mod.generic .mod-details .data-list .scroll-pane p, .mod.generic .mod-details .scroll-pane p, .mitarbeiter p.caption {
+	font-family: Georgia, serif !important;
+	font-weight: normal !important;
+}
+.container {
+	width: 100%;
+	max-width: 90%;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+	float: left
+}
+.col-md-12 {
+	width: 100%
+}
+.col-md-11 {
+	width: 91.66666667%
+}
+.col-md-10 {
+	width: 83.33333333%
+}
+.col-md-9 {
+	width: 75%
+}
+.col-md-8 {
+	width: 66.66666667%
+}
+.col-md-7 {
+	width: 58.33333333%
+}
+.col-md-6 {
+	width: 50%
+}
+.col-md-5 {
+	width: 41.66666667%
+}
+.col-md-4 {
+	width: 33.33333333%
+}
+.col-md-3 {
+	width: 25%
+}
+.col-md-2 {
+	width: 16.66666667%
+}
+.col-md-1 {
+	width: 8.33333333%
+}
+.col-sm-6, .navbar-nav, .navbar-nav > LI, .navbar-nav .nav-widget {
+	float: left;
+}
+.navbar-header {
+	display: none;
+}
+.navbar-nav {
+	margin: 0;
+}
+.babygallerie-dropdown.form-control.bootstrap-select.btn-group.default-sm {
+	width: 120px;
+}
+INPUT.babygallerie#srch-term {
+	line-height: 33px;
+}
+.mob-hide .show-btn {
+	display: none;
+}
+.bootstrap-select, .selectpicker {
+	width: 100% !important;
+}
+.reset-field {
+	width: 90% !important;
+}
+.breadcrumbs LI {
+	display: block;
+	float: left;
+	margin-right: 10px;
+}
+.pagination a {
+	margin: 0 0 0 10px;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn, .btn.disabled span {
+	filter: alpha(opacity=65);
+}
+.result-data.download .file-title {
+	width: 80%;
+	margin: 5px 0px 0px 0px;
+}
+.tx-tnt-jobs .jobdetail {
+	border-spacing: 0;
+}
+table.jobdetail {
+	padding-left: 0;
+	padding-right: 0;
+}
+table.jobdetail tbody tr, .mod-details.listView > div, table.title tbody tr, table.babygalerie tbody tr {
+	background: #f2f1ef;
+}
+.mod-details.listView > div {
+	line-height: 30px !important;
+	border: 2px solid #ffffff;
+}
+.jobdetail td, .jobdetail th {
+	border: 1px solid #ffffff;
+}
+.powermail_check_inner {
+	width: 35%;
+}
+.galerie .datepicker {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.bootstrap-filestyle.input-group input[type=text].form-control {
+	color: #3f3f3f;
+	line-height: 36px !important;
+}
+.list-detail.galerie .form-control, .search .text {
+	line-height: 33px !important;
+}
+.form-control.text.search.reset-field, #mod-generic7 .searchalign #srch-term, .mitarbeiter .searchalign input[type=text].babygallerie.form-control {
+	line-height: 27px !important;
+}
+.searchalign {
+	width: 30.5% !important;
+}
+#mod-generic7 .searchalign {
+	width: 100% !important;
+}
+.btn-group.bootstrap-select .dropdown-menu {
+	max-width: 99.5% !important;
+	min-width: 99.5% !important;
+	padding-right: 0 !important;
+}
+.galerie .btn-group.bootstrap-select .dropdown-menu {
+	max-width: 98.5% !important;
+	min-width: 98.5% !important;
+}
+.btn-group.bootstrap-select .dropdown-menu .text {
+	color: #333;
+}
+.dropdown-menu > li > a {
+	margin: 0;
+}
+.spotlight .carousel-caption span, .spotlight .carousel-indicators li {
+	background: url(../images/trans.png);
+	background-repeat: repeat;
+}
+.spotlight .carousel-indicators .active {
+	cursor: default;
+}
+footer .col-md-3 h3 {
+	padding-top: 12px;
+}
+.footer-links li {
+	padding-right: 17px;
+}
+.reset-this.deactive, .default-img img {
+	filter: alpha(opacity=40);
+}
+.mask .part {
+	filter: alpha(opacity=0)
+}
+.mask .part:hover, .mask .part.active {
+	filter: alpha(opacity=100)
+}
+ul.dropdown-menu.inner.selectpicker span {
+	color: #333333
+}
+.krankheit #box > .col-md-4 {
+	padding-right: 30px !important;
+}
+.krankheit #box > .col-md-4.last-col, .col-md-6.last-col {
+	padding-right: 0px !important;
+}
+a.lightbox:after, .news-img-wrap .outer a:after, article.inhalt span.align-left a:after {
+	background: url('../images/sprite.png') no-repeat -564px 0px;
+}
+.left.carousel-control, .right.carousel-control {
+	filter: none;
+}
+.bodytext a {
+	font-weight: bold;
+}
+.weblinks ul li a span {
+	margin: 3px 10px 0px 0px;
+}
+.downloadData li {
+	list-style-type: none !important;
+}
+.galerie .searchalign {
+	width: 27% !important;
+}
+.disable_btn, .disable_btn b {
+	filter: alpha(opacity=50);
+}
+.hitlist_col1 {
+	background: #e5e2dd;
+	font-family: 'roboto_slabbold', Arial, Helvetica, sans-serif;
+	font-size: 22px;
+}
+.hitlist_col2 {
+	width: 100%;
+	font-size: 16px;
+	color: #005a8c;
+	font-weight: bold;
+	background: #f2f1ef;
+}
+.inhalt .csc-default ul {
+	list-style-image: url(../images/list-bullet.png);
+}
+.inhalt .download ul, .inhalt .weblinks ul {
+	list-style-image: none;
+}
+.result-data.download h2, .result-data.download ul li, .weblinks h2.Links, .weblinks ul li {
+	border-bottom: dotted 1px #ccc;
+	border-top: none;
+}
+.powermail_message_error {
+	color: #F00;
+	padding: 10px;
+	list-style-position: inside;
+}
+article.mitarbeiter .col-md-3 {
+	height: 340px;
+}
+.krankheit-dropdown.form-control.bootstrap-select.btn-group.default-sm {
+	min-width: 160px !important;
+}
+.krankheit #box > .col-md-4.first-col, .col-md-6.first-col {
+	padding-left: 0px !important;
+}
+.krankheit .linkHeading.col-md-4.col-xs-12 {
+	float: left;
+	min-height: 30px !important;
+	line-height: 30px;
+}
+.krankheit .linkContent.col-md-8.col-xs-12 {
+	min-height: 30px;
+	line-height: 30px;
+	width: 64.66%;
+}
+.krankheit .linkHeading.col-md-4.col-xs-12 .link {
+	display: inline-block;
+}
+section.mod.schritt .col-xs-6.col-md-4 img {
+	width: 100%;
+	height: auto;
+}
+.default-sm.btn-group.bootstrap-select .btn .filter-option {
+	font-weight: normal !important;
+	font: Arial !important;
+}
+#gridview .col-md-4.col-sm-4.colLft.mob-hide.reset-left {
+	padding: 0px 30px 0px 1px;
+}
+.socialmedia {
+	display: block;
+	width: 100%;
+}
+.social-likes__widget, .social-likes {
+	display: block;
+	clear: both;
+}
+.base-position {
+	width: 100%;
+}
+.col-md-8.col-sm-8.colrgt.thumb-details.reset-right {
+	background: #f2f1ef;
+	height: 520px;
+}
+.newspresse td {
+	padding: 15px;
+}
+.newspresse td span {
+	background: url(../images/clock-icon.jpg) no-repeat;
+	background-position: right center;
+}
+.glyphicon-time {
+	visibility: hidden;
+	padding: 5px;
+}
+.tx-tnt-download-module .col-sm-11 {
+	width: 91.66666667%;
+	float: left;
+}
+.tx-tnt-download-module .col-sm-1 {
+	width: 8.33333333%;
+	padding: 0;
+	float: left;
+}
+.col-sm-1 .reset-lrg-this {
+	top: 6px;
+}
+article.mitarbeiter.detailpage ul li {
+	list-style: none !important;
+}
+.jobdetail-2 td.first-td {
+	width: 28%;
+}
+.mod.info {
+	background: #ffcc00;
+	padding: 12px;
+	margin: 15px;
+}
+.mod.info .container, .col-md-12 {
+	padding: 0;
+	width: 100% !important;
+}
+.mod.info .col-md-12 {
+	padding: 0px 30px 0px 0px;
+}
+.info h2 {
+	font: bold 22px 'roboto_slabbold';
+	margin: 0px 0px 0px 0px;
+	line-height: 26px;
+}
+.mod.info p {
+	font: normal 22px 'roboto_slablight';
+	line-height: 26px;
+	margin: 0px 0px 0px;
+	padding: 0px;
+}
+.mod .icon.btn-close {
+	position: absolute;
+	right: 15px;
+	top: 22px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	z-index: 99999999;
+}
+.mod.info .icon.btn-close {
+	right: 0px;
+	top: 0px;
+}
+.mod.info p a {
+	font: bold 22px 'roboto_slabbold';
+	text-decoration: underline;
+	color: #493d34;
+}
+.downloadcenter form .ajaxLoadingIndicator {
+	filter: alpha(opacity=50);
+}
+.col-md-12.breadcrumb-media {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.nav.navbar-nav.mob-hide {
+	padding-left: 0;
+}

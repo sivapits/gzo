@@ -1,0 +1,99 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    199,
+                    63
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "home",
+                        "detail",
+                        "widget"
+                    ]
+                },
+                "name": "Staff",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "698243622709"
+                },
+                "propertyGroup": {
+                    "properties": [
+
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "This is a custom extension build for managing staffs.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "tnt_mitarbeiter",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "stable",
+            "targetVersion": "6.2",
+            "version": "1.0"
+        },
+        "extensionKey": "tnt_mitarbeiter",
+        "name": "TNT Staff Management",
+        "originalExtensionKey": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "hoja@tnt-graphics.ch",
+                "name": "HOJA M A",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "tntmitarbeiter",
+                "name": "TNT Staff Management"
+            }
+        ],
+        "vendorName": "TYPO3"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2014-08-06 09:28",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}

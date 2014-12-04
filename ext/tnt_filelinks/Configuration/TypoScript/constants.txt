@@ -1,0 +1,15 @@
+
+plugin.tx_tntfilelinks {
+	view {
+		# cat=plugin.tx_tntfilelinks/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:tnt_filelinks/Resources/Private/Templates/
+		# cat=plugin.tx_tntfilelinks/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:tnt_filelinks/Resources/Private/Partials/
+		# cat=plugin.tx_tntfilelinks/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:tnt_filelinks/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_tntfilelinks//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

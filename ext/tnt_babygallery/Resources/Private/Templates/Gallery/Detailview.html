@@ -1,0 +1,382 @@
+<div class="babygalerie-loading">
+	<f:image id="babygalerie-loading-image" src="EXT:tnt_babygallery/Resources/Public/Icons/loader.gif" alt="Loading..." />
+</div>
+<script type="text/javascript">
+	var reqError = '<f:translate key="LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang.xml:reqerror">required</f:translate>';
+	var emailerror = '<f:translate key="LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang.xml:emailerror">Invalid E-Mail ID!</f:translate>';
+	var remainChar =  '<f:translate key="LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang.xml:remainchar">Characters Remaining</f:translate>';
+</script>
+<h1><f:translate key="gallery_title">Babygalerie</f:translate></h1>
+<section class="mod gallery">
+	<f:if condition="{data.pageAccesswright} == 1">
+		<f:then>
+			<div class="mod-highlight list cta multy-tab">
+				<a href="{data.GridUrl.baseurl}">
+					<span><span class="infos"></span><i>
+							<f:translate key="grid">Grid	</f:translate>
+					</i></span>
+				</a>
+				<a href="{data.ListUrl.baseurl}">
+					<span><span class="liste"></span><i>
+						<f:translate key="list_link">
+							List
+						</f:translate>
+					</i></span>
+				</a>
+				<a href="javascript:void(0);" class="active">
+					<span><span class="detail"></span><i>
+						<f:translate key="detail_link">
+							Detail
+						</f:translate>
+					</i></span>
+				</a>
+				<!-- Portable Trigger -->
+				<a class="desktop-hide" href="javascript:void(0);" id="trigger">
+					<span><span class="search"></span><i class="search">Dropdown</i></span>
+				</a>
+				<!-- Portable View -->
+				<div id="drop">
+				  <div class="row">
+					<form action="{data.GridUrl.baseurl}" name="detailViewSearch" class="list-detail galerie" method="post">
+					  <div class="col-md-9">
+						<div class="searchalign">
+							<label class="rem">Name</label>
+							<input type="text" class="babygallerie form-control nameFilter" name="tx_tntbabygallery_tntbabygallery[nameFilter]" placeholder="{f:translate(key: 'phsearch',  default: 'First Name / Name')}" id="srch-term" value="{data.prefill.name}">
+							<i class="icon-search babygallerie"></i>				 
+						</div>
+						<fieldset>
+							<select title="Gender" class="genderFilter selectpicker form-control default-sm babygallerie-dropdown" name="tx_tntbabygallery_tntbabygallery[genderFilter]">
+								<option value="ALL">
+								<f:translate key="all">
+									All
+								</f:translate></option>
+								<option value="0">
+								<f:translate key="male">
+									Male
+								</f:translate></option>
+								<option value="1">
+								<f:translate key="female">
+									Female
+								</f:translate>
+								</option>
+							</select>
+						</fieldset>
+						<div class="datum-bis"><span class="txtalign bold"><f:translate key="list_date">Date</f:translate></span>
+							<fieldset>
+								<input readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="tx_tntbabygallery_tntbabygallery[dateFromFilter]" class="mobdateFilterFrom datepicker form-control">
+							</fieldset>
+							<span class="txtalign">
+									<f:translate key="infto">
+										to
+									</f:translate>
+							</span>
+							<fieldset>
+								<input readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="tx_tntbabygallery_tntbabygallery[dateToFilter]" class="mobdateFilterTo datepicker form-control">
+							</fieldset>
+						</div>
+						<input type="submit" name="tx_tntbabygallery_tntbabygallery[detailSubmit]" class="btn btn-primary filtern detailfilter mobile" value="{f:translate(key: 'filter',  default: 'Filter')}" />
+						<div class="desktop-hide">
+						  <div class="mob-resetbtn">
+							<ul>
+							  <li><a href="javascript:void(0);"><i class="babyCount">{data.Babydata.babyCount}</i> <f:translate key="babies">Babys</f:translate></a></li>
+							  <li class="reset"><a class="resetbtn" href="javascript:void(0);"><b><label for="babygallerie" class="rem">Name</label></b></a></li>
+							</ul>
+						  </div>
+						</div>
+					  </div>
+					</form>
+				  </div>
+				</div>
+				<!-- END OF Portable View -->
+			</div>
+			<!-- Main Search Menu -->
+			<div class="mob-hide">
+				<div class="row">
+					<form action="{data.GridUrl.baseurl}" name="detailViewSearch" class="list-detail galerie" method="post">
+						<div class="col-md-9">
+							<div class="searchalign">
+									<input type="text" class="form-control nameFilter babygallerie " name="tx_tntbabygallery_tntbabygallery[nameFilter]" placeholder="{f:translate(key: 'phsearch',  default: 'First Name / Name')}" title="{f:translate(key: 'phsearch',  default: 'First Name / Name')}" id="srch-term" value="{data.prefill.name}"><i class="icon-search babygallerie"></i>
+							</div>
+							<fieldset>
+								<select title="Gender" class="genderFilter selectpicker form-control default-sm babygallerie-dropdown" name="tx_tntbabygallery_tntbabygallery[genderFilter]">
+									<option value="ALL">
+									<f:translate key="all">
+										All
+									</f:translate></option>
+									<option value="0">
+									<f:translate key="male">
+										Male
+									</f:translate></option>
+									<option value="1">
+									<f:translate key="female">
+										Female
+									</f:translate>
+									</option>
+								</select>
+							</fieldset><span class="txtalign bold"><f:translate key="list_date">Date</f:translate></span>
+							<fieldset>
+								<input title="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="tx_tntbabygallery_tntbabygallery[dateFromFilter]" class="dateFilterFrom datepicker form-control">
+							</fieldset>
+							<span class="txtalign">
+									<f:translate key="infto">
+										to
+									</f:translate>
+							</span>
+							<fieldset>
+								<input title="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="tx_tntbabygallery_tntbabygallery[dateToFilter]" class="dateFilterTo datepicker form-control">
+							</fieldset>
+							<input type="submit" name="tx_tntbabygallery_tntbabygallery[detailSubmit]" class="btn btn-primary filtern detailfilter desktop" value="{f:translate(key: 'filter',  default: 'Filter')}" />
+						</div>
+						<div class="col-md-3">
+							
+							<div class="pagination">
+								<ul>
+									<li class="disabled seitenos"><a href="javascript:void(0);" ><i class="babyCount">{data.Babydata.babyCount} </i><f:translate key="babies">Babys</f:translate> </a></li>
+									<li class="prev {data.prevClass}"><a href="{data.prevBaby.baseurl}" class="btnPrevious"><b><label class="rem">remove</label></b></a></li>
+									<li class="next {data.nextClass}"><a href="{data.nextBaby.baseurl}" class="btnNext"><b><label class="rem">remove</label></b></a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- END OF MAIN SEARCH MENU -->
+			<!-- Main Container --> 
+			<div class="row mod-detail" id="gridview">
+				<div class="col-md-4 col-sm-4 colLft mob-hide reset-left">
+					<h2><span><i class="{data.babyDetail.classname}"></i></span>{data.babyDetail.firstname} <br/>{data.babyDetail.lastname}</h2>
+					<table class="baby-dtl">
+						<tbody>
+							<tr>
+							  <td>Datum</td>
+							  <td><strong>{data.babyDetail.tstamp}</strong></td>
+							</tr>
+							<tr>
+							  <td>Zeit</td>
+							  <td><strong>{data.babyDetail.time}h</strong></td>
+							</tr>
+							<tr>
+							  <td>Gewicht</td>
+							  <td><strong>{data.babyDetail.weight}g</strong></td>
+							</tr>
+							<tr>
+							  <td>Grösse</td>
+							  <td><strong>{data.babyDetail.height}cm</strong></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="socialmedia">
+						<div class="social"> 
+							<div class="social-likes">
+								<f:if condition="{data.babyDetail.facebooklike}">
+									<f:then></f:then>
+									<f:else>
+										<div class="facebook" title="{data.babyDetail.firstname} {data.babyDetail.lastname}">Empfehlen</div>
+									</f:else>
+								</f:if>
+								<f:if condition="{data.babyDetail.twitter}">
+									<f:then></f:then>
+									<f:else>
+										<div class="twitter" title="{data.babyDetail.firstname} {data.babyDetail.lastname}">Twitter</div>
+									</f:else>
+								</f:if>
+								<f:if condition="{data.babyDetail.googleplus}">
+									<f:then></f:then>
+									<f:else>
+										<div class="plusone" title="{data.babyDetail.firstname} {data.babyDetail.lastname}">Google+</div>
+									</f:else>
+								</f:if>
+							</div>
+						</div>
+					</div>
+					<div class="base-position">
+						<div class="accordion flexi" id="accordion2">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle collapsed" href="#collapseOne" data-parent="#accordion2" data-toggle="collapse">
+										<f:translate key="singleView_sentence12"></f:translate>
+									</a>
+								</div>
+								<div class="accordion-body collapse" id="collapseOne">
+									<div class="accordion-inner">
+										<form role="form" id="send-e-card">
+											<div class="form-group">
+												<input type="text" class="alpha required form-control" placeholder="{f:translate(key: 'name_receiver',  default: 'Name of Reciever')}" data-msg-error="{f:translate(key: 'reqerror',  default: 'required')}" name="recname" id="recname"/>
+											</div>
+											<div class="form-group">
+												<input type="email" id="recemail" class="required form-control" placeholder="{f:translate(key: 'email_receiver',  default: 'Email of Reciever')}"  name="recemail" data-rule-required="true" data-rule-email="true" data-msg-email="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}"/>
+											</div>
+											<div class="form-group">
+												<textarea class="form-control required counted" name="message" title="{f:translate(key: 'message_compose',  default: 'Your Message (Max 300 words)')}" placeholder="{f:translate(key: 'message_compose',  default: 'Your Message (Max 300 words)')}"  id="message"></textarea>
+											</div>
+											<div class="form-group">
+												<input type="text" class="alpha required form-control" placeholder="{f:translate(key: 'name_sender',  default: 'Ihr Name')}" data-msg-error="{f:translate(key: 'reqerror',  default: 'required')}" name="sendername" id="sendername">
+											</div>
+											<div class="form-group">
+												<input type="text"  class="alpha required form-control" placeholder="{f:translate(key: 'email_sender',  default: 'Ihre E-Mail-Addresse')}" data-msg-error="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" data-rule-required="true" data-rule-email="true" data-msg-email="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" name="senderemail" id="senderemail"/>
+											</div>
+											<div class="statusResp"></div>
+											<button type='submit' name="sendMail" id="sendMail" class="btn btn-primary">
+												<f:translate key="email_send">Send</f:translate> 
+											</button>
+											<button class="btn btn-transparent resetBack" type="reset"><f:translate key="resetform">Reset Form</f:translate></button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-sm-8 colrgt thumb-details reset-right">
+					<img alt="{data.babyDetail.firstname} {data.babyDetail.lastname}" title="{data.babyDetail.firstname} {data.babyDetail.lastname}" src="{data.babyDetail.imagepath}">
+				</div>
+				<div class="col-md-3 col-sm-3 colLft desktop-hide tablet-hide">
+					<h2><span><i class="{data.babyDetail.classname}"></i></span>{data.babyDetail.firstname} {data.babyDetail.lastname}</h2>
+					<table class="baby-dtl">
+					<tbody>
+						<tr>
+						  <td>Datum</td>
+						  <td>{data.babyDetail.tstamp}</td>
+						</tr>
+						<tr>
+						  <td>Zeit</td>
+						  <td>{data.babyDetail.time}h</td>
+						</tr>
+						<tr>
+						  <td>Gewicht</td>
+						  <td>{data.babyDetail.weight}g</td>
+						</tr>
+						<tr>
+						  <td>Grösse</td>
+						  <td>{data.babyDetail.height}cm</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				<div class="col-md-3 col-sm-3 colLft desktop-hide test">
+					<div class="row-fluid tablet">
+					<div class="col-md-8"><span>Datum:<b>{data.babyDetail.tstamp}</b></span><span>Zeit:<b>{data.babyDetail.time}h</b></span><span>Gewicht:<b>{data.babyDetail.weight}g</b></span><span>Grösse:<b>{data.babyDetail.height}cm</b></span></div>
+					<div class="col-md-4">
+					  <div class="accordion" id="accordion3">
+						<div class="accordion-group">
+						  <div class="accordion-heading"><a class="accordion-toggle" href="#collapseThree" data-parent="#accordion3" data-toggle="collapse"><f:translate key="singleView_sentence12"></f:translate></a></div>
+						  <div class="accordion-body collapse" id="collapseThree" style="">
+							<div class="accordion-inner">
+								<form role="form" id="tabsend-e-card">
+									<div class="form-group">
+										<input type="text" class="alpha required form-control" placeholder="{f:translate(key: 'name_receiver',  default: 'Name of Reciever')}" data-msg-error="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" name="recname" id="tabrecname"/>
+									</div>
+									<div class="form-group">
+										<input type="email" id="tabrecemail" class="required form-control" placeholder="{f:translate(key: 'email_receiver',  default: 'Email of Reciever')}"  name="recemail" data-rule-required="true" data-rule-email="true" data-msg-email="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}"/>
+									</div>
+									<div class="form-group">
+										<textarea class="form-control required counted" name="message" placeholder="{f:translate(key: 'message_compose',  default: 'Your Message (Max 300 words)')}" title="{f:translate(key: 'message_compose',  default: 'Your Message (Max 300 words)')}"  id="tabmessage"></textarea>
+									</div>
+									<div class="form-group">
+										<input type="text" class="alpha required form-control" placeholder="{f:translate(key: 'name_sender',  default: 'Ihr Name')}" name="sendername" id="tabsendername">
+									</div>
+									<div class="form-group">
+										<input type="text"  class="alpha required form-control" placeholder="{f:translate(key: 'email_sender',  default: 'Ihre E-Mail-Addresse')}" data-msg-error="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" data-rule-required="true" data-rule-email="true" data-msg-email="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" name="senderemail" id="tabsenderemail"/>
+									</div>
+									<div class="statusResp"></div>
+									<button type='submit' name="sendMail" id="tabsendMail" class="btn btn-primary">
+										<f:translate key="email_send">Send</f:translate> 
+									</button>
+									<button class="btn btn-transparent resetBack" type="reset"><f:translate key="resetform">Reset Form</f:translate></button>
+									<a class="resetbtn" class="accordion-toggle" href="#collapseTwo" data-parent="#accordion1" data-toggle="collapse"><b><label for="babygallerie" class="rem">Name</label></b></a>
+								</form>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					</div>
+					<div class="socialmedia">
+						<div class="social"> 
+							<div class="social-likes">
+								<f:if condition="{data.babyDetail.facebooklike}">
+									<f:then></f:then>
+									<f:else>
+										<div class="facebook" title="{data.babyDetail.firstname} {data.babyDetail.lastname}">Empfehlen</div>
+									</f:else>
+								</f:if>
+								<f:if condition="{data.babyDetail.twitter}">
+									<f:then></f:then>
+									<f:else>
+										<div class="twitter" title="{data.babyDetail.firstname} {data.babyDetail.lastname}">Twitter</div>
+									</f:else>
+								</f:if>
+								<f:if condition="{data.babyDetail.googleplus}">
+									<f:then></f:then>
+									<f:else>
+										<div class="plusone" title="{data.babyDetail.firstname} {data.babyDetail.lastname}">Google+</div>
+									</f:else>
+								</f:if>
+							</div>
+						</div>
+					</div>
+					<div class="accordion tablet-hide" id="accordion1">
+						<div class="accordion-group">
+							<div class="accordion-heading"><a class="accordion-toggle" href="#collapseTwo" data-parent="#accordion1" data-toggle="collapse"><f:translate key="singleView_sentence12"></f:translate></a></div>
+							<div class="accordion-body collapse" id="collapseTwo">
+							<div class="accordion-inner">
+								<form role="form" id="mobsend-e-card">
+									<div class="form-group">
+										<input type="text" class="alpha required form-control" placeholder="{f:translate(key: 'name_receiver',  default: 'Name of Reciever')}" data-msg-error="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" name="recname" id="mobrecname"/>
+									</div>
+									<div class="form-group">
+										<input type="email" id="mobrecemail" class="required form-control" placeholder="{f:translate(key: 'email_receiver',  default: 'Email of Reciever')}"  name="recemail" data-rule-required="true" data-rule-email="true" data-msg-email="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}"/>
+									</div>
+									<div class="form-group">
+										<textarea class="form-control required counted" name="message" placeholder="{f:translate(key: 'message_compose',  default: 'Your Message (Max 300 words)')}"  title="{f:translate(key: 'message_compose',  default: 'Your Message (Max 300 words)')}" id="mobmessage"></textarea>
+									</div>
+									<div class="form-group">
+										<input type="text" class="alpha required form-control" placeholder="{f:translate(key: 'name_sender',  default: 'Ihr Name')}" name="sendername" id="mobsendername">
+									</div>
+									<div class="form-group">
+										<input type="text"  class="alpha required form-control" placeholder="{f:translate(key: 'email_sender',  default: 'Ihre E-Mail-Addresse')}" data-msg-error="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" data-rule-required="true" data-rule-email="true" data-msg-email="{f:translate(key: 'emailerror',  default: 'Invalid Email ID!')}" name="senderemail" id="mobsenderemail"/>
+									</div>
+									<div class="statusResp"></div>
+									<button type='submit' name="sendMail" id="mobsendMail" class="btn btn-primary">
+										<f:translate key="email_send">Send</f:translate> 
+									</button>
+									<button class="btn btn-transparent resetBack" type="reset"><f:translate key="resetform">Reset Form</f:translate></button>
+									<a class="resetbtn" class="accordion-toggle" href="#collapseTwo" data-parent="#accordion1" data-toggle="collapse"><b><label for="babygallerie" class="rem">Name</label></b></a>
+								</form>
+							</div>
+						  </div>
+						</div>
+					</div>
+					
+					<div class="desktop-hide">
+						<div class="pagination pagination-centered yearfilter">
+						  <ul>
+							<li class="prev {data.prevClass}"><a href="{data.prevBaby.baseurl}" class="btnPrevious"><b><label class="rem">remove</label></b></a></li>
+							<li class="next {data.nextClass}"><a href="{data.nextBaby.baseurl}" class="btnNext"><b><label class="rem">remove</label></b></a></li>
+						  </ul>
+						</div>
+					</div>
+					
+				</div>		
+			</div>
+			<input type="hidden" name="sendPath" id="sendPath" value="{data.url.baseurl}"/>
+			<!-- TAB VIEW SOCIAL LIKE BUTTONS -->
+			<!-- END OF TAB VIEW SOCIAL LIKE BUTTONS -->
+			<f:form.hidden id="pid" name="pid" value="{data.url.pid}" />
+			<f:form.hidden id="base_url" name="baseurl" value="{data.url.baseurl}" />
+			<f:form.hidden id="steepval" name="steepval" value="1" />
+			<f:form.hidden id="filterName" name="filterName" value="" />
+			<f:form.hidden id="filterGender" name="filterGender" value="" />
+			<f:form.hidden id="filterDateTo" name="filterDateTo" value="" />
+			<f:form.hidden id="filterDateFrom" name="filterDateFrom" value="" />
+			<f:form.hidden id="viewRef" name="viewRef" value="GRID" />
+			<f:form.hidden id="detailPage" name="viewRef" value="SET" />
+		</f:then>
+		<f:else>
+			<div role="alert" class="alert alert-default fade in">
+				<strong><f:translate key="nodata">No Data Found</f:translate></strong>
+			</div>
+		</f:else>
+	</f:if>
+</section>

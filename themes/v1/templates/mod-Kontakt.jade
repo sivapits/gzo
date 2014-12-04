@@ -1,0 +1,42 @@
+// tabbed module start
+article.Kontakt
+	h2 Kontakt 
+	.row
+		.col-md-4
+			h4 Adresse
+			p
+				|GZO Spital Wetzikon
+				br
+				|Spitalstrasse 66
+				br
+				|8620 Wetzikon
+			h4 Telefonzentrale
+			p
+				|Tel. +41 44 934 11 11 
+				br
+				|Fax +41 44 930 05 87
+		.col-md-8
+			iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2704.636674300418!2d8.802365999999997!3d47.321436!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479abbc46d6184a9%3A0x585e37e8137dd32d!2sGZO+Spital+Wetzikon!5e0!3m2!1sen!2s!4v1406871401494', width='100%', height='450', frameborder='0', style='border: 0;')
+	.kontakt-form
+		h5 Nehmen Sie Kontakt mit uns auf
+		form.form-horizontal(role='form')
+		.form-group
+			label.col-sm-2.control-label(for='firstname') Name*
+			.col-sm-10
+				input#firstname.form-control(type='text', placeholder='Dipl. Pflegefachperson Pall. Care und Spitex')
+		.form-group
+			label.col-sm-2.control-label(for='firstname') Vorname
+			.col-sm-10
+				input#firstname.form-control(type='text', placeholder='')
+		.form-group
+			label.col-sm-2.control-label(for='firstname') E-Mail*
+			.col-sm-10
+				input#firstname.form-control(type='text', placeholder='')
+		.form-group
+			label.col-sm-2.control-label(for='firstname') Nachricht
+			.col-sm-10
+				textarea#textarea.span12(name='textarea', rows='10')
+		.form-group
+			.col-sm-offset-2.col-sm-10
+				button.btn.btn-primary(type='submit') Abschicken
+        

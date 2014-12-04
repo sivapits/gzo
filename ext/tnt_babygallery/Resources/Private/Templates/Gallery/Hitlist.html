@@ -1,0 +1,112 @@
+<div class="content">
+<!-- news module start-->
+<h1><f:translate key="hitlist_title">Namen-Hitliste</f:translate></h1>
+<hr class="twopx year">
+	<div class="yearpanel">
+		<f:if condition="{data.errFlag} == 0">
+			<f:then>
+				
+			</f:then>
+			<f:else>
+				<f:if condition="{data.disablePrevious} == 0">
+					<f:then>
+						<div class="pagination">
+							<ul>
+								<li class="disabled seitenos"><a href="javasript:void(0);"><i class="babyCount">{data.nameCount} </i><f:translate key="names">Namen</f:translate></a></li>
+								<li class="prev paginationLft"><a href="{data.purl}"><b></b></a></li>
+								<li class="next paginationRgt"><a href="{data.nurl}"><b></b></a></li>
+							</ul>
+						</div>
+					</f:then>
+					<f:else>
+						<div class="pagination">
+							<ul>
+								<li class="disabled seitenos"><a href="javasript:void(0);"><i class="babyCount">{data.nameCount} </i><f:translate key="names">Namen</f:translate></a></li>
+								<li class="disabled prev paginationLft"><a href="{data.purl}"><b></b></a></li>
+								<li class="next paginationRgt"><a href="{data.nurl}"><b></b></a></li>
+							</ul>
+						</div>
+					</f:else>
+				</f:if>
+			</f:else>
+		</f:if>
+		
+		<ul class="nav nav-tabs year">
+			<f:if condition="{data.currentYear} != ''">
+				<f:then>
+					<li><a href="{data.baseurl.baseurl}"><f:translate key="label_all">Alle</f:translate></a></li>
+				</f:then>
+				<f:else>
+					<li class="active"><a href="{data.baseurl.baseurl}"><f:translate key="label_all">Alle</f:translate></a></li>
+				</f:else>
+			</f:if>
+			
+			<f:for each="{data.ask}" as="yearlist">
+				<f:if condition="{data.currentYear} == {yearlist.year}">
+					<f:then>
+						<li class="active"><a href="{yearlist.yurl}">{yearlist.year}</a></li>
+					</f:then>
+					<f:else>
+						<li><a href="{yearlist.yurl}">{yearlist.year}</a></li>
+					</f:else>
+				</f:if>
+			</f:for>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="home">
+				<div class="row-fluid">
+					<f:if condition="{data.errFlag} == 0">
+						<f:then>
+							<div role="alert" class="alert alert-default fade in">
+							  <strong><f:translate key="nodata">No Data Found</f:translate></strong>
+							</div>
+						</f:then>
+						<f:else>
+							<div class="col-md-6">
+								<h3 class="subheading"><f:translate key="hitlist_girls">Mädchen</f:translate><i class="w"></i></h3>
+								<table class="babyname">
+									<tbody id="girlData">
+										<f:for each="{data.girlData}" as="babyGirl">
+											<tr>
+												<td class="hitlist_col1">{babyGirl.count}</td>
+												<td class="hitlist_col2">{babyGirl.name}</td>
+											</tr>
+										</f:for>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-md-6 last-col">
+								<h3 class="subheading"><f:translate key="hitlist_boys">Jungen</f:translate><i class="m"></i></h3>
+								<table class="babyname">
+									<tbody id="boyData">
+										<f:for each="{data.boyData}" as="babyBoy">
+											<tr>
+                                                                                            <td class="hitlist_col1">{babyBoy.count}</td>
+											    <td class="hitlist_col2">{babyBoy.name}</td>
+											</tr>
+										</f:for>
+									</tbody>
+								</table>
+							</div>
+						</f:else>
+					</f:if>
+				</div>
+			</div>
+		</div>
+		<div class="desktop-hide">
+			<f:if condition="{data.errFlag} == 0">
+				<f:then>
+					
+				</f:then>
+				<f:else>
+					<div class="pagination pagination-centered yearfilter">
+						<ul>
+							<li class="prev"><a href="{data.purl}"><b></b></a></li>
+							<li class="next"><a href="{data.nurl}"><b></b></a></li>
+						</ul>
+					</div>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</div>

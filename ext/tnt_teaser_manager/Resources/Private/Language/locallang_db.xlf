@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-21T10:57:18Z" product-name="tnt_teaser_manager">
+		<header/>
+		<body>
+			<trans-unit id="tx_tntteasermanager_domain_model_tntteasermanger">
+				<source>Tnt Teaser Manger</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

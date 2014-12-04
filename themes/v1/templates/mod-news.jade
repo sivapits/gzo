@@ -1,0 +1,65 @@
+// news module start
+section.mod.data-list
+	.mod-highlight
+			a(href="#news-mod")
+				span News
+			a(href="#press-mod").active
+				span Presse
+			a(href="#", target="_blank").icon-twitter
+				span twitter
+
+	.tab-content#news-mod
+		.mod-details
+			h2(data-toggle='collapse', data-target='#news')
+				a News
+			#news.collapse.in
+				ul
+					li
+						span.time 24.01.2014
+						h3
+							a(href="#") Neue Leiterin Onkologie
+						p Am 1. Januar 2014 hat Frau Prof. Ursula Kapp die Onkologie am GZO Spital Wetzikon übernommen.
+						a.link(href="#") GZO-Medienmitteilung
+					li
+						span.time 23.01.2014
+						h3
+							a(href="#") Erweiterungsbau Parlament
+						p Der Gestaltungsplan für die Erweiterung des GZO Spital Wetzikon liegt auf. Der 165-Millionen-Bau wird eines der ersten Geschäfte des Parlaments sein.
+						a.link(href="#") Zürcher Oberländer
+					li
+						span.time 22.01.2014
+						h3
+							a(href="#") Spitäler sind keine Schraubstöcke
+						p Reaktion von Dr. Jürg Schneider, Chefarz Frauenklinik am GZO Spital Wetzikon auf den öffentlichen Jahresrückblick des Urologen. 
+						a.link(href="#") Zürcher Oberländer
+				a(href="#", target="_blank").link Medienmitteilungen
+
+	.tab-content#press-mod.active
+		.mod-details
+			h2(data-toggle='collapse', data-target='#pressemitteilungen')
+				a Pressemitteilungen
+			#pressemitteilungen.collapse.in
+				ul
+					li
+						span.time 24.01.2014
+						h3
+							a(href="#") Neue Leiterin Onkologie
+						p Am 1. Januar 2014 hat Frau Prof. Ursula Kapp die Onkologie am GZO Spital Wetzikon übernommen.
+						a.link(href="#") GZO-Medienmitteilung
+					li
+						span.time 23.01.2014
+						h3
+							a(href="#") Erweiterungsbau Parlament
+						p Der Gestaltungsplan für die Erweiterung des GZO Spital Wetzikon liegt auf. Der 165-Millionen-Bau wird eines der ersten Geschäfte des Parlaments sein.
+						a.link(href="#") Zürcher Oberländer
+					li
+						span.time 22.01.2014
+						h3
+							a(href="#") Spitäler sind keine Schraubstöcke
+						p Reaktion von Dr. Jürg Schneider, Chefarz Frauenklinik am GZO Spital Wetzikon auf den öffentlichen Jahresrückblick des Urologen. 
+						a.link(href="#") Zürcher Oberländer
+				.link-wrapper
+					a(href="#").link Medienmitteilungen
+
+
+// news module end

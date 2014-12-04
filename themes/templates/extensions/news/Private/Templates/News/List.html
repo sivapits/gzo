@@ -1,0 +1,340 @@
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	
+<!--- News list page --->
+			<f:if condition="{settings.templateLayout} == 1"> 
+			<f:then>
+				<f:if condition="{news}">	
+				<f:then>	
+				<div class="news-list-view">
+					<f:if condition="{settings.hidePagination}">
+						<f:then>
+							<article class="newsarchiv">
+							 
+							<table class="newspresse">
+							<tbody>
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							</f:for>
+							</tbody>
+							</table>
+							</article>
+						</f:then>
+						<f:else>
+							<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+							<article class="newsarchiv">							 
+							<table class="newspresse">
+							<tbody>
+								<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+							</tbody>
+							</table>
+							</article>
+							</n:widget.paginate>
+						</f:else>
+					</f:if>
+				</div>
+				</f:then>
+				<f:else>
+					<div class="no-news-found">
+						<f:translate key="list_nonewsfound" />
+					</div>
+				</f:else>
+				</f:if>
+				
+				
+			</f:then>
+			</f:if>
+		
+<!--- Home - News template --->		
+		
+			<f:if condition="{settings.templateLayout} == 2">  
+			<f:then>	
+			<f:if condition="{news}">	
+			<f:then>	
+
+			
+						<!--- <div class="tab-content active" id="news-mod">
+							<div class="mod-details">
+							  <h2 data-target="#news" data-toggle="collapse"><a>News</a></h2>
+							---->  
+							<div class="collapse in news-teaser data-list" >
+							<div id="mod-teaser4">
+							<ul>
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+										<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							</f:for>
+							</ul>
+							<div class="link-wrapper">			
+							<f:link.page pageUid="{settings.listPid}" class="linkblock">Newsarchiv</f:link.page>
+							</div>
+							 
+							  </div>
+							</div>
+						    
+						  
+			</f:then>
+			<f:else>
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
+			</f:else>
+			</f:if>	  
+						  
+						  
+						  
+			</f:then>
+			</f:if>		
+			
+			<!--- Home - News template --->			
+
+			<f:if condition="{settings.templateLayout} == 7">  
+			<f:then>	
+				<f:if condition="{news}">	
+				<f:then>			
+						<!--- <div class="tab-content active" id="news-mod">
+							<div class="mod-details">
+							  <h2 data-target="#news" data-toggle="collapse"><a>News</a></h2>
+							---->  
+							<div class="collapse in news-teaser data-list" id="mod-teaser4">
+							<ul>
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+										<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							</f:for>
+							</ul>
+							<f:link.page pageUid="{settings.listPid}" class="linkblock">Medienmitteilungen</f:link.page>
+							 
+
+							  </div><!---
+							</div>
+						  </div>---->  
+						  
+						  
+			</f:then>
+			<f:else>
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
+			</f:else>
+			</f:if>
+						  
+						  
+			</f:then>
+			</f:if>	
+			
+			<!--- Top News bar --->
+			
+			<f:if condition="{settings.templateLayout} == 3">  
+			<f:then>
+				<f:if condition="{news}">	
+				<f:then>			
+				<div class="mod info">
+					<div class="container">
+						<div class="col-md-12">
+							<f:for each="{news}" as="newsItem" iteration="iterator">							
+							<h2>{newsItem.title}</h2>
+							<p>
+								<f:if condition="{newsItem.teaser}">
+									<f:then>
+									<f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop>
+									</f:then>
+									<f:else>
+									<f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop>
+									</f:else>
+								</f:if>
+								<n:link newsItem="{newsItem}" settings="{settings}" >
+								<f:translate key="more-link" />
+								</n:link>
+							
+							</p>
+							<div data-target=".info" class="icon btn-close">close</div>
+							</f:for>
+						  </div>
+					</div>
+				</div>
+				
+				
+			</f:then>
+			<f:else>
+ 
+			</f:else>
+			</f:if>
+				
+				
+				
+			</f:then>
+			</f:if>
+			
+			<!--- Agenda Template --->
+  
+			<f:if condition="{settings.templateLayout} == 4">   
+			<f:then>	
+				<f:if condition="{news}">	
+				<f:then>
+				<div class="collapse in news-teaser data-list" id="mod-widgetlist">
+				
+					<ul class="lists">
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:if condition="{iterator.index} < 3">
+										<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" /> 
+							</f:if> 
+						</f:for>
+					</ul>	
+					<f:link.page pageUid="{settings.listPid}" class="linkblock">Zur kompletten Agenda</f:link.page>
+					 
+				</div>
+				
+			</f:then>
+			<f:else>
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
+			</f:else>
+			</f:if>
+	
+			</f:then>
+			</f:if>
+			
+			<!--- News widget with image & text --->
+
+			<f:if condition="{settings.templateLayout} == 5">    
+			<f:then>
+				<f:if condition="{news}">	
+				<f:then>			
+					<div class="collapse in news-teaser" id="news">
+						<div class="scroll-pane">
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" /> 
+						</f:for>	
+						</div>							
+						<f:link.page pageUid="{settings.listPid}" class="linkblock" >Newsarchiv</f:link.page>
+					</div>					
+			</f:then>
+			<f:else>
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
+			</f:else>
+			</f:if>					
+			</f:then>
+			</f:if>	
+
+
+ <!--- News widget with content slider --->
+			<f:if condition="{settings.templateLayout} == 6">    
+			<f:then>	
+				<f:if condition="{news}">	
+				<f:then>
+				<div  class="collapse in news-teaser">
+					<div id="news-mod">
+					<div id="mod-news2" class="data-list" >
+				  
+						<div id="myCarousel" class="carousel slide">
+
+							<div class="carousel-inner">		
+								<f:for each="{news}" as="newsItem" iteration="iterator">								
+									<f:if condition="{iterator.isFirst}">
+									<f:then>
+										<article class="item active">
+										<div class="scroll-pane">
+										<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+										</div>
+										</article>	
+									</f:then>
+									<f:else>
+										<article class="item">
+										<div class="scroll-pane">
+										<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+										</div>
+										</article>	
+									</f:else>
+									</f:if>									
+								</f:for>								
+							</div>		
+							<ol class="carousel-indicators">
+								<f:for each="{news}" as="newsItem" iteration="iterator">
+									<f:if condition="{iterator.isFirst}">
+									<f:then>
+										<li data-target="#myCarousel" data-slide-to="{iterator.index}" class="active"></li> 
+									</f:then>
+									<f:else>
+										<li data-target="#myCarousel" data-slide-to="{iterator.index}" ></li> 
+									</f:else>
+									</f:if>
+								</f:for>	
+							</ol>
+							
+						</div>
+
+						</div>
+					</div>
+				</div>				
+ 
+			</f:then>
+			<f:else>
+				<div class="no-news-found">
+					<f:translate key="list_nonewsfound" />
+				</div>
+			</f:else>
+			</f:if>
+ 
+ 
+ 
+			</f:then>
+			</f:if>				
+<!--- News list page ---> 
+			<f:if condition="{settings.templateLayout} == 8"> 
+			<f:then>
+				<f:if condition="{news}">	
+				<f:then>	
+				<div class="news-list-view  event-list">
+					<f:if condition="{settings.hidePagination}">
+						<f:then>
+							<article class="newsarchiv">
+							 
+							<table class="newspresse">
+							<tbody>
+							<f:for each="{news}" as="newsItem" iteration="iterator">
+								<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							</f:for>
+							</tbody>
+							</table>
+							</article>
+						</f:then>
+						<f:else>
+							<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+							<article class="newsarchiv">							 
+							<table class="newspresse">
+							<tbody>
+								<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+									<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+								</f:for>
+							</tbody>
+							</table>
+							</article>
+							</n:widget.paginate>
+						</f:else>
+					</f:if>
+				</div>
+				</f:then>
+				<f:else>
+					<div class="no-news-found">
+						<f:translate key="list_nonewsfound" />
+					</div>
+				</f:else>
+				</f:if>
+				
+				
+			</f:then>
+			</f:if>
+		
+		
+	
+</f:section>

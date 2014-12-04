@@ -1,0 +1,47 @@
+
+<f:if condition="0">
+    <f:then>
+        <article class="krankheit">
+            <h1 class="inhalt_header">{pageOptions.headerLabel}</h1>
+        <div id="box" class="clearfix">
+            <f:for each="{diseases}" as="singleDiseaseSet" key="number1" iteration="itemIteration1">
+                <div class="col-md-6">
+                    <f:for each="{singleDiseaseSet}" as="singleDisease" key="number2" iteration="itemIteration2">
+                        <!-- generic module start-->
+                        <div>
+                            <section class="mod generic">
+                                <div class="mod-highlight"></div>
+                                <div class="mod-details infocontent">
+                                    <h2 data-toggle="collapse" data-target="#content-{itemIteration2.cycle}-{itemIteration1.cycle}">
+                                        <a>{singleDisease.title}</a>
+                                    </h2>
+                                    <div id="content-{itemIteration2.cycle}-{itemIteration1.cycle}" class="collapse in">
+                                       <f:format.html>{singleDisease.teaser_text}</f:format.html>
+                                        <f:link.page class="linkblock" pageUid="{pageOptions.detailPage}" additionalParams="{L:pageOptions.pageLang,tx_tntdiseases_tntdiseases: '{diseaseSelection:singleDisease.uid}'}">
+                                            <f:translate key='tx_tntdiseases_domain_model_diseases_detailLabel'>Details</f:translate> 
+                                            <f:if condition="{singleDisease.link_title}">
+                                                <f:then>
+                                                    {singleDisease.link_title}
+                                                </f:then>
+                                                <f:else>
+                                                    {singleDisease.title}
+                                                </f:else>
+                                            </f:if>                   
+                                        </f:link.page>
+                                    </div>
+
+                                </div>
+                            </section>
+                            <!-- generic module end-->
+                        </div>
+                    </f:for>
+                </div>
+            </f:for>
+        </div>
+        </article>
+    </f:then>
+    <f:else>
+        <f:translate key='tx_tntdiseases_domain_model_diseases_noItem'>No Item Found!</f:translate>
+    </f:else>
+</f:if>
+

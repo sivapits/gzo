@@ -1,0 +1,22 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+    <section class="mod data-list downloadData doc">
+        <div class="result-data download">
+            <h2 class="datadownload main">{pageOptions.headerLabel}</h2>
+            <ul>
+                <f:for each="{fileLinks}" as="downloadFile" iteration="itemIteration">
+                    <li>
+                        <a href="fileadmin{downloadFile.filelink}" target="_blank">
+                            <span class="file-title">{downloadFile.title}</span>
+                            <span class="file-info">
+                                <span class="size">{downloadFile.size}</span>
+                                <span class="icon icon-{downloadFile.extension}"></span>     
+                            </span>
+                        </a>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </section>
+</f:section>

@@ -1,0 +1,204 @@
+/*!
+ * Custom overrides by development team
+ * 
+ * 
+ */
+.quick-links li span{ display:none; }
+
+article.inhalt .downloadData ul li span{ color:#005a8c; }
+
+.icon.icon-pptx:after,
+.icon.icon-ppt:after {
+    background-position: -559px -133px;
+}
+section.mod.data-list.tabbed .result-data.download .icon.icon-pptx:after,
+section.mod.data-list.tabbed .result-data.download .icon.icon-ppt:after {
+    background-position: -79px -104px;
+}
+
+.icon.icon-file:after {
+    background-position: 9px 3px;
+}
+
+.facebook div {
+    display: inline-block;
+    width: auto;
+}
+
+.facebook div.share{ display: none; }
+
+.facebook-share {
+    float: left;
+    width: 169px !important;
+}
+
+
+/*-- Start of Baby Gallery Custom Styles -- */
+.datepicker:hover{
+	cursor:pointer;
+}
+.babygalerie-loading {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 9999;
+    text-align: center;
+}
+#babygalerie-loading-image {
+    left: 50%;
+    position: absolute;
+    top: 40%;
+    z-index: 100;
+}
+.group.list-group-image {
+    border: 2px solid #fff;
+    padding: 0;
+    text-align: left;
+    width: 75px;
+}
+/*--  End of Baby Gallery Custom Styles -- */
+
+
+/*--  Start of TNT Jobs Custom Styles -- */
+.jobdetail-2 {
+    border-collapse: collapse !important;
+    border-spacing: 0;
+}
+
+.powermail_label.powermail_check_legend {
+    display: none;
+}
+
+#powermail_field_jobbezeichnung{
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -o-user-select: none !important;
+    user-select: none !important;
+}
+
+.spontan .powermail_legend {
+    display: none;
+}
+
+.powermail_form.powermail_form_3.spontan > h3 {
+    display: none;
+}
+/*--  End of TNT Jobs Custom Styles -- */
+
+
+/*--  Start of TNT Mitarbeiter Custom Styles -- */
+.doc-img-crop{
+    width:100%;
+    height: auto;
+}
+.doc-img-crop.colour-img{
+    display: none;
+}
+/*--  Start of TNT Mitarbeiter Custom Styles -- */
+
+/* kontakt form styles */
+.kontakt h3{ display: none; }
+.disable_btn {
+    opacity:0.5;
+    cursor:default;
+}
+.disable_btn b{
+    opacity:0.5;
+}
+
+.mob-hide{
+    cursor:default;
+}
+
+
+.powermail_create > h2 {
+    margin: 30px 0;
+    font-size: 25px;
+}
+
+#mod-teaser4 li {
+    color: #000;
+}
+
+h2.mob-hide{
+    cursor:default;
+}
+
+
+.jspPane p {
+    /*color: #3f3f3f !important;
+    font-family: "roboto_slablight",Arial,Helvetica,sans-serif !important;
+    font-size: 13px !important;*/
+}
+
+
+/* added by abin for hover effect */
+.deactive:hover {
+    cursor: default !important;
+} 
+.active:hover {
+ /*   cursor: pointer !important;*/
+}
+/* cursor fix for namen hitliste */
+#girlData td,
+#boyData td {
+    cursor: default;
+}
+
+/* cursor fix for heide and rene buttons */
+.female-body .btn-imagemap.w span,
+.male-body .btn-imagemap.m span {
+    cursor: pointer;
+}
+
+div#bodyContent p {
+    margin: 0px;
+} 
+div#content {
+    width: 170px;
+    height: 70px;
+}
+
+.news-list-date-teaser{
+	float:left;
+	padding-right:10px;
+	font:14px roboto_slablight;
+	color:rgb(63, 63, 63);
+	height:15px;
+}
+
+.news-related .news-related-news-date {
+
+color: #005a8c;
+}
+
+.bold-title a{
+	font:bold 14px arial;
+}
+
+.file-info-large{
+	font:14px arial;
+}
+
+.ajaxLoder{
+    
+    background-image:url('../images/ajax_loader_blue_512.gif');
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    float: right;
+}
+.ajaxLoadingIndicator{
+    
+    background-image:url('../images/ajax_loader_blue_512.gif');
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    float: right;
+}
+.rem{ display:none !important; }

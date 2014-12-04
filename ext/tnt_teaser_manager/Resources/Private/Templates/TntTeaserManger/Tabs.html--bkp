@@ -1,0 +1,52 @@
+<f:layout name="Default" />
+<f:section name="main">
+    <f:if condition="{teaserType}">
+        <section class="mod {f:if(condition: teaserType, then: 'generic')} {f:if(condition: multiTab, then: 'multy-content')}">
+            <div class="mod-highlight {f:if(condition: multiTab, then: 'multy-tab')}">
+                <f:for each="{tntTeaserMangerCE}" as="singleTab" key="number2" iteration="itemIteration2">
+                    <f:if condition="{singleTab.tab_content}">
+                        <f:if condition="{teaserType}">
+                            <f:then>
+                                <f:if condition="{singleTab.isTwitter}">
+                                    <f:then>
+                                        <a class="icon-twitter" target="_blank" href="#teaserTab-{singleTab.tab_contentId}"><span>twitter</span></a>
+                                    </f:then>
+                                    <f:else>
+                                        <a href="#teaserTab-{singleTab.tab_contentId}" class="{f:if(condition: itemIteration2.isFirst, then: 'active')}"><span>{singleTab.tab_title}</span></a>
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{singleTab.isTwitter}">
+                                    <f:then>
+                                        <a class="icon-twitter" target="_blank" href="#teaserTab-{singleTab.tab_contentId}"><span>twitter</span></a>
+                                    </f:then>
+                                    <f:else>
+                                        <span>{singleTab.tab_title}</span>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </f:if>
+                </f:for>
+            </div>
+    </f:if>
+    <f:for each="{tntTeaserMangerCE}" as="singleTab" key="number2" iteration="itemIteration2">
+        <f:if condition="{teaserType}">
+            <f:then>
+                <div class="tab-content {f:if(condition: singleTab.isTwitter, then: 'tab-twitter')} {f:if(condition: itemIteration2.isFirst, then: 'active')}" id="teaserTab-{singleTab.tab_contentId}">
+                    <div class="mod-details {f:if(condition: itemIteration2.isLast , then: 'theme-blue')}">
+                        <f:format.htmlentitiesDecode>{singleTab.tab_content}</f:format.htmlentitiesDecode>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <f:format.htmlentitiesDecode>{singleTab.tab_content}</f:format.htmlentitiesDecode>
+            </f:else>
+        </f:if>
+
+    </f:for>
+    <f:if condition="{teaserType}">
+        </section>         
+    </f:if>
+</f:section>

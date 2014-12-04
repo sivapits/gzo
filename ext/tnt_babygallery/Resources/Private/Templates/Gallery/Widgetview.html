@@ -1,0 +1,36 @@
+<h2 class="desktop-hide collapsed" data-target="#tx_babygallaery" data-toggle="collapse">
+	<a>{data.pageOptions}</a>
+</h2>
+<h2 class="mob-hide">{data.pageOptions}</h2>
+<div id="tx_babygallaery" class="data-list type-1 collapse in">
+	<div class="babydtl-listing">
+		<ul>
+			<f:for each="{data.WidgetItem}" as="baby">
+				<f:if condition="{baby.imagepath} == '' ">
+					<f:then>
+						<li>	
+							<h3><span class="icon {baby.classname}"></span><span class="new-born">{baby.firstname} {baby.lastname}</span></h3>
+							<div class="time">{baby.tstamp}, <span class="hours">{baby.time}h</span></div>
+						</li>
+					</f:then>
+				</f:if>
+			</f:for>
+		</ul>
+	</div>
+	<ul>
+		<f:for each="{data.WidgetItem}" as="baby">
+			<f:if condition="{baby.imagepath} != '' ">
+				<f:then>
+					<li>
+						<a class="thumb" href="{baby.uid}">
+							<f:image src="{baby.imagepath}" width="169" height="113" alt="{baby.firstname} {baby.lastname}" />
+						</a>
+						<h3><span class="icon {baby.classname}"></span><a href="{baby.uid}">{baby.firstname} {baby.lastname}</a></h3>
+						<div class="time">{baby.tstamp}</div>
+					</li>
+				</f:then>				
+			</f:if>
+		</f:for>
+	</ul>
+	<a class="linkblock" href="{data.GridUrl.baseurl}"><f:translate key="gallery_title">Babygalerie</f:translate></a>
+</div>

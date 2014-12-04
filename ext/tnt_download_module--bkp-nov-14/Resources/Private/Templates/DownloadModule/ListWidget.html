@@ -1,0 +1,43 @@
+<f:layout name="Default" />
+<f:section name="main">
+    <input type="hidden" id="page_id" value="{pages.id}"/>
+    <input type="hidden" id="page_lang" value="{pages.lang}"/>
+    <h2 class="desktop-hide collapsed" data-target="#download-mod" data-toggle="collapse"><a>{pages.headerLabel}</a></h2>
+    <h2 class="mob-hide">{pages.headerLabel}</h2>
+    <div class="collapse in data-list" id="download-mod">
+        <p>{pages.headerText}</p>
+        <form action="{pages.formAction}" method = "POST" id="form-{pages.randNumber}" onsubmit="return checkFileCount({pages.randNumber})">
+            <fieldset>
+                <select class="selectpicker custom-select form-control reset-field default-sm thema_selector" name = 'tx_tntdownloadmodule_tntdownloadmodule[cat_id]'>
+                    <option value=""><f:translate key="empty_thema">1. Hauptrubrik auswählen</f:translate></option>
+                    <f:for each="{categories}" as="category" iteration="itemIteration">
+                        <option value="{category.parentId}">{category.category_title}</option>
+                    </f:for>
+                </select>
+                <a href='javascript:void(0);' onclick='resetData(0, {pages.randNumber})' class="reset">
+                    <span class="reset-0 icon reset-this deactive"></span>
+                </a>                                   
+            </fieldset>
+            <div class ='step2'>
+                <fieldset>
+                    <select class="selectpicker custom-select form-control reset-field default-sm subCat" name = '' disabled="disabled">
+                        <option value=""><f:translate key="empty_subcat">2. Thema auswählen</f:translate></option>
+                    </select>
+                    <a href='javascript:void(0);' onclick='resetData(1, {pages.randNumber})' class="reset">
+                        <span class="reset-1 icon reset-this deactive"></span>
+                    </a>                                   
+                </fieldset>
+            </div>
+            <fieldset>
+                <input type="search" placeholder='<f:translate key="text_filter">Suchbegriff</f:translate>' class="form-control text search reset-field filter_text" name = 'tx_tntdownloadmodule_tntdownloadmodule[filterText]'/>
+                <a href='javascript:void(0);' onclick='resetData(2, {pages.randNumber})' class="reset">
+                    <span class="reset-2 icon reset-this deactive"></span></a>
+            </fieldset>
+            <div class="documnets"></div>
+            <input type="hidden" class="pageAction" name = 'tx_tntdownloadmodule_tntdownloadmodule[action]' value="{pages.action}"/>
+            <input type="hidden" class="pageController" name = 'tx_tntdownloadmodule_tntdownloadmodule[controller]' value="{pages.controller}"/>
+            <input disabled = 'disabled' type="submit" value="Alle Anzeigen" class="btn btn-primary countButton">
+            <span class ='ajaxLoadingIndicator' style="display: none;"></span>
+        </form>
+    </div>
+</f:section>

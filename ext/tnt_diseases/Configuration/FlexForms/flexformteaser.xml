@@ -1,0 +1,110 @@
+
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <display>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:tnt_diseases/Resources/Private/Language/locallang_db.xlf:tx_tntdiseases_domain_model_diseases_config</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                           <label>LLL:EXT:tnt_diseases/Resources/Private/Language/locallang_db.xlf:tx_tntdiseases_domain_model_diseases_config_viewType</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">Main Widget View</numIndex>
+                                        <numIndex index="1">Diseases->mainWidget;Diseases->multiView;Diseases->mainDetail;Diseases->diseaseDropList;Teaser->teaserWidget;Diseases->gridList;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">                   
+                                        <numIndex index="0">Teaser Widget View</numIndex>
+                                        <numIndex index="1">Teaser->teaserWidget;Diseases->multiView;Diseases->mainDetail;Diseases->diseaseDropList;Diseases->mainWidget;Diseases->gridList;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">                   
+                                        <numIndex index="0">List View</numIndex>
+                                        <numIndex index="1">Diseases->gridList;Diseases->multiView;Diseases->mainDetail;Diseases->diseaseDropList;Diseases->mainWidget;Teaser->teaserWidget;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">                   
+                                        <numIndex index="0">Detail View</numIndex>
+                                        <numIndex index="1">Diseases->mainDetail;Diseases->multiView;Teaser->teaserWidget;Diseases->diseaseDropList;Diseases->mainWidget;Diseases->gridList;</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    <settings.pageOption>
+                        <TCEforms>
+                            <label>Page</label>
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_tntdiseases_domain_model_pages</foreign_table>
+                                <foreign_table_where></foreign_table_where>
+                                <size>10</size>
+                                <maxitems>999</maxitems>
+                            </config>
+                        </TCEforms>
+                    </settings.pageOption>
+                    <settings.categoryOption>
+                        <TCEforms>
+                            <label>Category</label>
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_tntdiseases_domain_model_category</foreign_table>
+                                <foreign_table_where></foreign_table_where>
+                                <size>10</size>
+                                <maxitems>999</maxitems>
+                            </config>
+                        </TCEforms>
+                    </settings.categoryOption>
+                    <settings.list_page>
+                        <TCEforms>
+                            <label>List View Page</label>
+                            <config>
+                                <type>input</type>,
+                                <size>50</size>,
+                                <max>256</max>,
+                                <eval>trim</eval>,
+                                <wizards> 
+                                    <link> 
+                                        <type>popup</type>
+                                        <title>LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel</title>
+                                        <icon>link_popup.gif</icon>
+                                        <script>browse_links.php?mode=wizard</script>
+                                        <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link> 
+                                </wizards>
+                                <softref>typolink</softref>
+                            </config>
+                        </TCEforms>
+                    </settings.list_page>
+                    <settings.detail_page>
+                        <TCEforms>
+                            <label>Detail View Page</label>
+                            <config>
+                                <type>input</type>,
+                                <size>50</size>,
+                                <max>256</max>,
+                                <eval>trim</eval>,
+                                <wizards> 
+                                    <link> 
+                                        <type>popup</type>
+                                        <title>LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel</title>
+                                        <icon>link_popup.gif</icon>
+                                        <script>browse_links.php?mode=wizard</script>
+                                        <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link> 
+                                </wizards>
+                                <softref>typolink</softref>
+                            </config>
+                        </TCEforms>
+                    </settings.detail_page>                                    
+                </el>
+            </ROOT>
+        </display>
+    </sheets>
+</T3DataStructure>

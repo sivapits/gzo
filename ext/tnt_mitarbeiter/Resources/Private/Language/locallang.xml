@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>module</type>
+    <description>Language labels for plugin &quot;tx_babygal_pi1&quot;</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+		<label index="home_head">Mitarbeiter</label>teamhead
+		<label index="teamhead">Team</label>
+		<label index="home_desc">Acescid ma dolorum core dacia eosae aut enda sa sae etur sandit qui quiatecatio vit esseque qui ut fugit quibearum que veribea sam eossundae dit ea doluptiossed uta dit dolorae dolent.</label>
+		<label index="searchplace">Name / Lastname</label>
+		<label index="function">Position</label>
+		<label index="selectall">Select All</label>
+		<label index="selectnone">Select None</label>
+		<label index="department">Department</label>
+		<label index="search">Search</label>
+		<label index="alldepart">All Departments</label>
+		<label index="allpositions">All Positions</label>
+		<label index="back">Back</label>
+		<label index="page">Page</label>
+		<label index="of">of</label>
+    </languageKey>
+    <languageKey index="de" type="array">
+		<label index="home_head">Mitarbeiter</label>
+	   	<label index="home_desc">Acescid ma dolorum core dacia eosae aut enda sa sae etur sandit qui quiatecatio vit esseque qui ut fugit quibearum que veribea sam eossundae dit ea doluptiossed uta dit dolorae dolent.</label>
+		<label index="searchplace">Name / Vorname</label>
+		<label index="function">Funktion</label>
+		<label index="selectall">Alle auswählen</label>
+		<label index="selectnone">Keine auswählen</label>
+		<label index="department">Fachbereich</label>
+		<label index="search">Suchen</label>
+		<label index="alldepart">Alle Fachbereiche</label>
+		<label index="allpositions">Alle Funktionen</label>
+		<label index="back">Zurück</label>
+		<label index="page">Seite</label>
+		<label index="of">von</label>
+    </languageKey>
+  </data>
+</T3locallang>

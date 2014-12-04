@@ -1,0 +1,29 @@
+<f:form action="list" class="list-detail galerie mitarbeiter" method="post">
+	<fieldset>
+		<div class="input-group add-on">
+			<f:form.textfield class="form-control" name="searchkey" value="{data.searchkey}" id="srch-term" placeholder="{f:translate(key: 'searchplace',  default: 'First Name / Name')}"/>
+			<div class="input-group-btn">
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<select value="{data.position}" name="tx_tntmitarbeiter_tntmitarbeiter[position][]" class="custom-select form-control">
+			<option value=""><f:translate key="allpositions">Alle Funktionen</f:translate></option>
+			<f:for each="{data.positions}" as="position">
+				<option value="{position.uid}">{position.name}</option>
+			</f:for>
+		</select>
+
+	</fieldset>
+	<fieldset>
+		<select value="{data.department}" name="tx_tntmitarbeiter_tntmitarbeiter[department][]" class="custom-select form-control">
+			<option value=""><f:translate key="alldepart">Alle Fachbereiche</f:translate></option>
+			<f:for each="{data.departments}" as="depart">
+				<option value="{depart.uid}">{depart.title}</option>
+			</f:for>
+		</select>
+	</fieldset>
+	<input type="hidden" name="tx_tntmitarbeiter_tntmitarbeiter[listSearch]" value="1"/>
+	<input type="submit" class="btn btn-primary" value="Anzeigen">
+</f:form>

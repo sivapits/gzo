@@ -1,0 +1,564 @@
+{namespace n=Tx_News_ViewHelpers}
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+ 
+	<n:excludeDisplayedNews newsItem="{newsItem}" />
+		<f:if condition="{settings.templateLayout} == 1"> <!--- News list page --->
+		<f:then>
+                  <tr>
+                    <td><n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date> </td>
+                    <td>
+                      <h3><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}  </n:link></h3>
+					<p>
+                    <f:if condition="{newsItem.teaser}">
+					<f:then>
+						<f:format.stripTags><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop></f:format.stripTags>
+					</f:then>
+					<f:else>
+						<f:format.stripTags><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop></f:format.stripTags>
+					</f:else>
+					</f:if><n:link newsItem="{newsItem}" settings="{settings}" class="link">
+						<f:translate key="more-link" />
+					</n:link>
+                    </p>
+                    </td>
+                  </tr>
+		</f:then>
+		</f:if>
+        
+ 		
+		<f:if condition="{settings.templateLayout} == 2">    <!--- Home - News template --->
+		<f:then>	
+			<li>
+				<span class="time"><n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date></span>
+				<h3><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></h3>
+				
+				<f:if condition="{newsItem.teaser}">
+				<f:then>
+					<p>
+					<f:format.stripTags><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop></f:format.stripTags>
+					<n:link newsItem="{newsItem}" settings="{settings}" class="link">
+						<f:translate key="more-link" />
+					</n:link>
+                    </p>
+				</f:then>
+				<f:else>
+					
+					<f:format.html><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop></f:format.html>
+						
+					<n:link newsItem="{newsItem}" settings="{settings}" class="link">
+						<f:translate key="more-link" />
+					</n:link>
+				</f:else>
+				</f:if>	  
+				
+				
+					
+				 
+
+			</li>	
+		</f:then>
+		</f:if>
+		       
+
+		<f:if condition="{settings.templateLayout} == 4">    <!--- Agenda Template --->
+		<f:then>	
+			<li class="list-item">
+				<div class="time"><n:format.date format="%A, %d.%m.%Y, %H.%M">{newsItem.datetime}</n:format.date> Uhr</div>
+				<h3><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></h3>
+			</li>
+		</f:then>
+		</f:if>
+		 
+    
+		
+		<f:if condition="{settings.templateLayout} == 5">    <!--- News widget with image & text --->
+		<f:then>	
+			 
+			
+			
+			
+
+	<f:if condition="{newsItem.falMedia}">
+		<!-- fal media preview element -->
+		<f:then>
+			
+				<f:if condition="{newsItem.falMediaPreviews}">
+					<f:then>
+						<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+							<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+								<f:if condition="{mediaElement.originalResource.type} == 2">
+									<f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</f:if>
+								<f:if condition="{mediaElement.originalResource.type} == 4">
+									<f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement}" />
+								</f:if>
+							</f:alias>
+						</n:link>
+					</f:then>
+					<f:else>
+						<f:if condition="{settings.displayDummyIfNoMedia}">
+							
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+									<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</n:link>
+							
+						</f:if>
+					</f:else>
+				</f:if>
+
+			
+		</f:then>
+		<f:else>
+
+			<f:if condition="{newsItem.media}">
+				<!-- media preview element -->
+				<f:then>
+					
+						<f:if condition="{newsItem.mediaPreviews}">
+							<f:then>
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+									<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+										<f:if condition="{mediaElement.type} == 0">
+											<f:image src="uploads/tx_news/{mediaElement.image}" title="{mediaElement.title}" alt="{mediaElement.alt}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+										</f:if>
+										<f:if condition="{mediaElement.type} == 1">
+											<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}" />
+										</f:if>
+										<f:if condition="{mediaElement.type} == 2">
+											<f:render partial="Detail/MediaHtml" arguments="{mediaElement: mediaElement}" />
+										</f:if>
+									</f:alias>
+								</n:link>
+							</f:then>
+							<f:else>
+								<f:if condition="{settings.displayDummyIfNoMedia}">
+							
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+									<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</n:link>
+							
+								</f:if>
+							</f:else>
+						</f:if>
+
+					
+				</f:then>
+				<f:else>
+					<f:if condition="{settings.displayDummyIfNoMedia}">
+						<f:then>
+							
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">							
+								<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />							
+								</n:link>
+							
+						</f:then>
+					</f:if>
+				</f:else>
+			</f:if>
+
+		</f:else>
+	</f:if>
+
+ 
+			
+				
+				<h3 class="urologie-generic2"><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></h3>
+				<p class="teaser-date">
+				<span class="news-date"  >
+						<n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date> 
+				</span>
+					<f:format.stripTags>{newsItem.teaser}</f:format.stripTags>
+				</p>
+				
+				<f:format.html>{newsItem.bodytext}</f:format.html>
+				
+			 
+
+				<f:if condition="{newsItem.relatedFiles}">
+					<!-- Related files -->
+					<div class="news-related news-related-files">
+						<h4>
+							<f:translate key="related-files" />
+						</h4>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.relatedFiles}" as="relatedFile">
+								<li>
+								
+									<span class="news-related-files-link file-title  ">
+										<n:format.fileDownload file="fileadmin/user_upload/{relatedFile.file}" configuration="{settings.relatedFiles.download}">
+											<f:if condition="{relatedFile.title}">
+												<f:then>
+												 {relatedFile.title}
+												</f:then>
+												<f:else>
+												 {relatedFile.file}
+												</f:else>
+											</f:if>
+										</n:format.fileDownload>
+									</span>
+									<span class="file-info">
+			
+											<span class="size" ><n:format.fileSize file="{relatedFile.originalResource.publicUrl}" format="' | K| M| G'" /> </span>
+											<f:comment><span class="icon icon-file" >icon</span></f:comment>
+
+									</span>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+				</f:if>
+
+				<f:if condition="{newsItem.falRelatedFiles}">
+					<!-- FAL related files -->
+					<section class="mod data-list downloadData tabbed">
+<div class="result-data download">
+						<h2 class="datadownload main">
+							<f:translate key="related-files" />
+						</h2>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.falRelatedFiles}" as="relatedFile"> 
+								<li>
+									<span class="news-related-files-link file-title ">
+										<n:format.fileDownload file="{relatedFile.originalResource.publicUrl}" configuration="{settings.relatedFiles.download}">
+											<f:if condition="{relatedFile.originalResource.title}">
+												<f:then>
+												{relatedFile.originalResource.title} 
+												</f:then>
+												<f:else>
+												{relatedFile.originalResource.name}
+												</f:else>
+											</f:if>
+										</n:format.fileDownload>
+									</span>
+                  <span class="file-info">
+								
+										<span class="size" ><n:format.fileSize file="{relatedFile.originalResource.publicUrl}" format="' | K| M| G'" /> </span>	
+										<f:comment><span class="icon icon-file" >icon</span></f:comment>
+
+                  </span>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+          </section>
+				</f:if>
+       
+				<f:if condition="{newsItem.relatedLinks}">
+					<!-- Related links -->
+					<div class="news-related news-related-links">
+						<h4>
+							<f:translate key="related-links" />
+						</h4>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.relatedLinks}" as="relatedLink">
+								<li> 
+									<f:link.page pageUid="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}">{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}</f:link.page>
+									<f:if condition="{relatedLink.description}"><span>{relatedLink.description}</span></f:if>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+				</f:if>
+        
+        				<f:if condition="{newsItem.allRelatedSorted}">
+					<!-- Related news records -->
+					<div class="news-related news-related-news">
+						<h4>
+							<f:translate key="related-news" />
+						</h4>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.allRelatedSorted}" as="related">
+								<li>	
+									<span class="news-related-news-date">
+										<n:format.date format="{f:translate(key:'dateFormat')}">{related.datetime}</n:format.date>
+									</span>								
+									<n:link newsItem="{related}" settings="{settings}">
+										
+										<span class="list-details">{related.title}</span>
+									</n:link>
+								</li>
+
+							</f:for>
+						</ul>
+					</div>
+				</f:if>
+ 
+			
+			
+			
+		</f:then>
+		</f:if>		
+		
+
+
+<f:if condition="{settings.templateLayout} == 7">    <!--- Home - News template with more teaser --->
+		<f:then>	
+			<li>
+				<span class="time"><n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date></span>
+				<h3><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></h3>
+				 
+				<f:if condition="{newsItem.teaser}">
+				<f:then>
+					<p><f:format.stripTags><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop></f:format.stripTags></p>
+				</f:then>
+				<f:else>
+					<f:format.html><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop></f:format.html>
+				</f:else>
+				</f:if>	  
+				 
+				
+				<f:if condition="{newsItem.tntnewsMorelink}">
+				<f:then>
+					<n:link newsItem="{newsItem}" settings="{settings}" class="link" >{newsItem.tntnewsMorelink}</n:link>
+				</f:then>
+				<f:else>
+					<n:link newsItem="{newsItem}" settings="{settings}" class="link">
+						<f:translate key="more-link" />
+					</n:link>
+				</f:else>
+				</f:if>	  
+
+			</li>	
+		</f:then>
+		</f:if>		
+		
+			<f:if condition="{settings.templateLayout} == 8"> <!--- News list page with time --->
+		<f:then>
+                  <tr>
+                    <td><n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date> </br>
+					<span><i class="btn-sm glyphicon glyphicon-time"></i></span>
+					<n:format.date format="%H:%M">{newsItem.datetime}</n:format.date>
+					</td>
+                    <td>
+                      <h3><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}  </n:link></h3>
+					<f:if condition="{newsItem.teaser}">
+					<f:then>
+						<f:format.stripTags><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.teaser}</f:format.crop></f:format.stripTags>
+					</f:then>
+					<f:else>
+						<f:format.stripTags><f:format.crop maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="1">{newsItem.bodytext}</f:format.crop></f:format.stripTags>
+					</f:else>
+					</f:if>
+
+					<n:link newsItem="{newsItem}" settings="{settings}" class="link">
+						<f:translate key="more-link" />
+					</n:link>
+                    </td>
+                  </tr>
+		</f:then>
+		</f:if>		
+        
+        
+        
+
+<f:if condition="{settings.templateLayout} == 6">     <!--- News widget with content slider --->
+<f:then>	
+
+	<f:if condition="{newsItem.falMedia}">
+		<!-- fal media preview element -->
+		<f:then>
+			
+				<f:if condition="{newsItem.falMediaPreviews}">
+					<f:then>
+						<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+							<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+								<f:if condition="{mediaElement.originalResource.type} == 2">
+									<f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</f:if>
+								<f:if condition="{mediaElement.originalResource.type} == 4">
+									<f:render partial="Detail/FalMediaVideo" arguments="{mediaElement: mediaElement}" />
+								</f:if>
+							</f:alias>
+						</n:link>
+					</f:then>
+					<f:else>
+						<f:if condition="{settings.displayDummyIfNoMedia}">
+							
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+									<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</n:link>
+							
+						</f:if>
+					</f:else>
+				</f:if>
+
+			
+		</f:then>
+		<f:else>
+
+			<f:if condition="{newsItem.media}">
+				<!-- media preview element -->
+				<f:then>
+					
+						<f:if condition="{newsItem.mediaPreviews}">
+							<f:then>
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+									<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+										<f:if condition="{mediaElement.type} == 0">
+											<f:image src="uploads/tx_news/{mediaElement.image}" title="{mediaElement.title}" alt="{mediaElement.alt}" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+										</f:if>
+										<f:if condition="{mediaElement.type} == 1">
+											<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}" />
+										</f:if>
+										<f:if condition="{mediaElement.type} == 2">
+											<f:render partial="Detail/MediaHtml" arguments="{mediaElement: mediaElement}" />
+										</f:if>
+									</f:alias>
+								</n:link>
+							</f:then>
+							<f:else>
+								<f:if condition="{settings.displayDummyIfNoMedia}">
+							
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">	
+									<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />
+								</n:link>
+							
+								</f:if>
+							</f:else>
+						</f:if>
+
+					
+				</f:then>
+				<f:else>
+					<f:if condition="{settings.displayDummyIfNoMedia}">
+						<f:then>
+							
+								<n:link newsItem="{newsItem}" settings="{settings}" class="thumb">							
+								<f:image src="{settings.list.media.dummyImage}" title="" alt="" maxWidth="{settings.list.media.image.maxWidth}" maxHeight="{settings.list.media.image.maxHeight}" />							
+								</n:link>
+							
+						</f:then>
+					</f:if>
+				</f:else>
+			</f:if>
+
+		</f:else>
+	</f:if>
+
+ 		
+				
+			<h3 class="urologie-generic2"><n:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</n:link></h3>
+			<div>
+				
+				 
+				<p class="teaser-date">
+				<span class="news-date"  >
+						<n:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</n:format.date> 
+				</span>
+					<f:format.stripTags>{newsItem.teaser}</f:format.stripTags>
+				</p>
+				
+				<f:format.html>{newsItem.bodytext}</f:format.html>
+			 
+
+				<f:if condition="{newsItem.relatedFiles}">
+					<!-- Related files -->
+					<div class="news-related news-related-files">
+						<h4>
+							<f:translate key="related-files" />
+						</h4>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.relatedFiles}" as="relatedFile">
+								<li>
+								
+									<span class="news-related-files-link file-title  ">
+										<n:format.fileDownload file="fileadmin/user_upload/{relatedFile.file}" configuration="{settings.relatedFiles.download}">
+											<f:if condition="{relatedFile.title}">
+												<f:then>
+												 {relatedFile.title}
+												</f:then>
+												<f:else>
+												 {relatedFile.file}
+												</f:else>
+											</f:if>
+										</n:format.fileDownload>
+									</span>
+									<span class="file-info">
+											<span class="size"> <n:format.fileSize file="fileadmin/user_upload/{relatedFile.file}" format="{settings.relatedFiles.fileSizeLabels}" /> </span>
+											<f:comment><span class="icon icon-file" >icon</span></f:comment>
+									</span>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+				</f:if>
+
+				<f:if condition="{newsItem.falRelatedFiles}">
+					<!-- FAL related files -->
+					<section class="mod data-list downloadData tabbed">
+<div class="result-data download">
+						<h2 class="datadownload main">
+							<f:translate key="related-files" />
+						</h2>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.falRelatedFiles}" as="relatedFile">
+								<li>
+									<span class="news-related-files-link file-title  ">
+										<n:format.fileDownload file="{relatedFile.originalResource.publicUrl}" configuration="{settings.relatedFiles.download}">
+											<f:if condition="{relatedFile.originalResource.title}">
+												<f:then>
+												{relatedFile.originalResource.title} 
+												</f:then>
+												<f:else>
+												{relatedFile.originalResource.name}
+												</f:else>
+											</f:if>
+										</n:format.fileDownload>
+									</span>
+                  <span class="file-info">
+										<span class="size" ><n:format.fileSize file="{relatedFile.originalResource.publicUrl}" format="' | K| M| G'" /> </span>
+										<f:comment><span class="icon icon-file" >icon</span></f:comment>
+	                </span>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+          </section>
+				</f:if>
+       
+				<f:if condition="{newsItem.relatedLinks}">
+					<!-- Related links -->
+					<div class="news-related news-related-links">
+						<h4>
+							<f:translate key="related-links" />
+						</h4>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.relatedLinks}" as="relatedLink">
+								<li> 
+									<f:link.page pageUid="{relatedLink.uri}" title="{relatedLink.title}" target="{n:targetLink(link:relatedLink.uri)}">{f:if(condition: relatedLink.title, then: relatedLink.title, else: relatedLink.uri)}</f:link.page>
+									<f:if condition="{relatedLink.description}"><span>{relatedLink.description}</span></f:if>
+								</li>
+							</f:for>
+						</ul>
+					</div>
+				</f:if>
+        
+        				<f:if condition="{newsItem.allRelatedSorted}">
+					<!-- Related news records -->
+					<div class="news-related news-related-news">
+						<h4>
+							<f:translate key="related-news" />
+						</h4>
+						<ul class="news-ul-listing">
+							<f:for each="{newsItem.allRelatedSorted}" as="related">
+								<li>
+									<span class="news-related-news-date"><n:format.date format="{f:translate(key:'dateFormat')}">{related.datetime}</n:format.date></span>									
+									<n:link newsItem="{related}" settings="{settings}">
+										
+										<span class="list-details">{related.title}</span>
+									</n:link>
+								</li>
+
+							</f:for>
+						</ul>
+					</div>
+				</f:if>
+ 
+			</div>
+			
+				
+		</f:then>
+		</f:if>

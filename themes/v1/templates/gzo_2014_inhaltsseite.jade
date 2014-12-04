@@ -1,0 +1,34 @@
+include mixin
+doctype
+html.no-js
+	include header
+	body
+		#wrapper
+			//- include header-info
+			.container
+				.col-md-9.col-sm-6
+					include quick-link
+				.pull-right
+					a(href="#").logo
+						img(src="images/logo.png", title="GZO" alt="")
+
+			//- var navSelect =2;
+			include navbar-fixed
+			//- include spotlight
+			.container
+				.content-wrapper.clearfix
+					.col-md-12
+						+breadcrumb({items:["Home","Unterseite","Unterseite"],print:"Seite drucken"})
+					.col-md-8
+						include article-inhaltsseite
+						include video
+						include basic-slider
+						include title-table
+						include form-inhaltsseite
+						include mod-widget-links
+						include mod-widget-documents-w-btn
+					.col-md-4
+						include mod-generic-1
+
+			include footer-innerpage
+			include footer-script

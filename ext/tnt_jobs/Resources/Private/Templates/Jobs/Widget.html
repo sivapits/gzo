@@ -1,0 +1,25 @@
+<f:layout name="Widget" />
+
+<f:section name="main">
+
+	<f:flashMessages renderMode="div" />
+		<div class="data-list"> 	
+			<ul class="lists">
+				<f:for each="{data}" as="joblist">
+					<li class="list-item">
+						<div class="time">{joblist.name}, {joblist.job_type}</div>
+					  <h3><a href="{joblist.job_page}">{joblist.title}</a></h3>
+				  </li>
+			  </f:for>
+			</ul>
+			<f:if condition="{flexformval.teasertext}==''">
+				<f:then>
+					<a class="linkblock" href="{listpage}"><f:translate key="morevaccancy">Mehr offene Stellen</f:translate> </a>	
+				</f:then>
+				<f:else>
+					<a class="linkblock" href="{listpage}">{flexformval.teasertext}</a>
+				</f:else>
+			</f:if>
+		</div>
+	
+</f:section>

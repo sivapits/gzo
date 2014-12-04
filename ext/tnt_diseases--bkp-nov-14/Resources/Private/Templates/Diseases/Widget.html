@@ -1,0 +1,39 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+    <form id="widget-form" method="post" action="{pageOptions.detailAction}">
+        <fieldset>
+            <select class="custom-select form-control" name = 'tx_tntdiseases_tntdiseases[genderOption]' id='select-gender'>
+                    <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_gender">Select</f:translate></option>
+                    <f:for each="{pageOptions.genderOptions}" as="gender" key="number" iteration="itemIteration">
+                        <f:if condition="{number} =={pageOptions.pageGender}">
+                                <f:then>
+                                    <option selected value="{number}">{gender}</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="{number}">{gender}</option>
+                                </f:else>
+                            </f:if>
+                    </f:for>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select class="custom-select form-control disabled" name = 'tx_tntdiseases_tntdiseases[regionOption]' id='select-region' onchange="getDiseaseList(this)">
+                <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_region">Select</f:translate></option>
+                <f:for each="{pageOptions.regionOptions}" as="region" iteration="itemIteration">
+                    <option value="{region.uid}">{region.region_title}</option>
+                </f:for>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select class="custom-select form-control disabled" id='select-disease' name = 'tx_tntdiseases_tntdiseases[diseaseSelection]'>
+                 <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_disease">Select</f:translate></option>
+            </select>
+        </fieldset>
+        <input type="hidden" name = 'tx_tntdiseases_tntdiseases[pageOption]' value="{pageOptions.pageOption}"/>
+        <input type="hidden" name = 'tx_tntdiseases_tntdiseases[categoryOption]' value="{pageOptions.categoryOption}"/>
+        <input type="hidden" id="pageUrl" value="{pageOptions.listAction}"/>
+        <input type="button" value="<f:translate key='tx_tntdiseases_domain_model_diseases_submit'>Anzeigen</f:translate>" class="btn btn-primary" onclick="switchUrl()">
+        <span class="ajaxLoder" style="display: none;"> <img width="25px" height="25px" src="typo3conf/ext/tnt_diseases/Resources/Public/Images/ajax_loader_blue_512.gif"/></span>
+    </form>
+</f:section>

@@ -1,0 +1,34 @@
+<f:if condition="<f:count subject='{diseases}'/> > 0">
+    <f:then>
+        <div class="mod-details listView krankheit">
+            <f:for each="{diseases}" as="singleDisease" key="number1" iteration="itemIteration1">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 linkHeading">
+                        <f:link.page class="link" pageUid="{pageOptions.detailPage}" additionalParams="{L:pageOptions.pageLang,tx_tntdiseases_tntdiseases: '{diseaseSelection:singleDisease.uid}'}">
+                            <f:if condition="{singleDisease.title}">
+                                <f:then>
+                                    {singleDisease.title}
+                                </f:then>
+                                <f:else>
+                                    {singleDisease.link_title}
+                                </f:else>
+                            </f:if>
+                        </f:link.page>
+                    </div>
+                    <div class="col-xs-12 col-md-8 linkContent">                      
+                        <f:format.crop maxCharacters="120" append="&nbsp;...">
+                        <f:format.stripTags value='{singleDisease.teaser_text}'></f:format.stripTags>
+                        </f:format.crop>                      
+                    </div>
+                </div>
+           </f:for>
+        </div>
+    </f:then>
+    <f:else>
+        <div class="mod-details listView krankheit">
+            <div class="row">
+                    <f:translate key='tx_tntdiseases_domain_model_diseases_noItem'>No Item Found!</f:translate>
+            </div>
+        </div>
+    </f:else>
+</f:if>

@@ -1,0 +1,31 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+    <div class ="mod data-list downloadData">
+        <h2 class="desktop-hide collapsed" data-target="#mod-teaser{pageOptions.randNumber}" data-toggle="collapse">
+            <a>{pageOptions.headerLabel}</a></h2>
+        <h2 class="mob-hide">{pageOptions.headerLabel}</h2>
+        <div class="collapse in result-data download doc" id="mod-teaser{pageOptions.randNumber}">
+            <ul>
+                <f:for each="{fileLinks}" as="downloadFile" iteration="itemIteration">
+                    <li>
+                        <span class="icon icon-{downloadFile.extension} mod-teaser"></span>
+                        <div class="teaserlist">
+                            <div class="file-title">
+                            <a href="fileadmin{downloadFile.filelink}" target="_blank">
+                                {downloadFile.title} ({downloadFile.size})</span>
+                            </a>
+                                <span>{downloadFile.description}</span>
+                            </div>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </div>
+</f:section>
+<li><span class="icon icon-pdf mod-teaser"></span>
+    <div class="teaserlist">
+        <div class="file-title"><a href="#">Name des Dokuments (1.5 MB)</a><span>Kurzbeschrieb Zum Dokument</span></div>
+    </div>
+</li>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'news'</description>
+	</meta>
+	<data type="array">
+		 <languageKey index="default" type="array">
+			<label index="morevaccancy">More Vaccancies</label>		
+			<label index="error1">You haven't Selected a Job </label>
+			<label index="error2">Please try again</label>
+         </languageKey>
+		<languageKey index="de" type="array">
+        	<label index="morevaccancy">Mehr offene Stellen</label>	
+			<label index="error1">Sie haben kein Job ausgewählt</label>
+			<label index="error2">Bitte versuchen Sie es erneut</label>			
+        </languageKey>
+		
+	</data>
+</T3locallang>

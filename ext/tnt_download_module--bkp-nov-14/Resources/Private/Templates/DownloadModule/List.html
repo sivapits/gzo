@@ -1,0 +1,51 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+    <input type="hidden" id="page_id" value="{pages.id}"/>
+    <input type="hidden" id="page_lang" value="{pages.lang}"/>
+    <div class="downloadcenter">
+        <h1>{pages.headerLabel}</h1>
+        <p><f:format.html parseFuncTSPath="">{pages.headerText}</f:format.html></p>
+    <form action="#" onsubmit="return false;">
+            <fieldset>
+                <div class="col-sm-11">
+                    <select class="selectpicker form-control" id="thema_selector">
+                       <option value=""><f:translate key="empty_thema">1. Hauptrubrik auswählen</f:translate></option>
+                        <f:for each="{categories}" as="category" iteration="itemIteration">
+                            <option value="{category.parentId}">{category.category_title}</option>
+                        </f:for>
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <a href='javascript:void(0);' onclick='resetData(0,this)' class="reset" id='resetDb'><span class="icon reset-lrg-this deactive" id='reset-0'></span></a>                    
+                </div>                 
+            </fieldset>
+            <div id='step2'>
+                 <fieldset>
+                <div class="col-sm-11">
+                    <select class="selectpicker form-control" id="subCat" disabled="disabled">
+                       <option value=""><f:translate key="empty_subcat">2. Thema auswählen</f:translate></option>
+                    </select>
+                </div>  
+                <div class="col-sm-1">
+                    <a href='javascript:void(0);' onclick='resetData(1,this)' class="reset"><span class="icon reset-lrg-this deactive" id='reset-1'></span></a>                    
+                </div> 
+                </fieldset>
+            </div>
+            <fieldset>
+                <div class="input-group col-sm-11">
+                    <input type="search" class="form-control bdr-rgt-none" placeholder='<f:translate key="text_filter">Suchbegriff</f:translate>' id ="filter_text">
+                    <i class="icon-search"></i>
+                </div>
+                <div class="col-sm-1">
+		 <a href='javascript:void(0);' onclick='resetData(2,this)' class="reset"><span id='reset-2' class="icon reset-lrg-this deactive"></span></a>
+                    
+                </div>
+            </fieldset>
+            <span class="ajaxLoadingIndicator" style="display: none;"></span>
+        </form>
+    </div>
+
+        <div id="documnets" class="documnets">
+    </div>
+</f:section>

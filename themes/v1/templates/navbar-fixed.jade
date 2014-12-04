@@ -1,0 +1,265 @@
+// Demo navbar 
+nav.navbar.yamm.navbar-default(role='navigation')
+	.container
+		.navbar-header
+			//- button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-1' id="nav-expander")
+			button.navbar-toggle(type='button', id="nav-expander")
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='#') Yamm Megamenu
+		//- #navbar-collapse-1.navbar-collapse.collapse
+		#navbar-collapse-1
+			ul.nav.navbar-nav
+				//- li.dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Classic
+					ul.dropdown-menu(role='menu')
+						li
+							a(tabindex='-1', href='#')  Action 
+						li
+							a(tabindex='-1', href='#')  Another action 
+						li
+							a(tabindex='-1', href='#')  Something else here 
+						li.divider
+						li
+							a(tabindex='-1', href='#')  Separated link 
+				li.desktop-hide.bg-mobile
+					include quick-link-primary
+				li.dropdown.desktop-hide
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Kliniken & Zentren
+					ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu')
+						li.dropdown-submenu
+							a(tabindex='-1', href='#') Chirurgische Klinik
+							ul.dropdown-menu
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Viszeralchirurgie
+								li
+									a(href='#') Gefässchirurgie
+								li
+									a(href='#') Urologie
+								li
+									a(tabindex='-1', href='#') Traumatologie
+								li
+									a(href='#') Augenchirurgie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+						li.dropdown-submenu
+							a(tabindex='-1', href='#') Medizinische Klinik
+							ul.dropdown-menu
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Viszeralchirurgie
+								li
+									a(href='#') Gefässchirurgie
+								li
+									a(href='#') Urologie
+								li
+									a(tabindex='-1', href='#') Traumatologie
+								li
+									a(href='#') Augenchirurgie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+						li.dropdown-submenu
+							a(tabindex='-1', href='#') Frauenklinik
+							ul.dropdown-menu
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Viszeralchirurgie
+								li
+									a(href='#') Gefässchirurgie
+								li
+									a(href='#') Urologie
+								li
+									a(tabindex='-1', href='#') Traumatologie
+								li
+									a(href='#') Augenchirurgie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+								li
+									a(tabindex='-1', href='#') Bariatrie
+								li
+									a(href='#') Orthopädie
+								li
+									a(href='#') Kolorektalchirurgie
+						li
+							a(href='#') Radiologie
+						li
+							a(href='#') Anästhesie
+						li
+							a(href='#') Pflege
+						li
+							a(href='#') Physiotherapie + Reha
+						li
+							a(href='#') Beratungsdienste
+
+				li.dropdown.mob-hide
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Kliniken & Zentren
+					ul.dropdown-menu
+						li
+							.yamm-content
+								.row
+									ul.col-sm-2.list-unstyled
+										li: a(href="#") Chirurgische Klinik
+										li.sub-nav: a(href="#") Bariatrie
+										li.sub-nav: a(href="#") Orthopädie
+										li.sub-nav: a(href="#") Kolorektalchirurgie
+										li.sub-nav: a(href="#") Viszeralchirurgie
+										li.sub-nav: a(href="#") Gefässchirurgie
+										li.sub-nav: a(href="#") Urologie
+										li.sub-nav: a(href="#") Traumatologie
+										li.sub-nav: a(href="#") Augenchirurgie
+										li.sub-nav: a(href="#") Handchirurgie
+										li.sub-nav: a(href="#") Sportmedizin
+									ul.col-sm-2.list-unstyled
+										li: a(href="#") Medizinische Klinik
+										li.sub-nav: a(href="#") Angiologie
+										li.sub-nav: a(href="#") Kardiologie
+										li.sub-nav: a(href="#") Gastroenterologie
+										li.sub-nav: a(href="#") Pneumologie
+										li.sub-nav: a(href="#") Nephrologie
+										li.sub-nav: a(href="#") Onkologie
+										li.sub-nav: a(href="#") Endokrinologie
+										li.sub-nav: a(href="#") Palliativmedizin
+										li.sub-nav: a(href="#") Schlafmedizin
+										li.sub-nav: a(href="#") Schmerzmedizin
+									ul.col-sm-2.list-unstyled
+										li: a(href="#") Frauenklinik
+										li.sub-nav: a(href="#") Geburtshilfe
+										li.sub-nav: a(href="#") Gynäkologie
+										li.sub-nav: a(href="#") Urogynäkologie
+										li: a(href="#") Radiologie
+										li: a(href="#") Anästhesie
+										li: a(href="#") Pflege
+										li: a(href="#") Physiotherapie + Reha
+										li: a(href="#") Beratungsdienste
+									ul.col-sm-2.nav-widget
+										li
+											.item
+												a(href="#").thumb
+													img(src="images/temp/img-129x86.jpg", alt="image-title")
+												.details
+													h2: a(href="#") Promolink
+													p
+														a(href="#") Hier der Beschrieb zum Promolink. Hier der Beschrieb zum Promolink. 
+											.item
+												a(href="#").thumb
+													img(src="images/temp/img-129x86-1.jpg", alt="image-title")
+												.details
+													h2: a(href="#") Promolink
+													p
+														a(href="#") Hier der Beschrieb zum Promolink. Hier der Beschrieb zum Promolink. 
+											.item
+												a(href="#").thumb
+													img(src="images/temp/img-129x86-2.jpg", alt="image-title")
+												.details
+													h2: a(href="#") Promolink
+													p
+														a(href="#") Hier der Beschrieb zum Promolink. Hier der Beschrieb zum Promolink.
+				li.dropdown
+					a.dropdown-toggle.disabled(href='http://google.com') Krankheitsbilder
+					ul.dropdown-menu.nonmega(role='menu', aria-labelledby='dropdownMenu')
+						li
+							a(href='#') Actionss
+						li
+							a(href='#') Another action
+						li
+							a(href='#') Something else here
+						li.dropdown-submenu
+							a(tabindex='-1', href='#') Chirurgische Klinik
+							ul.dropdown-menu.nonmega
+								li
+									a(tabindex='-1', href='#') Second level
+								li.dropdown-submenu
+									a(href='#') More..
+									ul.dropdown-menu.nonmega
+										li
+											a(href='#') 3rd level
+										li
+											a(href='#') 3rd level
+								li
+									a(href='#') Second level
+								li
+									a(href='#') Second level	
+				li.dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Patient
+				li.dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Besucher
+				li.dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Zuweiser
+				li.dropdown
+					a.dropdown-toggle(href='#', data-toggle='dropdown') Über uns
+				li.dropdown
+					a.dropdown-toggle(data-toggle='dropdown', href='#') Dropdown
+					ul.dropdown-menu
+						li.dropdown-submenu
+							a(href='#') More options
+							ul.dropdown-menu
+								li
+									a(href='#') Second level link
+								li
+									a(href='#') Second level link
+								li
+									a(href='#') Second level link
+								li
+									a(href='#') Second level link
+								li
+									a(href='#') Second level link
+						li
+							a(href='#') Another action
+						li
+							a(href='#') Something else here
+						li
+							a(href='#') Separated link
+						li
+							a(href='#') One more separated link
+				li.desktop-hide.bg-mobile
+					include quick-link-secondary
+				li.desktop-hide
+					include footer-menu
+	

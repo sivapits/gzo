@@ -1,0 +1,141 @@
+<article class="mitarbeiter detailpage">
+	<f:if condition="{data.result.first_name} == ''">
+		<f:then>
+			<div class="alert alert-info fade in" role="alert">
+				<strong><f:translate key="error1">Sie haben noch keine Wählen Sie einen Mitarbeiter</f:translate></strong> 
+			</div>
+			<input type="button" onclick="window.history.back();" class="btn btn-primary VidBtn" value="{f:translate(key: 'back',  default: 'Zurück')}">
+		</f:then>
+		<f:else>
+			<f:form method="post" action="list">
+				<h1 class="inhalt_header">{data.result.title} {data.result.first_name} {data.result.last_name}</h1>
+				<h3><f:format.htmlentitiesDecode>{data.result.function}</f:format.htmlentitiesDecode></h3>
+				<!-- E-Mail and Telephone Number -->
+					<f:if condition="{data.result.block_1} != 0">
+						<f:then>
+							<div class="row email-tel">
+								<f:if condition="{data.result.email} != ''">
+									<div class="col-md-6 email"><span></span>E-Mail: <a href="mailto:{data.result.email}">{data.result.email}</a></div>
+								</f:if>
+								<f:if condition="{data.result.phone} != ''">
+									<div class="col-md-6 tel"><span></span>Tel direkt: <b>{data.result.phone}</b></div>
+								</f:if>
+							</div>
+						</f:then>
+					</f:if>
+				<!-- E-Mail and Telephone Number -->
+				
+				
+				<div class="row">
+					<f:if condition="{data.result.userImages}">
+						<f:then>
+							<div class="col-xs-12 col-md-3">
+								<f:for each="{data.result.userImages}" as="userImg"> 
+									<f:if condition="{userImg.fieldname} == 'image_colour'">
+										<div class="thumb">
+											<!--<img alt="{data.result.title} {data.result.first_name} {data.result.last_name}" title="{data.result.title} {data.result.first_name} {data.result.last_name}" src="{userImg.profImg}">-->
+											<f:image width="150" height="220" alt="{data.result.title} {data.result.first_name} {data.result.last_name}" src="{userImg.profImg}"/>
+										</div>
+									</f:if>
+								</f:for>
+							</div>
+						</f:then>
+					</f:if>
+					<div class="col-md-12 col-md-9">
+						
+						<!-- TITLE DATA -->
+						<f:if condition="{data.result.block_3} != 0">
+							<f:then>
+								<f:for each="{data.result.title_datas}" as="title_data">
+									<h4>{title_data.title}</h4>
+									<f:format.html>{title_data.title_data}</f:format.html>
+								</f:for>
+							</f:then>
+						</f:if>
+						<!-- END OF TITLE DATA -->
+						
+						<!-- CV DATA -->
+							<f:if condition="{data.result.block_2} != 0">
+								<f:then>
+									<h4><f:translate key="cvdetails">Ausbildung und Werdegang</f:translate></h4>
+									<table class="tblmitarbeiter">
+										<tbody>
+											<f:for each="{data.result.cvdata}" as="cv">
+												<tr>
+													<td>{cv.title}</td>
+													<td>{cv.cvdata}</td>
+												</tr>	
+											</f:for>
+										</tbody>
+									</table>
+								</f:then>
+							</f:if>
+						<!-- CV DATA -->
+						
+						<!-- Membership  DATA -->
+						<f:if condition="{data.result.block_4} != 0">
+							<f:then>
+								<f:for each="{data.result.membership_datas}" as="membership_data">
+									<h4>{membership_data.title}</h4>
+									<f:format.html>{membership_data.membership_details}</f:format.html>
+								</f:for>
+							</f:then>
+						</f:if>
+						<!-- END OF Membership -->
+						
+						
+						<!-- tabbed module start-->
+						<section class="mod data-list downloadData">
+							<ul>
+								<f:for each="{data.result.documents}" as="doc">
+									<li>
+										<a target="_blank" href="{doc.docPath}">
+
+											<f:if condition="{doc.metatitle} !=''">
+												<f:then>
+													<span class="file-title">{doc.metatitle} </span>
+												</f:then>
+												<f:else>
+													<span class="file-title">{doc.title} </span>
+												</f:else>
+											</f:if>
+												<span class="size">({doc.size})</span>
+
+											<span class="file-info"><span class="icon icon-{doc.extension}"></span></span>
+										</a>
+									</li>
+								</f:for>
+                
+								<f:for each="{data.result.links}" as="linkval">
+									<li>
+										<f:if condition="{linkval.target}!=''">
+											<f:then>
+												<a target="{linkval.target}" href="{linkval.link}">
+													<span class="file-title">{linkval.title} </span>
+													<span class="size"></span><span class="file-info"><span class="icon icon-link"></span></span>
+												</a>
+											</f:then>
+											<f:else>
+												<a href="{linkval.link}">
+													<span class="file-title">{linkval.title} </span>
+													<span class="size"></span><span class="file-info"><span class="icon icon-link"></span></span>
+												</a>
+											</f:else>
+										</f:if>
+									</li>
+								</f:for>
+							</ul>
+						</section>
+						<!-- Lorem module end-->
+						<f:for each="{data.result.movies}" as="video">
+							<h2 class="videohdg">{video.title}</h2>
+							<f:format.htmlentitiesDecode>{video.link}</f:format.htmlentitiesDecode>
+						</f:for>
+
+						<input type="button" onclick="window.history.back();" class="btn btn-primary VidBtn" value="{f:translate(key: 'back',  default: 'Zurück')}">
+					</div>
+				</div>
+			</f:form>
+		</f:else>
+	</f:if>
+</article>

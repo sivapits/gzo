@@ -1,0 +1,31 @@
+<f:layout name="AjaxSubcat"/>
+
+<f:section name="main">
+    <f:format.html parseFuncTSPath="">{downloadModule.pageNation}</f:format.html>
+    <input type='hidden' value='{permaLink}' id='permalink'/>
+    <f:if condition="{downloadModule.data}">
+        <f:then>
+            <div class="result-data download">
+                <ul class="tabbed">
+                    <f:for each="{downloadModule.data}" as="downloadFile" iteration="itemIteration">
+                        <li><f:link.action action="file" controller="DownloadModule" arguments="{fileId: downloadFile.identifier}" target="_blank">
+                            <span class="file-title">{downloadFile.document_title}</span>
+                            <span class="file-info">
+                                <span class="size">{downloadFile.size}</span>
+                                <span class="icon icon-{downloadFile.extension}"></span>
+                            </span>
+                        </f:link.action>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+            <f:format.html parseFuncTSPath="">{downloadModule.pageNation}</f:format.html>
+            <input type = "hidden" class = "docCount" value = "{dataCount}"/>
+        </f:then>
+        <f:else>
+            <input type = "hidden" class = "docCount" value = ""/>
+            <p class="info"><f:translate key="docTableNodata">Die gegenw�rtige Filterung ergibt keine Treffer.</f:translate></p>
+        </f:else>
+    </f:if>
+
+</f:section>

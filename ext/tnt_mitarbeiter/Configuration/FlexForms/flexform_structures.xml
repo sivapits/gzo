@@ -1,0 +1,184 @@
+<T3DataStructure>
+ <sheets>
+  <sDEF>
+   <ROOT>
+	 <TCEforms>
+	  <sheetTitle>General</sheetTitle>
+	 </TCEforms>
+	 <type>array</type>
+	 <el>
+		<switchableControllerActions>
+		<TCEforms>
+		 <label>Select Function</label>
+		 <config>
+		  <type>select</type>
+		  <items>
+			
+			<numIndex index="0">
+			 <numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xlf:searchview</numIndex>
+			 <numIndex index="1">Staff->home;Staff->team;Staff->widget;Staff->list;Staff->detail;Staff->employeewidget;</numIndex>
+			</numIndex>
+			
+			<numIndex index="1">
+			 <numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xlf:gridview</numIndex>
+			 <numIndex index="1">Staff->list;Staff->team;Staff->home;Staff->widget;Staff->detail;Staff->employeewidget;</numIndex>
+			</numIndex>
+			
+			<numIndex index="2">
+			 <numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xlf:widgetview</numIndex>
+			 <numIndex index="1">Staff->widget;Staff->team;Staff->list;Staff->home;Staff->detail;Staff->employeewidget;</numIndex>
+			</numIndex>
+			
+			<numIndex index="3">
+			 <numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xlf:detailview</numIndex>
+			 <numIndex index="1">Staff->detail;Staff->team;Staff->widget;Staff->list;Staff->home;Staff->employeewidget;</numIndex>
+			</numIndex>
+			
+			<numIndex index="4">
+			 <numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xlf:employeewidget</numIndex>
+			 <numIndex index="1">Staff->employeewidget;Staff->team;Staff->detail;Staff->widget;Staff->list;Staff->home;</numIndex>
+			</numIndex>
+			
+			<numIndex index="5">
+			 <numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xlf:teamview</numIndex>
+			 <numIndex index="1">Staff->team;Staff->employeewidget;Staff->detail;Staff->widget;Staff->list;Staff->home;</numIndex>
+			</numIndex>
+			
+		   </items>
+		 </config>
+		</TCEforms>
+		</switchableControllerActions>
+	  
+	 	<settings.listcount>
+			<TCEforms>
+				<label>LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:listcount</label>
+				<config>
+					<type>input</type>
+					<size>15</size>
+					<eval>int</eval>
+					<default>10</default>									
+				</config>
+			</TCEforms>
+		</settings.listcount>
+		
+		<settings.sortorder>
+			<TCEforms>
+				<label>LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:SortBy</label>
+				 <config>
+				  <type>select</type>
+				  <items type="array">
+				   <numIndex index="0" type="array">
+					<numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:backendsort</numIndex>
+					<numIndex index="1">sorting</numIndex>
+					</numIndex>
+				   <numIndex index="1" type="array">
+					<numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:first_name</numIndex>
+					<numIndex index="1">first_name</numIndex>
+				   </numIndex>	
+				   <numIndex index="2" type="array">
+					<numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:last_name</numIndex>
+					<numIndex index="1">last_name</numIndex>
+				   </numIndex>			
+				  </items>
+				  <minitems>0</minitems>
+				  <maxitems>1</maxitems>
+				  <size>1</size>
+				 </config>
+			</TCEforms>
+		</settings.sortorder>
+		
+		<settings.sortby>
+			<TCEforms>
+				<label>Order</label>
+				 <config>
+				  <type>select</type>
+				  <items type="array">
+				   <numIndex index="0" type="array">
+					<numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:ascending</numIndex>
+					<numIndex index="1">ASC</numIndex>
+					</numIndex>
+				   <numIndex index="1" type="array">
+					<numIndex index="0">LLL:EXT:tnt_mitarbeiter/Resources/Private/Language/locallang_db.xml:descending</numIndex>
+					<numIndex index="1">DESC</numIndex>
+				   </numIndex>		
+				  </items>
+				  <minitems>0</minitems>
+				  <maxitems>1</maxitems>
+				  <size>1</size>
+				 </config>
+			</TCEforms>
+		</settings.sortby>
+		<settings.subtitletext>
+			<TCEforms>
+				<label>Subtitle Text( Only for Employee Home Page Search and Widget View ) </label>
+					<config>
+						<type>text</type>
+						<size>1000</size>
+						<rows>5</rows>
+					</config>
+			</TCEforms>
+		</settings.subtitletext>
+		<settings.detailspage>
+			<TCEforms>
+				<label>Details View Page</label>
+				<config>
+					<type>group</type>
+					<internal_type>db</internal_type>
+					<allowed>pages</allowed>
+					<size>1</size>
+					<maxitems>1</maxitems>
+					<minitems>0</minitems>
+					<show_thumbs>1</show_thumbs>
+				</config>
+			</TCEforms>
+		</settings.detailspage>
+		
+		<settings.listpage>
+			<TCEforms>
+				<label>List View Page</label>
+				<config>
+					<type>group</type>
+					<internal_type>db</internal_type>
+					<allowed>pages</allowed>
+					<size>1</size>
+					<maxitems>1</maxitems>
+					<minitems>0</minitems>
+					<show_thumbs>1</show_thumbs>
+				</config>
+			</TCEforms>
+		</settings.listpage>
+		
+		<settings.widgetemployee>
+			<TCEforms>
+				<label>Select Employee ( Selection Only for Employee Widget) </label>
+					<config>
+						 <type>select</type>
+						 <foreign_table>tx_tntmitarbeiter_persons</foreign_table>
+						 <foreign_table_where>AND  tx_tntmitarbeiter_persons.hidden = 0 AND  tx_tntmitarbeiter_persons.deleted = 0 ORDER BY  tx_tntmitarbeiter_persons.uid</foreign_table_where>
+						 <size>10</size>
+						 <minitems>0</minitems>
+						 <maxitems>1</maxitems>
+					</config>
+			</TCEforms>
+		</settings.widgetemployee>
+		
+		<settings.department>
+			<TCEforms>
+				<label>Select Department ( Selection Only for Team View)</label>
+					<config>
+						 <type>select</type>
+						 <foreign_table>tx_tntmitarbeiter_departments</foreign_table>
+						 <foreign_table_where>AND  tx_tntmitarbeiter_departments.hidden = 0 AND  tx_tntmitarbeiter_departments.deleted = 0 ORDER BY  tx_tntmitarbeiter_departments.uid</foreign_table_where>
+						 <size>10</size>
+						 <minitems>0</minitems>
+						 <maxitems>1</maxitems>
+					</config>
+			</TCEforms>
+		</settings.department>
+		
+		
+	</el>
+   </ROOT>
+  </sDEF>
+ </sheets>
+</T3DataStructure>

@@ -1,0 +1,38 @@
+//
+//	Project:	
+//	Version:	1.0.0
+//	Date:
+//	Auhor:		
+// 
+// includeCss typoscript setting 
+// 
+//
+
+page.includeCSS {
+    file1 = {$filepath.css}bootstrap.css
+    file1.media = all
+    file2 = {$filepath.css}bootstrap.min.css
+    file2.media = all
+    file3 = {$filepath.css}style.css
+    #file3 = http://ui.pitsolutions.com/public/gzo/assets_html/v1/css/style.css
+    file3.media = all
+    file4 = {$filepath.css}font-awesome.css
+    file4.media = all
+    file5 = {$filepath.css}bootstrap-select.css
+    file5.media = all
+    file6 = {$filepath.css}jquery.jscrollpane.css
+    file6.media = all
+    file7 = {$filepath.css}lightbox.css
+    file7.media = all
+    file8 = {$filepath.css}override.css
+    file8.media = all
+    file9 = {$filepath.css}custom-print.css
+    file9.media = print
+}
+
+page.headerData.7 = TEXT
+page.headerData.7.value (
+  <!--[if lt IE 9]>
+	  <link rel="stylesheet" type="text/css" href="fileadmin/themes/templates/css/ie8_override.css" media="all">
+  <![endif]-->
+)

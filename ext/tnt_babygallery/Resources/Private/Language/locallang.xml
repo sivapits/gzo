@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+  <meta type="array">
+    <type>module</type>
+    <description>Language labels for plugin &quot;tx_babygal_pi1&quot;</description>
+  </meta>
+  <data type="array">
+    <languageKey index="default" type="array">
+       <label index="grid">Grid</label>filter
+	   <label index="filter">Filter</label>
+       <label index="detail_link">Detail</label>
+       <label index="male">Male</label>
+       <label index="female">Female</label>
+       <label index="phsearch">First Name / Name</label>
+       <label index="infto">to</label>
+       <label index="newborn">New Born</label>
+       <label index="babies">Babies</label>
+       <label index="nodata">No Data Found!</label>
+       <label index="tryagain">Please Try Again..</label>
+       <label index="name_receiver">Name of Reciever</label>
+       <label index="email_receiver">Email of Reciever</label>
+       <label index="email_send">Send Out</label>
+       <label index="emailerror">Invalid E-mail ID</label>
+        <label index="reqerror">required</label>
+        <label index="ecardFrom">ecardFrom</label>
+        <label index="ecardSubject">Link zur GZO-Babygallery</label>
+        <label index="ecardMessage">
+            <![CDATA[%s (%s) schickt Ihnen diesen Babygallery-Link:
+			%s 
+			
+			
+			Nachricht:
+			%s
+            ]]>
+        </label>
+        <label index="ecardSuccess">E-Card Send Successfully!</label>
+        <label index="ecardFailure">E-Card Sending Failed!</label>
+		<label index="message_compose">Your Message (Max 300 words)</label>
+		<label index="name_sender">Your Name</label>
+		<label index="email_sender">Your E-Mail-Address</label>
+		<label index="resetform">Reset</label>
+        <label index="hitlist_title">Name Hitlist</label>
+        <label index="hitlist_girls">Girls</label>
+        <label index="hitlist_boys">Boys</label>
+        <label index="label_all">All</label>
+		<label index="remainchar">Characters Remaining</label>
+        <label index="babies_label">Babies</label>
+      <label index="list_sex_male">m</label>
+      <label index="list_sex_female">w</label>
+      <label index="list_month_1">January</label>
+      <label index="list_month_2">February</label>
+      <label index="list_month_3">March</label>
+      <label index="list_month_4">April</label>
+      <label index="list_month_5">May</label>
+      <label index="list_month_6">June</label>
+      <label index="list_month_7">July</label>
+      <label index="list_month_8">August</label>
+      <label index="list_month_9">September</label>
+      <label index="list_month_10">October</label>
+      <label index="list_month_11">November</label>
+      <label index="list_month_12">December</label>
+      <label index="list_title_base">Our babies in</label>
+      <label index="gallery_link">Picture Overview</label>
+      <label index="recentbabies_newborn">New born</label>
+      <label index="baby_search">Baby-Search</label>
+      <label index="list_link">List</label>
+      <label index="list_lastname">Nachname</label>
+      <label index="list_firstname">Vorname</label>
+      <label index="list_sex">M/W</label>
+      <label index="list_date">Datum</label>
+      <label index="list_time">Zeit</label>
+      <label index="list_weight">Gewicht</label>
+      <label index="list_height">Grösse</label>
+      <label index="back">Back</label>
+      <label index="submit_button_label">Click here to submit value</label>
+      <label index="singleView_sentence1">born on</label>
+      <label index="singleView_sentence2">at</label>
+      <label index="singleView_sentence3">at GZO Spital Wetzikon</label>
+      <label index="singleView_sentence4">weighs</label>
+      <label index="singleView_sentence5">and has</label>
+      <label index="singleView_sentence6">of height</label>
+      <label index="singleView_sentence7">Nice to meet you!</label>
+      <label index="singleView_sentence8">Send a gift</label>
+      <label index="singleView_sentence9">Send a gift to</label>     
+      <label index="singleView_sentence10">'s mother</label>
+      <label index="singleView_transfer">Weitersagen</label>
+      <label index="singleView_sentence11">Send image as MMS</label>
+      <label index="singleView_sentence12">Send image as Email</label>
+      <label index="pi_list_browseresults_prev">&lt;</label>
+      <label index="pi_list_browseresults_next">&gt;</label>
+      <label index="pi_list_browseresults_page"></label>
+      <label index="productView_form_submit">Next</label>
+      <label index="pi_list_searchBox_search">Search</label>
+      <label index="productView_your_address">Ihre Personalien / Adresse</label>     
+      <label index="productView_sender_firstName">Vorname</label>
+      <label index="productView_sender_lastName">Nachname</label>      
+      <label index="productView_sender_address">Adresse</label>
+      <label index="productView_sender_zipCode_city">PLZ / Ort</label>
+	  <label index="productView_sender_agb_sentence1">Ich habe die</label>  
+	  <label index="productView_sender_agb">AGB</label>       
+      <label index="productView_sender_agb_sentence2">gelesen und erkläre mich damit einverstanden.</label>
+      <label index="productView_confirmation_title">Geschenk Auswahl bestätigen</label>
+      <label index="productView_not_selected">Bitte wählen Sie mindestens ein Produkt</label>
+      <label index="productView_no_address">Bitte geben Sie Ihre vollständige Adresse ein</label> 
+      <label index="productView_no_agb">Um ein Produkt auszuwählen, müssen Sie die AGB gelesen haben und sich damit einverstanden erklären</label> 
+       
+      
+
+      
+    </languageKey>
+    <languageKey index="de" type="array">
+		<label index="gallery_title">Babygalerie</label>
+		<label index="filter">Filtern</label>
+	   <label index="grid">Bilder</label>
+       <label index="detail_link">Detail</label>
+       <label index="male">Male</label>
+       <label index="female">Female</label>
+       <label index="phsearch">Vorname / Name</label>
+       <label index="infto">bis</label>
+       <label index="newborn">Neu geboren</label>
+       <label index="babies">Babys</label>
+       <label index="nodata">Keine Babys gefunden.</label>
+       <label index="tryagain"></label>
+       <label index="name_receiver">Name Empfanger</label>
+       <label index="email_receiver">E-Mail-Adresse Empfanger</label>
+       <label index="email_send">Verschicken</label>
+       <label index="emailerror">Ungültige E-Mail-ID</label>
+        <label index="reqerror">erforderlich</label>
+        <label index="ecardFrom">ecardFrom</label>
+        <label index="ecardSubject">Link zur GZO-Babygallery</label>
+        <label index="ecardMessage">
+            <![CDATA[%s (%s) schickt Ihnen diesen Babygallery-Link:
+			%s  
+			
+			
+			Nachricht:
+			%s			
+            ]]>
+        </label>
+        <label index="ecardSuccess">E-Card erfolgreich senden!</label>
+        <label index="ecardFailure">E-Card senden konnten!</label>
+		<label index="message_compose">Ihre Nachricht (max 300 Zeichen)</label>
+		<label index="name_sender">Ihr Name</label>
+		<label index="email_sender">Ihre E-Mail-Adresse</label>
+		<label index="resetform">Zurücksetzen</label>
+        <label index="hitlist_title">Namen-Hitliste</label>
+        <label index="hitlist_girls">Mädchen</label>
+        <label index="hitlist_boys">Jungen</label>
+        <label index="label_all">Alle</label>
+		<label index="all">Alle</label>
+		<label index="female">Mädchen</label>
+		<label index="male">Jungen</label>
+		<label index="remainchar">Verbleibende Zeichen</label>
+        <label index="babies_label">Babys</label>
+      <label index="list_sex_male">m</label>
+      <label index="list_sex_female">w</label>
+      <label index="list_month_1">Januar</label>
+      <label index="list_month_2">Februar</label>
+      <label index="list_month_3">Maerz</label>
+      <label index="list_month_4">April</label>
+      <label index="list_month_5">Mai</label>
+      <label index="list_month_6">Juni</label>
+      <label index="list_month_7">Juli</label>
+      <label index="list_month_8">August</label>
+      <label index="list_month_9">September</label>
+      <label index="list_month_10">Oktober</label>
+      <label index="list_month_11">November</label>
+      <label index="list_month_12">Dezember</label>
+      <label index="list_link">Liste</label>
+      <label index="th_lastname">Nachname</label>
+      <label index="th_firstname">Vorname</label>
+      <label index="th_sex">M/W</label>
+      <label index="th_date">Datum</label>
+      <label index="th_time">Zeit</label>
+      <label index="th_weight">Gewicht</label>
+      <label index="th_height">Grösse</label>
+      <label index="list_title_base">Unsere Babies im Jahr 2009/10</label>
+      <label index="gallery_link">Bilder-Übersicht</label>
+      <label index="list_link">Listen</label>
+      <label index="list_view_noresult">Das gesuchte Baby wurde nicht gefunden.</label>
+      <label index="imprint_link">Bilderuebersicht</label>
+      <label index="recentbabies_newborn">Neu geboren</label>
+      <label index="baby_search">Baby-Suche</label>
+      <label index="back">Zurück</label>
+      <label index="submit_button_label">Click here to submit value</label>
+      <label index="singleView_sentence1">geboren am</label>
+      <label index="singleView_sentence2">um</label>
+      <label index="singleView_sentence3">im GZO Spital Wetzikon</label>
+      <label index="singleView_sentence4">wiegt</label>
+      <label index="singleView_sentence5">und ist</label>
+      <label index="singleView_sentence6">gross</label>
+      <label index="singleView_sentence7">Schön, dass es dich gibt!</label>
+      <label index="singleView_sentence8">Mutter überraschen</label>
+      <label index="singleView_sentence9">Geschenk an die Mutter von</label>
+      <label index="singleView_sentence10"> senden</label>
+      <label index="productView_total_price_label">Total:</label>
+      <label index="productView_currency">CHF</label>
+      <label index="productView_form_next">Mit Kreditkarte bezahlen</label>
+      <label index="productPaymentResultView_successTitle">Bezahlung erfolgreich ausgeführt</label>
+      <label index="productPaymentResultView_errorTitle">Bezahlung nicht erfolgreich</label>
+      <label index="productPaymentResultView_cancelTitle">Bezahlung abgebrochen</label>
+      <label index="productPaymentResultView_successText">Ihre Zahlung wurde erfolgreich ausgeführt. Ihr Geschenk wird bis spätestens 24h nach Eingabe der Bestellung an die Mutter ausgehändigt.</label>
+      <label index="productPaymentResultView_errorText">Ihre Zahlung konnte nicht ausgeführt werden.</label>
+      <label index="productPaymentResultView_errorReason">Grund</label>
+      <label index="productPaymentResultView_cancelText">Sie haben die Bezahlung abgebrochen</label>
+      <label index="singleView_transfer">Weitersagen</label>
+      <label index="singleView_sentence11">MMS Download</label>
+      <label index="mmsView_send_mms_image">Bild als MMS versenden</label>
+      <label index="mmsView_mms_instruction1">Sie können das Bild als MMS-Nachricht an eine beliebige Person aus Ihrem Freundeskreis senden</label>
+      <label index="mmsView_mms_instruction2">MMS-Nachricht</label>
+      <label index="mmsView_mms_instruction3">Mobile-Nummer</label>
+      <label index="mmsView_mms_confirmation_success_title">MMS erfolgreich versendet</label>
+      <label index="mmsView_form_submit">MMS Versenden</label>
+      <label index="singleView_sentence12">Als E-Card versenden</label>
+      <label index="pi_list_browseresults_prev">&lt;</label>
+      <label index="pi_list_browseresults_next">&gt;</label>
+      <label index="pi_list_browseresults_first">Erste</label>
+      <label index="pi_list_browseresults_last">Letzte</label>
+      <label index="productView_form_submit">Weiter</label>
+      <label index="pi_list_browseresults_page"></label>
+      <label index="productView_your_address">Ihre Personalien / Adresse</label>  
+      <label index="productView_sender_firstName">Vorname</label>
+      <label index="productView_sender_lastName">Nachname</label>      
+      <label index="productView_sender_address">Adresse</label>
+      <label index="productView_sender_zipCode_city">PLZ / Ort</label>
+	  <label index="productView_sender_agb_sentence1">Ich habe die</label>  
+	  <label index="productView_sender_agb">AGB</label>       
+      <label index="productView_sender_agb_sentence2">gelesen und erkläre mich damit einverstanden.</label>
+      <label index="productView_confirmation_title">Geschenk Auswahl bestätigen</label>
+      <label index="productView_not_selected">Bitte wählen Sie mindestens ein Produkt</label>
+      <label index="productView_no_address">Bitte geben Sie Ihre vollständige Adresse ein</label> 
+ 	  <label index="productView_no_agb">Um ein Produkt auszuwählen, müssen Sie die AGB gelesen haben und sich damit einverstanden erklären</label> 
+      <label index="pi_list_searchBox_search">Suche</label>
+    </languageKey>
+  </data>
+</T3locallang>

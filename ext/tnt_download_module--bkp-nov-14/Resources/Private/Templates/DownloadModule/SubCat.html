@@ -1,0 +1,19 @@
+<f:layout name="AjaxSubcat" />
+<f:section name="main">
+    <fieldset>
+        <div class="col-sm-11">
+            <select class="selectpicker form-control" id = "thema_subcat" onChange='load(1)'>
+                <option value=""><f:translate key="empty_subcat">2. Thema auswählen</f:translate></option>
+                <f:for each="{subCategories}" as="category" iteration="itemIteration">
+                    <option value="{category.parentId}">{category.category_title}</option>
+                </f:for>
+            </select>
+        </div>
+        <div class="col-sm-1">
+			<a href='javascript:void(0);' onclick='resetData(1,this)' class="reset">
+                            <span class="icon reset-lrg-this deactive" id='reset-1'></span></a>
+	    </div>
+    </fieldset>
+</f:section>
+
+

@@ -1,0 +1,36 @@
+include mixin
+doctype
+html.no-js
+	include header
+	body
+		#wrapper
+			include header-info
+			.container
+				.col-md-9.col-sm-6
+					include quick-link
+				.pull-right
+					a(href="#").logo
+						img(src="images/logo.png", title="GZO" alt="")
+
+			//- include nav-main
+			include navbar-fixed
+			include spotlight
+			.container
+				.content-wrapper.clearfix
+					.col-md-12.urologie-home
+						+breadcrumb({items:["GZO ","Kliniken & Zentren","Chirurgische Klinik fdg", "Urologie"],print:"Seite drucken"})
+					.col-md-4
+						include mod-urologie-generic-1
+						include mod-urologie-generic-2
+					.col-md-4
+						include mod-urologie-generic-3
+						include mod-urologie-generic-4
+						include mod-urologie-generic-5
+					.col-md-4
+						include mod-urologie-generic-6
+						include mod-urologie-generic-7
+						include mod-urologie-generic-8
+						include mod-urologie-generic-9
+						include mod-urologie-generic-10
+			include footer-innerpage
+			include footer-script

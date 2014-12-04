@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'tnt_pageextend'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            <label index="tx_pageextend.icon_title">Icon Navigation Title</label>
+            <label index="tx_pageextend.icon_desc">Icon Navigation Description</label>
+		</languageKey>
+	</data>
+</T3locallang>

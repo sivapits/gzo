@@ -1,0 +1,151 @@
+// Demo navbar 
+.navbar.yamm.navbar-default
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-1')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#') Yamm Megamenu
+      #navbar-collapse-1.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        // Classic list 
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            | Kliniken & Zentren
+          ul.dropdown-menu
+            li
+              // Content container to add padding 
+              .yamm-content
+                .row
+                  ul.col-sm-2.list-unstyled
+                    li: a(href="#") Chirurgische Klinik
+                    li.sub-nav: a(href="#") Bariatrie
+                    li.sub-nav: a(href="#") Orthopädie
+                    li.sub-nav: a(href="#") Kolorektalchirurgie
+                    li.sub-nav: a(href="#") Viszeralchirurgie
+                    li.sub-nav: a(href="#") Gefässchirurgie
+                    li.sub-nav: a(href="#") Urologie
+                    li.sub-nav: a(href="#") Traumatologie
+                    li.sub-nav: a(href="#") Augenchirurgie
+                    li.sub-nav: a(href="#") Handchirurgie
+                    li.sub-nav: a(href="#") Sportmedizin
+                  ul.col-sm-2.list-unstyled
+                    li: a(href="#") Medizinische Klinik
+                    li.sub-nav: a(href="#") Angiologie
+                    li.sub-nav: a(href="#") Kardiologie
+                    li.sub-nav: a(href="#") Gastroenterologie
+                    li.sub-nav: a(href="#") Pneumologie
+                    li.sub-nav: a(href="#") Nephrologie
+                    li.sub-nav: a(href="#") Onkologie
+                    li.sub-nav: a(href="#") Endokrinologie
+                    li.sub-nav: a(href="#") Palliativmedizin
+                    li.sub-nav: a(href="#") Schlafmedizin
+                    li.sub-nav: a(href="#") Schmerzmedizin
+                  ul.col-sm-2.list-unstyled
+                    li: a(href="#") Frauenklinik
+                    li.sub-nav: a(href="#") Geburtshilfe
+                    li.sub-nav: a(href="#") Gynäkologie
+                    li.sub-nav: a(href="#") Urogynäkologie
+                    li: a(href="#") Radiologie
+                    li: a(href="#") Anästhesie
+                    li: a(href="#") Pflege
+                    li: a(href="#") Physiotherapie + Reha
+                    li: a(href="#") Beratungsdienste
+                  ul.col-sm-2.nav-widget
+                    li
+                      .item
+                        a(href="#").thumb
+                          img(src="images/temp/img-129x86.jpg", alt="image-title")
+                        .details
+                          h2: a(href="#") Promolink
+                          p
+                            a(href="#") Hier der Beschrieb zum Promolink. Hier der Beschrieb zum Promolink. 
+                      .item
+                        a(href="#").thumb
+                          img(src="images/temp/img-129x86-1.jpg", alt="image-title")
+                        .details
+                          h2: a(href="#") Promolink
+                          p
+                            a(href="#") Hier der Beschrieb zum Promolink. Hier der Beschrieb zum Promolink. 
+                      .item
+                        a(href="#").thumb
+                          img(src="images/temp/img-129x86-2.jpg", alt="image-title")
+                        .details
+                          h2: a(href="#") Promolink
+                          p
+                            a(href="#") Hier der Beschrieb zum Promolink. Hier der Beschrieb zum Promolink.
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            |  Krankheitsbilder
+          ul.dropdown-menu
+            li
+              .yamm-content
+                .row
+                  #accordion.panel-group
+                    .panel.panel-default
+                      .panel-heading
+                        h4.panel-title
+                          a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne')
+                            | Collapsible Group Item #1
+                      #collapseOne.panel-collapse.collapse.in
+                        .panel-body
+                          | Ut consectetur ullamcorper purus a rutrum. Etiam dui nisi, hendrerit feugiat scelerisque et, cursus eu magna. 
+                    .panel.panel-default
+                      .panel-heading
+                        h4.panel-title
+                          a(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+                            | Collapsible Group Item #2
+                      #collapseTwo.panel-collapse.collapse
+                        .panel-body
+                          | Nullam pretium fermentum sapien ut convallis. Suspendisse vehicula, magna non tristique tincidunt, massa nisi luctus tellus, vel laoreet sem lectus ut nibh. 
+                    .panel.panel-default
+                      .panel-heading
+                        h4.panel-title
+                          a(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+                            | Collapsible Group Item #3
+                      #collapseThree.panel-collapse.collapse
+                        .panel-body
+                          | Praesent leo quam, faucibus at facilisis id, rhoncus sit amet metus. Sed vitae ipsum non nibh mattis congue eget id augue. 
+        // Classic dropdown 
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            | Classic
+            b.caret
+          ul.dropdown-menu(role='menu')
+            li
+              a(tabindex='-1', href='#')  Action 
+            li
+              a(tabindex='-1', href='#')  Another action 
+            li
+              a(tabindex='-1', href='#')  Something else here 
+            li.divider
+            li
+              a(tabindex='-1', href='#')  Separated link 
+        // Pictures 
+        li.dropdown.yamm-fw
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            | Pictures
+            b.caret
+          ul.dropdown-menu
+            li
+              .yamm-content
+                .row
+                  .col-xs-6.col-sm-2
+                    a.thumbnail(href='#')
+                      img(alt='150x190', src='http://placekitten.com/150/190/')
+                  .col-xs-6.col-sm-2
+                    a.thumbnail(href='#')
+                      img(alt='150x190', src='http://placekitten.com/150/190/')
+                  .col-xs-6.col-sm-2
+                    a.thumbnail(href='#')
+                      img(alt='150x190', src='http://placekitten.com/150/190/')
+                  .col-xs-6.col-sm-2
+                    a.thumbnail(href='#')
+                      img(alt='150x190', src='http://placekitten.com/150/190/')
+                  .col-xs-6.col-sm-2
+                    a.thumbnail(href='#')
+                      img(alt='150x190', src='http://placekitten.com/150/190/')
+                  .col-xs-6.col-sm-2
+                    a.thumbnail(href='#')
+                      img(alt='150x190', src='http://placekitten.com/150/190/')

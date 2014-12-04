@@ -1,0 +1,5 @@
+# cat=basic; type=string; label=Baby Gallery CSV Upload Path: By Default "fileadmin/data/tnt_babygallery/csv"
+tnt_babygallery_csvpath = fileadmin/data/tnt_babygallery/csv
+
+# cat=basic; type=string; label=Baby Gallery Image Upload Path: By Default "fileadmin/data/tnt_babygallery/images"
+tnt_babygallery_imgpath = fileadmin/data/tnt_babygallery/images

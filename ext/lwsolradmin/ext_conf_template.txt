@@ -1,0 +1,7 @@
+
+# cat=solradmin//50; type=boolean; label=Enable experimental new interface: Enabled the new ExtJS interface.
+extjsenable = 0
+
+# cat=solradmin//60; type=int [0-100000]; label= Root page uid!: If this is set to 0 this is ignored. Set this to a page uid to skip the search for rootpages and use this page TS Solr Configuration 
+rootpageuid = 0
+

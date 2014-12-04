@@ -1,0 +1,229 @@
+<?php
+namespace TYPO3\TntMitarbeiter\Controller;
+
+
+/***************************************************************
+ *
+ *  Copyright notice
+ *
+ *  (c) 2014 HOJA M A <hoja@tnt-graphics.ch>
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
+/**
+ * StaffController
+ */
+class StaffController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+
+	public function __construct() {
+		$this->Model	= new\TYPO3\TntMitarbeiter\Domain\Model\Staff();
+		$this->arrConf	= unserialize($GLOBALS["TYPO3_CONF_VARS"]["EXT"]["extConf"]['tnt_babygallery']);
+	}
+	/**	
+	 * staffRepository
+	 * 
+	 * @var \TYPO3\TntMitarbeiter\Domain\Repository\StaffRepository
+	 * @inject
+	 */
+	protected $staffRepository = NULL;
+	
+	/**
+	 * action home
+	 * 
+	 * @return void
+	 */
+	public function homeAction() {
+		$this->local_cObj		=	$this->configurationManager->getContentObject();
+		$settings['resFolder']	=	($this->local_cObj->data['pages'] > 0) ? $this->local_cObj->data['pages'] : NULL;
+		$data['positions']		=	$this -> Model -> getPositions($settings['resFolder']);
+		$data['departments']	=	$this -> Model -> getDepartments($settings['resFolder']);
+		$data['url']			=	$this->generateUrl(NULL, NULL);
+		$this->view->assign('data', $data);
+	}
+	
+	/**
+	 * action list
+	 * 
+	 * @return void
+	 */
+	public function listAction() {
+		$args				=	$this->request->getArguments();
+		$this->local_cObj		=	$this->configurationManager->getContentObject();
+		$settings['resFolder']	=	($this->local_cObj->data['pages'] > 0) ? $this->local_cObj->data['pages'] : NULL;
+		$settings['pageCount'] =	($this->settings['listcount']) ? $this->settings['listcount'] : 9;
+		$settings['sortby']	=	($this->settings['sortby']) ? $this->settings['sortby'] : 'ASC';
+		$settings['sortorder']	=	($this->settings['sortorder']) ? $this->settings['sortorder'] : 'first_name';
+		$page_no			=	($args['page_num'])?$args['page_num']:1;
+		$count			=	($this->settings['listcount']) ? $this->settings['listcount'] : 9;
+		$settings['limit']		 =	($page_no <=1)? '0,'.$count: (($page_no -1)*$count.','.$count);
+		
+		$data['positions']		=	$this -> Model -> getPositions($settings['resFolder']);
+		$data['departments']	=	$this -> Model -> getDepartments($settings['resFolder']);
+		//echo '<pre>';print_r($args);
+		if(isset($args['searchkey'])){
+			$settings ['position']		=	implode(',', $args['position']);
+			$settings ['department']	=	implode(',', $args['department']);
+			$settings ['searchkey']		=	$args['searchkey'];
+		}
+		else{
+			$settings ['position']		=	FALSE;
+			$settings ['department']	=	FALSE;
+			$settings ['searchkey']		=	FALSE;
+		}
+		$getSearch		=	$this -> Model -> searchStaffs($settings);
+		$data['result']	=	$this -> orderData($getSearch);
+		if(isset($args['listSearch'])){
+			$data ['position']			=	implode('', $args['position']);
+			$data['department']		=	implode('', $args['department']);
+			$data ['searchkey']		=	$args['searchkey'];
+		}
+		//echo '<pre>'; print_r($data);exit;
+		/*Pagination Codes*/
+		$data['current_page']		=	$page_no;
+		$showLimit				=	$getSearch['total_results']/$settings['pageCount'];
+		$prevPage				=	($page_no >1)?($page_no-1):1;
+		$data['previous_page_link']	=	$this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=list&tx_tntmitarbeiter_tntmitarbeiter[page_id]='.$prevPage);
+		$data['first_page_link']		=	($page_no == 1)?'':$this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=list&tx_tntmitarbeiter_tntmitarbeiter[page_id]=1');
+		$data['next_page']		=	($showLimit>$page_no)?$page_no+1:$page_no;
+		$data['next_page']		=	$this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=list&tx_tntmitarbeiter_tntmitarbeiter[page_id]='.$data['next_page']	);
+		$data['last_page']			=	ceil( $showLimit );
+		$data['last_page_link']		=	$this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=list&tx_tntmitarbeiter_tntmitarbeiter[page_id]='.$data['last_page']	);
+		$data['segment_start']		=	($page_no == 1)?"disabled disabledLink":NULL;
+		$data['segment_end']		=	($data['last_page'] == $page_no)?"disabled disabledLink":NULL;
+		$data['paginate_url']		=	$this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=list&tx_tntmitarbeiter_tntmitarbeiter[page_id]=');
+		//echo '<pre>';print_r($data);exit;
+		/********************/
+		$this->view->assign('data', $data);
+	}
+
+	/**
+	 * action detail
+	 * 
+	 * @return void
+	 */
+	public function detailAction() {
+		$args				=	$this->request->getArguments();
+		//print_r($args);exit;
+		if($args['id'] != NULL){
+			$data['result']	=	$this -> Model -> getStaffDetails($args['id']);
+		}
+		else{
+			$this->view->assign('data', $data);
+		}
+		foreach ($data['result']['documents'] as $key => $value){
+			$data['result']['documents'][$key]['size']	=  $this -> formatBytes( $value['size']);
+		}
+		$this->view->assign('data', $data);
+	}
+
+	/**
+	 * action widget
+	 * 
+	 * @return void
+	 */
+	public function widgetAction() {
+		$args				=	$this->request->getArguments();
+		$this->local_cObj		=	$this->configurationManager->getContentObject();
+		$settings['resFolder']	=	($this->local_cObj->data['pages'] > 0) ? $this->local_cObj->data['pages'] : NULL;
+		$settings['pageCount'] =	($this->settings['countval']) ? $this->settings['countval'] : 9;
+		$settings['sortby']	=	($this->settings['sortby']) ? $this->settings['sortby'] : 'ASC';
+		$settings['sortorder']	=	($this->settings['sortorder']) ? $this->settings['sortorder'] : 'first_name';
+
+		$data['positions']		=	$this -> Model -> getPositions($settings['resFolder']);
+		$data['departments']	=	$this -> Model -> getDepartments($settings['resFolder']);
+		$data['url']			=	$this->generateUrl(NULL, NULL);
+		$this->view->assign('data', $data);
+	}
+	
+	/**
+	 * action  employeewidget
+	 * 
+	 * @return void
+	 */
+	
+	public function employeewidgetAction(){
+		$emp_id				=	$this -> settings['widgetemployee'];
+		$data['empDetails']		=	$this -> Model -> getempDetails( $emp_id );
+		$detailPage				=	($this->settings['detailspage'])? $this->generateUrl($this->settings['detailspage'], '&tx_tntmitarbeiter_tntmitarbeiter[id]=' ):$this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=detail&tx_tntmitarbeiter_tntmitarbeiter[id]=' );
+		$data['employee_page']	=	$detailPage['baseurl'].$data['empDetails']['uid'];
+		//echo '<pre>';print_r($data);
+		$this->view->assign('data', $data);
+	}
+	
+	public function orderData($getSearch){
+		foreach($getSearch as $key => $value){
+			$detailPage=($this->settings['detailspage'])? $this->generateUrl($this->settings['detailspage'], '&tx_tntmitarbeiter_tntmitarbeiter[id]=' ): $this->generateUrl(NULL, '&tx_tntmitarbeiter_tntmitarbeiter[action]=detail&tx_tntmitarbeiter_tntmitarbeiter[id]=' );
+			if($getSearch[$key]['name'] == "image_colour" && $getSearch[$key-1]['emp_id'] ==$getSearch[$key]['emp_id'] ){
+				$set=$key-1;
+				$getSearch[$set]['colour_image'] = $getSearch[$key]['userimage'] ;
+				unset($getSearch[$key]);
+			}
+			$getSearch[$key]['detailPage'] = $detailPage['baseurl'].$value['emp_id'];
+		}
+		return $getSearch;
+		//echo '<pre>';print_r($getSearch);exit;
+	}
+	 /* --------------------Custom Utility Functions Starts Here------------------------------------ */
+
+	//===================================
+	//= 1. URL Parameters General Function =
+	//===================================
+	public function generateUrl($pid, $status) {
+		$pId = ($pid != NULL) ? $pid : $GLOBALS['TSFE']->id;
+		$addtionalParam = (!empty($status)) ? $status : FALSE;
+		$conf = array('parameter'        => $pId, // Link to current page
+			'additionalParams' => $addtionalParam, // Set additional parameters
+			'forceAbsoluteUrl' => true, 'useCashHash'      => true, // We must add cHash because we use parameters
+			'returnLast'       => 'url', // We want link only
+		);
+		$this->local_cObj = $this->configurationManager->getContentObject();
+		$baseUrl = $this->local_cObj->typoLink('', $conf);
+		$data['baseurl'] = $baseUrl;
+		$data['pid'] = $pId;
+		return $data;
+	}
+
+	//==== 2. Include Js File Formatting ========
+	public function includeJsFile($jsFile) {
+		return '<script src="' . htmlspecialchars($jsFile) . '" type="text/javascript"></script>';
+	}
+
+	//==== 3. Include css File Formatting ========
+	public function includeCssFile($cssFile) {
+		return '<link rel="stylesheet" href="' . htmlspecialchars($cssFile) . '" />';
+	}
+
+	//==== 4. Label Localisation ========
+	public function localise($id) {
+		return \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($id, 'TntMitarbeiter');
+	}
+	
+	function formatBytes($bytes, $precision = 2) { 
+		$units = array('B', 'KB', 'MB', 'GB', 'TB'); 
+		$bytes = max($bytes, 0); 
+		$pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
+		$pow = min($pow, count($units) - 1); 
+		// Uncomment one of the following alternatives
+		 $bytes /= pow(1024, $pow);
+		// $bytes /= (1 << (10 * $pow)); 
+
+		return round($bytes, $precision) . ' ' . $units[$pow]; 
+	} 
+}

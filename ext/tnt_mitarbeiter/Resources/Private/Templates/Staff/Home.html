@@ -1,0 +1,63 @@
+<article class="mitarbeiter">
+	<h1><f:translate key="home_head">Mitarbeiter</f:translate></h1>
+	<f:form action="list">
+		<f:if condition="{flexform.subtitletext} != ''">
+			<f:then>
+				<p class="caption">
+					{flexform.subtitletext}				
+				</p>
+			</f:then>
+		</f:if>
+		
+			<fieldset>
+				<div class="input-group col-sm-12">
+					<f:form.textfield class="form-control bdr-rgt-none" name="searchkey" placeholder="{f:translate(key: 'searchplace',  default: 'First Name / Name')}" title="{f:translate(key: 'searchplace',  default: 'First Name / Name')}"/><i class="icon-search"></i>
+				</div>
+			</fieldset>
+			<div class="result-listing">
+				<h3><f:translate key="function">Funktion</f:translate></h3>
+				<div class="result-listing listings">
+					<div class="row-fluid">
+						<f:for each="{data.positions}" key="posKey" as="position">
+							<label class="cbLabel">
+								<span class="custom-checkbox">
+									<input title="{position.name}" type="checkbox" name="tx_tntmitarbeiter_tntmitarbeiter[position][]" class="poscheck cbBind position-select" value="{position.uid}"/>
+									<!--<f:form.checkbox name="position[]" class="poscheck cbBind" checked="1" value="{position.uid}" />-->
+								</span>{position.name}
+							</label>
+						</f:for>
+					</div>
+					<div class="row-fluid">
+						<div class="link-wrapper">
+							<a class="link posSelAll position-select" onclick="posCheckAll();" href="javascript:void(0);"><f:translate key="selectall">Alle auswählen</f:translate></a>
+							<a class="link posSelNone position-select" onclick="posunCheckAll();" href="javascript:void(0);"><f:translate key="selectnone">Keine auswählen</f:translate></a>
+						</div>
+					</div>
+				</div>
+				<h3><f:translate key="department">Fachbereich</f:translate></h3>
+				<div class="result-listing listings">
+					<div class="row-fluid">
+						<f:for each="{data.departments}" as="depart">
+							<label class="cbLabel">
+								<span class="custom-checkbox">
+									<input title="{depart.title}" type="checkbox" name="tx_tntmitarbeiter_tntmitarbeiter[department][]" class="depcheck cbBind department-select" value="{depart.uid}"/>
+									<!--<f:form.checkbox id="{depart.uid}" name="department[]" class="depcheck cbBind"  checked="1" value="{depart.uid}" />-->
+								</span>{depart.title}
+							</label>
+						</f:for>
+					</div>
+					<div class="row-fluid">
+						<div class="link-wrapper">
+							<a class="link depSelAll department-select"  onclick="checkAll();" href="javascript:void(0);"><f:translate key="selectall">Alle auswählen</f:translate></a>
+							<a class="link depSelNone department-select" onclick="unCheckAll();" href="javascript:void(0);"><f:translate key="selectnone">Keine auswählen</f:translate></a>
+						</div>
+					</div>
+				</div>
+			<f:form.hidden id="pid" name="pid" value="{data.url.pid}" />
+			<f:form.hidden id="depall" name="depall" value="0" />
+			<f:form.hidden id="posall" name="posall" value="0" />
+			<f:form.hidden id="base_url" name="baseurl" value="{data.url.baseurl}" />
+		</div>
+		<button name="tx_tntmitarbeiter_tntmitarbeiter[searchbtn]" class="btn btn-primary" type="submit"><f:translate key="search">Suchen</f:translate></button>
+	</f:form>
+</article>

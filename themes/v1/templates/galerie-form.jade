@@ -1,0 +1,33 @@
+.row
+	form(id="", method="", action="" class="list-detail galerie")
+		.col-md-9
+			.searchalign
+				.input-group.add-on
+					input#srch-term.form-control(type='text', placeholder='Search', name='srch-term')
+					.input-group-btn
+						button.btn.btn-default(type='submit')
+							i.glyphicon.glyphicon-search
+			fieldset
+				select.custom-select.form-control
+					option(value="") Mann
+					option(value="1") Mann
+					option(value="2") Mann
+					option(value="3") Mann
+			span.txtalign.bold datum
+			fieldset
+					select.custom-select.form-control
+						option(value="") 01.01.2014
+						option(value="1") 01.01.2014
+						option(value="2") 01.01.2014
+						option(value="3") 01.01.2014
+			span.txtalign bis
+			fieldset
+					select.custom-select.form-control
+						option(value="") 01.01.2014
+						option(value="1") 01.01.2014
+						option(value="2") 01.01.2014
+						option(value="3") 01.01.2014
+			input(type="submit",class="btn btn-primary filtern",value="Anzeigen")
+		.col-md-3
+			include mod-pagination
+

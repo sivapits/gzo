@@ -1,0 +1,101 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    253,
+                    81
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "gridview",
+                        "detailview",
+                        "search",
+                        "sendcard",
+                        "hitlist"
+                    ]
+                },
+                "name": "Gallery",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1380418791517"
+                },
+                "propertyGroup": {
+                    "properties": [
+
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "TNT BABY GALLERY is a custom TYPO3 6.2 FLUID EXT BASE Extension build for managing the baby gallery with different views on front end.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "stable",
+            "targetVersion": "6.2",
+            "version": "1.0"
+        },
+        "extensionKey": "tnt_babygallery",
+        "name": "TNT BABY GALLERY",
+        "originalExtensionKey": "tnt_babygallery",
+        "persons": [
+            {
+                "company": "",
+                "email": "hoja@tnt-graphics.ch",
+                "name": "HOJA.M.A",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "tntbabygallery",
+                "name": "TNT BABY GALLERY"
+            }
+        ],
+        "vendorName": "TYPO3"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2014-07-24 08:13",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}

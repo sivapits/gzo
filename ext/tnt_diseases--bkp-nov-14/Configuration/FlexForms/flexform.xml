@@ -1,0 +1,163 @@
+
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <display>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:tnt_diseases/Resources/Private/Language/locallang_db.xlf:tx_tntdiseases_domain_model_diseases_config</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el> 
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>LLL:EXT:tnt_diseases/Resources/Private/Language/locallang_db.xlf:tx_tntdiseases_domain_model_diseases_config_viewType</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">Main Widget View</numIndex>
+                                        <numIndex index="1">Diseases->mainWidget;Diseases->multiView;Diseases->mainDetail;Diseases->diseaseDropList;Teaser->teaserWidget;Diseases->gridList;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">                   
+                                        <numIndex index="0">Teaser Widget View</numIndex>
+                                        <numIndex index="1">Teaser->teaserWidget;Diseases->multiView;Diseases->mainDetail;Diseases->diseaseDropList;Diseases->mainWidget;Diseases->gridList;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">                   
+                                        <numIndex index="0">List View</numIndex>
+                                        <numIndex index="1">Diseases->gridList;Diseases->multiView;Diseases->mainDetail;Diseases->diseaseDropList;Diseases->mainWidget;Teaser->teaserWidget;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">                   
+                                        <numIndex index="0">Detail View</numIndex>
+                                        <numIndex index="1">Diseases->mainDetail;Diseases->multiView;Teaser->teaserWidget;Diseases->diseaseDropList;Diseases->mainWidget;Diseases->gridList;</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    <settings.isFilterEnabled>
+                        <TCEforms>
+                            <label>Disable Filter</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.isFilterEnabled>
+                                        <settings.headerText>
+                        <TCEforms>
+                            <label>Header Text</label>
+                            <config>
+                                <type>text</type>,
+                                <cols>40</cols>
+                                <rows>10</rows>
+                            </config>
+                            <defaultExtras>richtext[bold|italic|subscript|superscript|removeformat|chMode]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras>
+                        </TCEforms>
+                    </settings.headerText> 
+                    <settings.headerImages>
+                        <TCEforms>
+                            <label>Header Images</label>
+                            <config>
+                                <type>inline</type>
+                                <maxitems>99</maxitems>
+                                <foreign_table>sys_file_reference</foreign_table>
+                                <!--<foreign_field>uid_foreign</foreign_field>-->
+                                <foreign_table_field>tablenames</foreign_table_field>
+                                <foreign_label>uid_local</foreign_label>
+                                <foreign_sortby>sorting_foreign</foreign_sortby>
+                                <foreign_selector>uid_local</foreign_selector>
+                                <foreign_selector_fieldTcaOverride type="array">
+                                    <config>
+                                        <appearance>
+                                            <elementBrowserType>file</elementBrowserType>
+                                            <elementBrowserAllowed>jpg,png</elementBrowserAllowed>
+                                        </appearance>
+                                    </config>
+                                </foreign_selector_fieldTcaOverride>
+                                <foreign_match_fields type="array">
+                                    <fieldname>flex_head_image</fieldname>
+                                </foreign_match_fields>
+                                <appearance type="array">
+                                    <newRecordLinkAddTitle>1</newRecordLinkAddTitle>
+                                    <headerThumbnail>
+                                        <field>uid_local</field>
+                                        <height>64</height>
+                                        <width>64</width>
+                                    </headerThumbnail>
+                                </appearance>
+                            </config>
+                        </TCEforms>
+                    </settings.headerImages> 
+                    <settings.pageOption>
+                        <TCEforms>
+                            <label>Page</label>
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_tntdiseases_domain_model_pages</foreign_table>
+                                <foreign_table_where>AND tx_tntdiseases_domain_model_pages.deleted = 0 AND tx_tntdiseases_domain_model_pages.hidden = 0</foreign_table_where>
+                                <size>10</size>
+                                <maxitems>999</maxitems>
+                            </config>
+                        </TCEforms>
+                    </settings.pageOption>
+                    <settings.categoryOption>
+                        <TCEforms>
+                            <label>Category</label>
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_tntdiseases_domain_model_category</foreign_table>
+                                <foreign_table_where>AND tx_tntdiseases_domain_model_category.deleted = 0 AND tx_tntdiseases_domain_model_category.hidden = 0</foreign_table_where>
+                                <size>10</size>
+                                <maxitems>999</maxitems>
+                            </config>
+                        </TCEforms>
+                    </settings.categoryOption>
+                    <settings.list_page>
+                        <TCEforms>
+                            <label>List View Page</label>
+                            <config>
+                                <type>input</type>,
+                                <size>50</size>,
+                                <max>256</max>,
+                                <eval>trim</eval>,
+                                <wizards> 
+                                    <link> 
+                                        <type>popup</type>
+                                        <title>LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel</title>
+                                        <icon>link_popup.gif</icon>
+                                        <script>browse_links.php?mode=wizard</script>
+                                        <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link> 
+                                </wizards>
+                                <softref>typolink</softref>
+                            </config>
+                        </TCEforms>
+                    </settings.list_page>
+                    <settings.detail_page>
+                        <TCEforms>
+                            <label>Detail View Page</label>
+                            <config>
+                                <type>input</type>,
+                                <size>50</size>,
+                                <max>256</max>,
+                                <eval>trim</eval>,
+                                <wizards> 
+                                    <link> 
+                                        <type>popup</type>
+                                        <title>LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel</title>
+                                        <icon>link_popup.gif</icon>
+                                        <script>browse_links.php?mode=wizard</script>
+                                        <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link> 
+                                </wizards>
+                                <softref>typolink</softref>
+                            </config>
+                        </TCEforms>
+                    </settings.detail_page>                                    
+                </el>
+            </ROOT>
+        </display>
+    </sheets>
+</T3DataStructure>

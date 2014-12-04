@@ -1,0 +1,72 @@
+<article class="mitarbeiter detailpage">
+	<f:if condition="{data.result.first_name} == ''">
+		<f:then>
+			<div class="alert alert-info fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+				<strong><f:translate key="error1">Sie haben noch keine Wählen Sie einen Mitarbeiter</f:translate></strong> <f:translate key="error2">Bitte versuchen Sie es..</f:translate>
+			</div>
+			<input type="button" onclick="window.history.back();" class="btn btn-primary VidBtn" value="{f:translate(key: 'back',  default: 'Zurück')}">
+		</f:then>
+		<f:else>
+			<f:form method="post" action="list">
+				<h2>{data.result.title} {data.result.first_name} {data.result.last_name}</h2>
+				<h3><f:format.htmlentitiesDecode>{data.result.teasertext}</f:format.htmlentitiesDecode></h3>
+				<div class="row email-tel">
+					<div class="col-md-6 email"><span></span>E-Mail: <a href="#">{data.result.email}</a></div>
+					<div class="col-md-6 tel"><span></span>Tel direkt: <b>{data.result.phone}</b></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-3">
+						<f:for each="{data.result.userImages}" as="userImg">
+							<f:if condition="{userImg.fieldname} == 'image_colour'">
+								<a class="thumb" href="javascript:void(0);"><img alt="" title="GZO" src="{userImg.profImg}"></a>
+							</f:if>
+						</f:for>
+					</div>
+					<div class="col-md-12 col-md-9">
+						<f:format.htmlentitiesDecode>{data.result.title_text}</f:format.htmlentitiesDecode>
+						<f:format.htmlentitiesDecode>{data.result.cv}</f:format.htmlentitiesDecode>
+						<!-- tabbed module start-->
+						<section class="mod data-list downloadData">
+							<ul>
+								<f:for each="{data.result.documents}" as="doc">
+									<li>
+										<a href="{doc.docPath}">
+
+											<f:if condition="{doc.metatitle} !=''">
+												<f:then>
+													<span class="file-title">{doc.metatitle} </span>
+												</f:then>
+												<f:else>
+													<span class="file-title">{doc.title} </span>
+												</f:else>
+											</f:if>
+												<span class="size">({doc.size})</span>
+
+											<span class="file-info"><span class="icon icon-pdf"></span></span>
+										</a>
+									</li>
+								</f:for>
+								<f:for each="{data.result.links}" as="linkval">
+									<li>
+										<a href="{linkval.link}">
+											<span class="file-title">{linkval.title} </span>
+											<span class="size"></span><span class="file-info"><span class="icon icon-link"></span></span>
+										</a>
+									</li>
+								</f:for>
+							</ul>
+						</section>
+						<!-- Lorem module end-->
+						<f:for each="{data.result.movies}" as="video">
+							<h2 class="videohdg">{video.title}</h2>
+							<iframe width="100%" height="390" frameborder="0" autoplay="" allowfullscreen="" src="{video.link}"></iframe>
+						</f:for>
+
+						<input type="button" onclick="window.history.back();" class="btn btn-primary VidBtn" value="{f:translate(key: 'back',  default: 'Zurück')}">
+					</div>
+				</div>
+			</f:form>
+		</f:else>
+	</f:if>
+</article>

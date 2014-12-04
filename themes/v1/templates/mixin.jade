@@ -1,0 +1,16 @@
+-var navSelected =0;
+mixin breadcrumb(obj)
+  .breadcrumbs
+    -if(obj.items){
+      ul
+        each items,index in obj.items
+          //- li #{obj.items.length} #{index}
+          -if (index>=(obj.items.length-1)){
+            li: span #{items}
+          -}else{
+            li: a(href="#") #{items}
+          -}
+    -}
+    -if(obj.print){
+      a(href="#",class="btn-print").print #{obj.print}
+    -}      

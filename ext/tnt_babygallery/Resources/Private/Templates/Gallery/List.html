@@ -1,0 +1,208 @@
+<div class="babygalerie-loading">
+	<f:image id="babygalerie-loading-image" src="EXT:tnt_babygallery/Resources/Public/Icons/loader.gif" alt="Loading..." />
+</div>
+<h1><f:translate key="gallery_title">Babygalerie</f:translate></h1>
+<section class="mod gallery">
+	<div class="mod-highlight list cta multy-tab">
+		<f:link.action action="gridview" controller="Gallery">
+			<span><span class="infos"></span><i>
+					<f:translate key="grid">Grid	</f:translate>
+			</i></span>
+		</f:link.action>
+
+		<f:link.action action="list" controller="Gallery" class="active">
+			<span><span class="liste"></span><i>
+				<f:translate key="list_link">
+					List
+				</f:translate>
+			</i></span>
+		</f:link.action>
+
+		<a href="{data.detailpage.baseurl}">
+			<span><span class="detail"></span><i>
+				<f:translate key="detail_link">
+					Detail
+				</f:translate>
+			</i></span>
+		</a>
+		
+		<a class="desktop-hide" href="javascript:void(0);" id="trigger">
+			<span><span class="search"></span><i class="search">Dropdown</i></span>
+		</a>
+		
+		<div id="drop">
+		  <div class="row">
+			<form class="list-detail galerie">
+			  <div class="col-md-9">
+				<div class="searchalign">
+					<label class="rem">Name</label>
+					<input type="text" class="babygallerie form-control mobnameFilter" name="srch-term" placeholder="{f:translate(key: 'phsearch',  default: 'First Name / Name')}"  id="mobName">
+					<i class="icon-search babygallerie"></i>
+				</div>
+				<fieldset>
+					<select title="Gender" class="mobgenderFilter selectpicker form-control default-sm babygallerie-dropdown">
+						<option value="ALL">
+						<f:translate key="all">
+							All
+						</f:translate></option>
+						<option value="0">
+						<f:translate key="male">
+							Male
+						</f:translate></option>
+						<option value="1">
+						<f:translate key="female">
+							Female
+						</f:translate>
+						</option>
+					</select>
+				</fieldset>
+				<div class="datum-bis"><span class="txtalign bold"><f:translate key="list_date">Date</f:translate></span>
+					<fieldset>
+						<input readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="from" class="mobdateFilterFrom datepicker form-control">
+					</fieldset>
+					<span class="txtalign bis">
+							<f:translate key="infto">
+								to
+							</f:translate>
+					</span>
+					<fieldset>
+						<input readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="to" class="mobdateFilterTo datepicker form-control">
+					</fieldset>
+				</div>
+				<input type="button" class="btn btn-primary filtern" id="mobfilterBabies" value="{f:translate(key: 'filter',  default: 'Filter')}">
+				<div class="desktop-hide">
+				  <div class="mob-resetbtn">
+					<ul>
+					   <li><a href="javascript:void(0);"><i class="babyCount">{data.Babydata.babyCount}</i> <f:translate key="babies">Babys</f:translate></a></li>
+					  <li class="reset"><a class="resetbtn" href="javascript:void(0);"><b><label class="rem">remove</label></b></a></li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			</form>
+		  </div>
+		</div>
+	</div>
+	<div class="mob-hide">
+		<div class="row">
+			<form class="list-detail galerie">
+				<div class="col-md-9">
+					<div class="searchalign">
+						<input title="{f:translate(key: 'phsearch',  default: 'First Name / Name')}" type="text" class="babygallerie form-control nameFilter nameFilter" name="srch-term" placeholder="{f:translate(key: 'phsearch',  default: 'First Name / Name')}" id="srch-term">
+						<i class="icon-search babygallerie"></i>						
+					</div>
+					<fieldset>
+						<select title="Gender" class=" genderFilter selectpicker form-control default-sm babygallerie-dropdown">
+							<option value="ALL">
+							<f:translate key="all">
+								All
+							</f:translate></option>
+							<option value="0">
+							<f:translate key="male">
+								Male
+							</f:translate></option>
+							<option value="1">
+							<f:translate key="female">
+								Female
+							</f:translate>
+							</option>
+						</select>
+					</fieldset><span class="txtalign bold"><f:translate key="list_date">Date</f:translate></span>
+					<fieldset>
+						<input title="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" readonly placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="from" class="dateFilterFrom datepicker form-control">
+					</fieldset>
+					<span class="txtalign bis">
+							<f:translate key="infto">
+								to
+							</f:translate>
+					</span>
+					<fieldset>
+						<input title="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" readonly  placeholder="{f:translate(key: 'ddmmyy',  default: 'dd.mm.yyyy')}" type="text" name="to" class="dateFilterTo datepicker form-control">
+					</fieldset>
+					<input type="button" id="filterBabies" class="btn btn-primary filtern" value="{f:translate(key: 'filter',  default: 'Filter')}">
+				</div>
+				<div class="col-md-3">
+					<div class="pagination">
+						<ul>
+							<li class="disabled seitenos"><a href="javascript:void(0);" ><i class="babyCount">{data.Babydata.babyCount} </i><f:translate key="babies">Babys</f:translate> </a></li>
+							<li class="prev active"><a href="javascript:void(0);" class="btnPrevious"><b><label class="rem">remove</label></b></a></li>
+							<li class="next"><a href="javascript:void(0);" class="btnNext"><b><label class="rem">remove</label></b></a></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div id="newborn" class="filterDetail hidden-print">
+		<div class="hdg">
+			<f:translate key="newborn">
+				New Borns
+			</f:translate> 
+		</div>
+		<f:for each="{data.NewBorn}" as="baby">
+			<div class="babydetails">{baby.firstname} <i class="{baby.classname}"></i><span class="datetime">({baby.tstamp}. {baby.time}h)</span></div>
+		</f:for>
+	</div>
+	<hr class="tabular twopx">
+	<div class="row-fluid">
+		<table id="datatable_ajax" class="babygalerie">
+			<thead>
+				<tr>
+					<th class="desktop-hide"><label for="babygallerie" class="rem">Name</label></th>
+					<th class="desktop-hide"><label for="babygallerie" class="rem">Name</label></th>
+					<th><label for="babygallerie" class="rem">Name</label></th>
+					<th><f:translate key="list_lastname">First Name</f:translate> </th>
+					<th><f:translate key="list_firstname">Last Name</f:translate> </th>
+					<th class="mw"><f:translate key="list_sex">M/W</f:translate></th>
+					<th><f:translate key="list_date">Birth Date</f:translate></th>
+					<th><f:translate key="list_time">Time</f:translate></th>
+					<th class="sorting"><f:translate key="list_weight">Gewicht</f:translate></th>
+					<th class="sorting"><f:translate key="list_height">Grosse</f:translate></th>
+				</tr>
+			</thead>
+			<tbody id="listBody"> 
+				<!--
+				<f:for each="{data.Babydata.result}" as="baby">
+					<tr>
+						<td class="desktop-hide"><i class="{baby.classname}"></i></td>
+						<td class="desktop-hide">
+							<div class="babygal-content"><span><a href="{baby.uid}" class="bold">{baby.firstname} {baby.lastname}</a></span><span>{baby.tstamp}, {baby.time}h, {baby.weight}g, {baby.height}cm </span></div>
+						</td>
+						<td class="img-babygalerie" rel="{baby.uid}">
+							 <a href="{baby.uid}">
+								<f:image src="{baby.imagepath}" width="75" height="50" alt="{baby.firstname} {baby.lastname}" class="group list-group-image" />
+							 </a>
+						</td>
+						<td class="nachname">{baby.firstname}</td>
+						<td class="vorname">{baby.lastname}</td>
+						<td><i class="{baby.classname}"></i></td>
+						<td>{baby.tstamp}</td>
+						<td>{baby.time}h</td>
+						<td>{baby.weight}g</td>
+						<td>{baby.height}cm</td>
+					</tr>
+				</f:for>
+				-->
+			</tbody>
+		</table>
+		<f:form.hidden id="pid" name="pid" value="{data.url.pid}" />
+		<f:form.hidden id="resultCount" name="resultCount" value="{data.resultsCount}" />
+		<f:form.hidden id="base_url" name="baseurl" value="{data.url.baseurl}" />
+		<f:form.hidden id="steepval" name="steepval" value="1" />
+		<f:form.hidden id="filterName" name="filterName" value="" />
+		<f:form.hidden id="filterGender" name="filterGender" value="" />
+		<f:form.hidden id="filterDateTo" name="filterDateTo" value="" />
+		<f:form.hidden id="filterDateFrom" name="filterDateFrom" value="" />
+		<f:form.hidden id="viewRef" name="viewRef" value="LIST" />
+		<f:form.hidden id="sortorder" name="sortorder" value="descending" /> 
+		<f:form.hidden id="sortcolumn" name="sortcolumn" value="0" />
+	</div>
+	<div class="desktop-hide">
+		<div class="pagination pagination-centered yearfilter">
+		  <ul>
+			<li class="prev active"><a class="btnPrevious" href="javascript:void(0);"><b><label class="rem">remove</label></b></a></li>
+			<li class="next"><a class="btnNext" href="javascript:void(0);"><b><label class="rem">remove</label></b></a></li>
+		  </ul>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,40 @@
+<h2 class="desktop-hide collapsed" data-target="#mod-generic7" data-toggle="collapse">
+	<a>{data.pageOptions}</a>
+</h2>
+<h2 class="mob-hide">{data.pageOptions}</h2>
+<div id="mod-generic7" class="collapse in">
+	<p>
+		<f:if condition="{flexform.subtitletext} != ''">
+			<f:then>
+				{flexform.subtitletext}
+			</f:then>
+		</f:if>
+		
+	</p>
+	<form name="tx_tntmitarbeiter_tntmitarbeiter[empform]" action="{data.actionLink.baseurl}" method="post" class="frm-mitarbeiter">
+		<fieldset>
+			<div class="searchalign">
+				<f:form.textfield class="form-control" name="tx_tntmitarbeiter_tntmitarbeiter[searchkey]" value="{data.searchkey}" id="srch-term" title="{f:translate(key: 'searchplace',  default: 'First Name / Name')}" placeholder="{f:translate(key: 'searchplace',  default: 'First Name / Name')}"/><i class="icon-search"></i>
+			</div>
+		</fieldset>
+		<fieldset>
+			<select name="tx_tntmitarbeiter_tntmitarbeiter[position][]" title="{f:translate(key: 'allpositions',  default: 'Alle Funktionen')}" class="selectpicker default-sm form-control">
+				<option value=""><f:translate key="allpositions">Alle Funktionen</f:translate></option>
+				<f:for each="{data.positions}" as="position">
+					<option value="{position.uid}">{position.name}</option>
+				</f:for>
+			</select>
+
+		</fieldset>
+		<fieldset>
+			<select name="tx_tntmitarbeiter_tntmitarbeiter[department][]" title="{f:translate(key: 'alldepart',  default: 'Alle Fachbereiche')}" class="selectpicker default-sm form-control">
+				<option value=""><f:translate key="alldepart">Alle Fachbereiche</f:translate></option>
+				<f:for each="{data.departments}" as="depart">
+					<option value="{depart.uid}">{depart.title}</option>
+				</f:for>
+			</select>
+		</fieldset> 
+		<input type="hidden" name="tx_tntmitarbeiter_tntmitarbeiter[listSearch]" value="1"/>
+		<input type="submit" name="tx_tntmitarbeiter_tntmitarbeiter[searchbtn]"  class="btn btn-primary" value="{f:translate(key: 'search',  default: 'Suchen')}">
+	</form>
+</div>

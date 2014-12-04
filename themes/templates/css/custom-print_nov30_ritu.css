@@ -1,0 +1,515 @@
+@page {
+    margin-bottom: 5%
+}
+table.babyname tbody tr, img{
+    display: block;
+    /*page-break-after: always;*/
+}
+img{
+    page-break-before: avoid;
+}
+.col-md-12.krankheit .col-md-6:first-child {
+/*background: red; margin-bottom: 0px*/
+}
+.col-md-12.krankheit .col-md-6:last-child {
+/*background: green; */
+}
+.female-body {
+margin-top: 12px;
+}
+.carousel-inner .item{
+    margin-bottom: 10px;
+
+}
+.row.mitarbeiter{
+    border-bottom: none;
+}
+.group.list-group-image {
+border: 2px solid #fff;
+padding: 0;
+text-align: left;
+width: 75px;
+height: 50px;
+display: block;
+}
+.babygalerie td.img-babygalerie a{
+    display: block;
+    width: 75px;
+height: 50px;
+}
+form.schritt .btn.dropdown-toggle.selectpicker {
+    background: none;
+    border: 1px solid #c6c0b9;
+    box-shadow: none;
+    display: block;
+}
+.yearpanel .tab-content{
+    margin-bottom: 30px
+}
+#carousel-example-generic.spotlight{
+    /*display: none
+    background: red*/
+}
+.mod-details .jspContainer{
+    height: 100%
+}
+
+div.jScrollPaneContainer {
+   position: static !important;
+   height: auto !important;
+   overflow: visible !important;
+}
+
+div.jScrollPaneContainer > * {
+   display: none !important;
+}
+
+div.scroll-pane/*,  
+div.scroll-pane > div*/{
+  position:static !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+section.mod.schritt .default-sm.btn-group.bootstrap-select.form-control.blumenservice {
+}
+.default-sm.bootstrap-select.blumenservice>.btn {
+    /* border: 5px solid red */
+}
+.quick-links, .breadcrumb-media, footer .social-icons, footer .footer-links, footer .quick-list, .csc-default>section.mod.generic, .csc-default h2.videohdg, .csc-default iframe, form.schritt .btn, .btn.btn-primary.lrg, .powermail_fieldwrap.powermail_fieldwrap_file, .carousel-indicators, .btn-primary.VidBtn, .mitarbeiter .btn-primary.VidBtn, .mitarbeiter .btn-primary, form.list-detail.galerie.mitarbeiter, div.pagination, .tx-pagebrowse-pi1, .news-backlink-wrap, .mod form.list-detail.galerie, article.webcam .facebook-share, form#builder .btn.btn-primary, .jspVerticalBar, form#builder, .hidden-print, .gallery .base-position, .body .counter, form.list-detail, .facebook, #iframe-facebook, .joblinks .link, p.error_class, .contact_errorclass, .formErrorContent /*, .outerdiv.hdr>.container .pull-right, .mod.contact-info .address, .mod.contact-info .contact */ {
+    display: none;
+}
+.krankheit #box>.col-md-4:first-child{
+    padding: 0px 15px 0px 0px;
+}
+#infos-mod, #liste-mod{
+    margin-top: 15px;
+}
+article summary, article .summary, .teaser-text p {
+    font-family: normal 20px 'roboto_slablight' !important;
+}
+.krankheit .col-md-4 {
+width: 33.33333333%;
+float: left;
+padding: 0px;
+}
+.col-md-8.col-sm-8.colrgt.thumb-details.reset-right img{
+    width: 100%
+}
+.yearpanel .col-md-6:first-child, .yearpanel .col-md-6:last-child{
+    width:48%;
+    float: left;
+}
+.yearpanel .col-md-6:last-child {
+float: right;
+}
+.img-babygallerie .col-md-4 {
+    width: 33.33333%;
+    padding-right: 15px;
+padding-left: 15px;
+}
+.personaldetails, .personaldetails a, .designation {
+    display: block;
+}
+.krankheit #box>.col-md-4:nth-child(even) {
+padding: 0px 15px;
+}
+.krankheit #box>.col-md-4:last-child {
+padding: 0px 0px 0px 15px;
+}
+.row-fluid.urologie-home .csc-default>section.mod.generic, .row-fluid.home .csc-default>section.mod.generic/*, .col-md-8.contact-map iframe */{
+    display: block
+}
+.box-gallery .name span {
+display: block;
+}
+.krankheit .row.img-babygallerie .col-md-4 {
+margin-top: 30px;
+}
+.row.mod-detail{
+    border-top: none
+}
+.row.email-tel .email {
+width: auto;
+padding: 0px 30px 0px 0px;
+float: left;
+}
+.row.email-tel .tel {
+padding: 0px;
+}
+article.mitarbeiter .col-md-3.col-xs-12 {
+width: 25%;
+float: left;
+}
+.mitarbeiter.detailpage .col-md-9 {
+float: left;
+width: 75%;
+}
+
+.row-fluid.urologie-home .col-md-4, .row-fluid.home .col-md-4, article.mitarbeiter .image-gallery .col-md-3 {
+    width: 33.333%;
+    float: left
+}
+.humanbuilder {
+page-break-before: always;
+-webkit-region-break-before: always;
+zoom:0;
+ /*       page-break-inside: avoid;
+        -webkit-region-break-inside: avoid;
+        page-break-after: always;*/
+}
+form#builder{
+    /*page-break-after: always*/
+}
+.mod.generic .mod-details .data-list.type-1 li {
+padding: 10px 0px 10px 12px;
+}
+.yearpanel .col-md-6:first-child, .yearpanel .col-md-6:last-child {
+    padding: 0px
+}
+footer .contact-info .address {
+    float: left;
+    padding-top: 5px;
+}
+footer .contact-info .contact {
+    padding-top: 5px;
+}
+footer [class^="col-"] {
+    width: 100%;
+    padding: 0;
+}
+html, body {
+    height: auto !important;
+    overflow: visible;
+    -webkit-print-color-adjust: exact;
+}
+.row.mod-detail #accordion2 {
+    position: absolute;
+    bottom: 0px;
+    width: 96%;
+    right: 4%;
+}
+.print-show, .desktop-hide.mob-hide.print-show, .mod.contact-info .desktop-hide.mob-hide.print-show.address {
+    display: block;
+}
+.mod.contact-info .desktop-hide.mob-hide.print-show.address {
+}
+.header-print {
+    /* position: fixed;
+    top: 0px;
+    */
+}
+div.csc-textpic .csc-textpic-imagewrap .csc-textpic-image {
+    margin: 0px 15px 15px 0px;
+}
+.content-wrapper {
+    /* border: 2px solid red;
+    */
+}
+#wrapper>.container, .outerdiv.hdr>.container {
+    /* background: green;
+    */
+    padding: 0px;
+}
+.container .row-fluid .col-md-8 {
+    padding: 0px;
+}
+footer .container {
+    border-top: solid 1px #cccccc;
+    padding: 15px 0px 0px;
+}
+footer.footermenu .col-md-3{
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+footer .col-xs-12.col-md-8{
+}
+footer h3 {
+    font-size: 12px;
+    margin: 0px 5px 0px 0px;
+    padding-top: 4px;
+    float: left;
+}
+.col-md-3 .contact-info p:before, footer.innerpage .address li p:before, footer.innerpage .contact li p:before{
+    content: "";
+    background: url('../images/sprite.png') no-repeat -174px -3px;
+    width: 7px;
+    height: 7px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.col-md-3 .contact-info p:before{
+    top: 5px;
+}
+.col-md-3 .contact-info h3:nth-child(even){
+    display: none;
+}
+footer.innerpage .contact li.tel p:before {
+    display: block;
+}
+footer.innerpage .contact li.tel p {
+    padding: 0px 0px 0px 12.5px;
+}
+footer.innerpage .contact-info .address li, footer.innerpage .contact-info .contact li{
+    margin: 0;
+}
+footer.innerpage .contact-info .contact li:last-child p, .col-md-3 .contact-info p:last-child{
+    margin: 0;
+}
+footer.innerpage .contact-info .address li p, footer.innerpage .contact-info .contact li p, .col-md-3 .contact-info p {
+    padding: 0px 0px 0px 12.5px;
+    position: relative;
+    font-size: 12px;
+    margin: 0px 5px 0px 0px;
+}
+.col-md-3 .contact-info p{
+    float: left;
+}
+.krankheit #box>.col-md-4 {
+    padding: 0px;
+}
+.krankheit .col-xs-12.col-md-8.linkContent, .krankheit .col-xs-12.col-md-4.linkHeading {
+    width: 100%;
+    padding: 0px;
+}
+
+.mod-details.listView>div {
+    padding: 6px 10px !important;
+}
+div.csc-textpic-intext-left .csc-textpic-imagewrap, div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+    margin-bottom: 10px;
+}
+
+/* .schritt3 fieldset .form-group div.col-sm-10, .schritt3 fieldset .form-group label {
+    width: 100% !important;
+    padding: 0px !important;
+}
+*/
+.schritt3 fieldset .form-group div.col-sm-3 {
+    padding: 0px !important;
+    width: 25% !important;
+    float: left;
+}
+.schritt3 fieldset .form-group div.col-sm-9 {
+    width: 73% !important;
+    padding-left: 2% !important;
+    float: right;
+}
+.schritt3 fieldset .form-group label.control-label {
+    padding: 8px 0px 0px;
+    width: 15%;
+    float: left;
+    display: block;
+}
+.schritt3 fieldset .form-group div.col-sm-10 {
+    padding-right: 0px;
+    width: 85%;
+    float: left;
+    font: normal 16px arial;
+}
+input.powermail_field.powermail_submit {
+    display: none !important;
+}
+.downloadcenter .col-sm-11 input.form-control.bdr-rgt-none {
+    width: 100%;
+}
+.downloadcenter .col-sm-11 {
+    width: 91.66666667%;
+    float: left;
+}
+.downloadcenter .col-sm-1 {
+    width: 8.33333333%;
+    float: left;
+}
+section.mod.schritt .col-xs-6.col-md-4 {
+    width: 33.333%;
+    float: left
+}
+.powermail_fieldwrap.powermail_fieldwrap_check.powermail_fieldwrap_24 {
+    margin-bottom: 170px;
+}
+a.logo:hover {
+    cursor: default;
+}
+.col-md-8.krankheit {
+    padding: 0px
+}
+#webcambild {
+    margin: 0px;
+}
+.inhalt .Kontakt .col-md-3:nth-child(4n+1), article.mitarbeiter .image-gallery .col-md-3:nth-child(3n+1) {
+    clear: left;
+}
+.inhalt .Kontakt .col-md-3 {
+    width: 25%;
+    float: left;
+}
+form.list-detail.galerie .col-md-9 {
+    width: 75%;
+    float: left;
+    padding: 0px 0px 0px 15px
+}
+form.list-detail.galerie .col-md-3 {
+    width: 25%;
+    float: left;
+    padding: 0px 15px 0px 0px
+}
+.galerie .searchalign {
+    width: 27%;
+    float: left;
+    margin: 0px 5px 0px 0px;
+}
+.default-sm.btn-group.bootstrap-select.form-control.babygallerie-dropdown {
+    min-width: 90px;
+}
+.list-detail.galerie .form-control.datepicker {
+    width: 75px;
+}
+.txtalign {
+    display: block;
+    float: left;
+    padding: 8px 5px;
+}
+.mod form.list-detail .btn.btn-primary {
+    margin-left: 5px;
+}
+.col-md-12.krankheit {
+    padding: 0px;
+}
+.img-babygallerie .col-md-4:nth-child(3n+1) {
+    clear: left;
+}
+.img-babygallerie .col-md-4 {
+    float: left;
+    width: 33.3333%
+}
+.col-md-8.col-sm-8.colrgt.thumb-details.reset-right {
+    padding: 0px 0px 0px 0px;
+    background: #f2f1ef;
+    height: 520px;
+}
+.schritt3 fieldset .form-group label {
+    padding: 8px 0px 0px;
+    width: 15%;
+    font: normal 16px arial;
+}
+.schritt3 fieldset .form-group div.col-sm-10 {
+    padding-right: 0px;
+    width: 85%;
+    font: normal 16px arial; /* background: red */
+}
+section.mod.schritt .default-sm.btn-group.bootstrap-select.form-control.blumenservice {
+}
+.humanbuilder.clearfix{
+    page-break-before: always;
+}
+article.builder{
+    page-break-after: always;
+}
+/*table {
+    page-break-inside: auto
+}
+tr {
+    page-break-inside: avoid;
+    page-break-after: auto
+}*/
+div, .humanbuilder {
+    /*zoom: 1;
+    page-break-inside: avoid;*/
+} 
+
+/* a[href]:after {
+    content: none !important;
+}
+a[href]:after {
+    content: " (" attr(href) ")";
+}
+*/
+/* .outerdiv.hdr .pull-right {
+    padding: 0px;
+    background: yellow;
+    text-align: right;
+    float: left;
+    display: block;
+}
+.outerdiv.hdr .pull-right a {
+    border: 1px solid green;
+    text-align: right;
+}
+.outerdiv.hdr .pull-right img {
+    text-align: right;
+    float: right;
+}
+#wrapper {
+    background: red;
+}
+*/
+
+.krankheit .col-xs-12.col-md-4.linkHeading {
+float: none;
+width: 45%;
+font: bold 14px arial;
+display: table-cell;
+vertical-align: middle;
+}
+.krankheit .col-xs-12.col-md-8.linkContent {
+float: none;
+width: 55%;
+font: normal 14px arial;
+display: table-cell;
+vertical-align: middle;
+}
+#map-canvas{
+width: 100%;
+height: 450px;
+}
+.contact-address {
+width: 100%;
+}
+.contact-map {
+width: 100%;
+background: red;
+clear: left;
+margin-bottom: 200px
+}
+/* customized checkbox css starts here */
+span.custom-checkbox, span.powermail_checkbox, .mod-highlight span.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    top: 3px;
+    background: url(../images/sprite.png) no-repeat -341px -38px;
+    background-position: -341px -38px;
+    margin: 0px 10px 0px 0px;
+}
+.mod-highlight span.custom-checkbox {
+    margin: 0px 5px 0px 0px;
+}
+span.custom-checkbox:hover, span.powermail_checkbox:hover {
+    background-position: -341px -38px;
+}
+span.custom-checkbox.selected, span.powermail_checkbox.selected {
+    background-position: -317px -38px;
+}
+span.custom-checkbox input[type="checkbox"], span.powermail_checkbox input[type="checkbox"] {
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    outline: none;
+    opacity: 0; /* CSS hacks for older browsers */
+    _noFocusLine: expression(this.hideFocus=true);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/* customized checkbox css starts here */

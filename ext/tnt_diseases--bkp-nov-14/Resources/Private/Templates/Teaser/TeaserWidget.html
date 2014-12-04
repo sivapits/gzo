@@ -1,0 +1,58 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+    <h2 class="desktop-hide collapsed" data-target="#mod-generic-T1" data-toggle="collapse">
+        <span class="figure icon icon-large"></span>
+        <a>{pageOptions.headerLabel}</a>
+    </h2>
+    <h2 class="mob-hide">
+        <span class="figure icon icon-large"></span>{pageOptions.headerLabel}
+    </h2>
+    <div class="collapse in" id="mod-generic-T1">
+
+        <f:if condition="{pageOptions.headerImage.identifier}">
+            <a class="thumb" href="{pageOptions.builderPage}">
+                <img alt="{pageOptions.headerImage.title}" src="fileadmin/{pageOptions.headerImage.identifier}">
+            </a>
+        </f:if>
+        <f:format.html>{pageOptions.headerText}</f:format.html>     
+        <form id="widget-form" method="post" action="{pageOptions.listAction}">
+            <fieldset>
+                <select class="selectpicker custom-select form-control default-sm" name = 'tx_tntdiseases_tntdiseases[genderOption]' id='select-gender'>
+                    <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_gender">Select</f:translate></option>
+                    <f:for each="{pageOptions.genderOptions}" as="gender" key="number" iteration="itemIteration">
+                        <f:if condition="{number} =={pageOptions.pageGender}">
+                            <f:then>
+                                <option selected value="{number}">{gender}</option>
+                            </f:then>
+                            <f:else>
+                                <option value="{number}">{gender}</option>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </select>
+            </fieldset>
+            <fieldset>
+                <select class="selectpicker custom-select form-control default-sm" name = 'tx_tntdiseases_tntdiseases[regionOption]' id='select-region' onchange="getDiseaseList()" disabled="disabled">
+                    <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_region">Select</f:translate></option>
+                    <f:for each="{pageOptions.regionOptions}" as="region" iteration="itemIteration">
+                        <option value="{region.uid}">{region.region_title}</option>
+                    </f:for>
+                </select>
+            </fieldset>
+            <fieldset>
+                <select class="selectpicker custom-select form-control default-sm" id='select-disease' name = 'tx_tntdiseases_tntdiseases[diseaseSelection]' disabled="disabled">
+                    <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_disease">Select</f:translate></option>
+                </select>
+            </fieldset>
+            <input id="pageOption" type="hidden" name = 'tx_tntdiseases_tntdiseases[pageOption]' value="{pageOptions.pageOption}"/>
+            <input id="viewType" type="hidden" name = 'tx_tntdiseases_tntdiseases[viewType]' value="1"/>
+            <input id="categoryOption" type="hidden" name = 'tx_tntdiseases_tntdiseases[categoryOption]' value="{pageOptions.categoryOption}"/>
+            <input type="hidden" id="pageActionKrank" name = 'tx_tntdiseases_tntdiseases[action]' value="gridList"/>
+            <input type="hidden" id="pageUrl" name = 'tx_tntdiseases_tntdiseases[url]' value="{pageOptions.detailAction}"/>
+            <input type="button" id="teaserSerach" value="<f:translate key='tx_tntdiseases_domain_model_diseases_submit'>Anzeigen</f:translate>" class="btn btn-primary" onclick="switchUrl()">
+            <span class="ajaxLoder" style="display: none;"></span>
+                
+        </form>
+    </div>
+</f:section>

@@ -1,0 +1,66 @@
+
+<f:layout name="Default" />
+
+<f:section name="main"> 
+    <section class="mod data-list">
+        <div class="mod-highlight list">
+            <a href="#infos-mod" class="active">
+                <span>
+                    <span class="infos"></span>
+                    <i>Infos</i></span></a>
+            <a class="" href="#liste-mod">
+                <span>
+                    <span class="liste"></span>
+                    <i>Liste</i></span>
+            </a>
+        </div>
+            <f:form  class="list-detail" action="detail" name="disease" object="{customer}">
+            <fieldset>
+                <select class="custom-select form-control" name = 'tx_tntdiseases_tntdiseases[genderOption]' id='select-gender'>
+                    <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_gender">Select</f:translate></option>
+                    <f:for each="{pageOptions.genderOptions}" as="gender" key="number" iteration="itemIteration">
+                        <f:if condition="{number} =={pageOptions.pageGender}">
+                                <f:then>
+                                    <option selected value="{number}">{gender}</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="{number}">{gender}</option>
+                                </f:else>
+                            </f:if>
+                    </f:for>
+                </select>
+            </fieldset>
+            <fieldset>
+                <select class="custom-select form-control" name = 'tx_tntdiseases_tntdiseases[regionOption]' id='select-region'>
+                    <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_disease">Select</f:translate></option>
+                    <f:for each="{pageOptions.regionOptions}" as="region" iteration="itemIteration">
+                        <f:if condition="{region.uid} =={pageOptions.pageRegion}">
+                                <f:then>
+                                    <option selected value="{region.uid}">{region.region_title}</option>
+                                </f:then>
+                                <f:else>
+                                    <option value="{region.uid}">{region.region_title}</option>
+                                </f:else>
+                            </f:if>
+                    </f:for>
+                </select>
+            </fieldset>
+            <input type="hidden" id="pageOption" name = 'tx_tntdiseases_tntdiseases[pageOption]' value="{pageOptions.pageOption}"/>
+            <input type="hidden" id="categoryOption" name = 'tx_tntdiseases_tntdiseases[categoryOption]' value="{pageOptions.categoryOption}"/>
+            <input type="button" class="btn btn-primary" value="<f:translate key='tx_tntdiseases_domain_model_diseases_submit'>Anzeigen</f:translate>" onclick="getMultiView();">
+           <span class="ajaxLoder" style="display: none;"> 
+               <img width="25px" height="25px" src="typo3conf/ext/tnt_diseases/Resources/Public/Images/ajax_loader_blue_512.gif"/>
+           </span>
+         </f:form>
+        <div class="tab-content active" id="infos-mod">
+            <div class="mod-details">
+                <div class="row" id="grid-mode">
+                    <f:render partial="Diseases/Grid" arguments="{diseases:diseases,pageOptions:pageOptions}" />
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="liste-mod">            
+                <f:render partial="Diseases/List" arguments="{diseases:diseases,pageOptions:pageOptions}" />
+        </div>
+    </section>
+</f:section>

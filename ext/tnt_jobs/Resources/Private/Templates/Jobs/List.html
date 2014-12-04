@@ -1,0 +1,37 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:flashMessages renderMode="div" />
+	<div class="tx-dmmjobcontrol-pi1">
+		<table class="jobdetail">
+			<caption><f:translate key="listcaption">Sie suchen eine neue berufliche Perspektive? Das GZO Spital Wetzikon hat folgende Stellen ausgeschrieben:</f:translate></caption>
+			<thead>
+			  <tr>
+				<th class="hdg-desktop-hide"><f:translate key="jobtitle">Stellenbezeichnung</f:translate><span><f:translate key="placeofwork">Arbeitsort</f:translate></span></th>
+				<th class="mob-hide bold"><f:translate key="jobtitle">Stellenbezeichnung</f:translate></th>
+				<th class="mob-hide"><f:translate key="placeofwork">Arbeitsort</f:translate></th>
+				<th><f:translate key="jobtype">Pensum</f:translate></th>
+			  </tr>
+			</thead>
+			<tbody>
+			<f:for each="{data}" as="joblist">
+			
+			  <tr>
+				<td>
+					<a title="{joblist.title}" href="{joblist.job_page}">{joblist.title}</a>
+				</td>
+				<td class="desktop-hide">
+					<a title="{joblist.title}" href="{joblist.job_page}">{joblist.title}</a>
+					<span>{joblist.name}</span>
+				</td>
+				
+				<td> {joblist.name} </td>
+				<td class="mob-view">{joblist.job_type}</td>
+			  </tr>
+			
+			</f:for>
+			</tbody>
+		</table>	
+	</div>
+</f:section>

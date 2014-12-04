@@ -1,0 +1,28 @@
+.row.mod-detail
+  .col-xs-3.col-sm-3.colLft
+    h2
+      span
+        i.w
+      | Nino Stephan Hugentobler
+    #accordion2.accordion
+      .accordion-group
+        .accordion-heading
+          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseOne')
+            | Als E-Card versenden
+        #collapseOne.accordion-body.collapse.in
+          .accordion-inner
+            form(role='form')
+              .form-group
+                input#exampleInputEmail1.form-control(type='text', placeholder='Name Empfänger')
+              .form-group
+                input#exampleInputPassword1.form-control(type='email', placeholder='E-Mail-Adresse Empfänger')
+              .form-group
+                textarea.form-control(rows='3', placeholder='Ihre Nachricht (max. 300 Zeichen)')
+              .form-group
+                input#exampleInputPassword1.form-control(type='text', placeholder='Ihr Name')
+              .form-group
+                input#exampleInputPassword1.form-control(type='email', placeholder='Ihre E-Mail-Adresse')
+              button.btn.btn-primary(type='submit') Verschicken
+              button.btn.btn-transparent(type='submit') Zurücksetzen
+  .col-xs-9.col-sm-9.colrgt
+    img(src="images/temp/img-400x268 -1.jpg", title="GZO" alt="")

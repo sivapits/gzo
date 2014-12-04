@@ -1,0 +1,134 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>General</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select View</label>
+							<config>
+								<type>select</type>
+								<items>
+
+									<numIndex index="0">
+										<numIndex index="0">Grid View</numIndex>
+										<numIndex index="1">Gallery->gridview;Gallery->datatable;Gallery->search;Gallery->list;Gallery->widgetview;Gallery->detailview;Gallery->sendcard;Gallery->hitlist;</numIndex>
+									</numIndex>
+
+									<numIndex index="1">
+										<numIndex index="0">List View</numIndex>
+										<numIndex index="1">Gallery->list;Gallery->gridview;Gallery->datatable;Gallery->search;Gallery->widgetview;Gallery->detailview;Gallery->sendcard;Gallery->hitlist;</numIndex>
+									</numIndex>
+
+									<numIndex index="2">
+										<numIndex index="0">Detail View</numIndex>
+										<numIndex index="1">Gallery->detailview;Gallery->gridview;Gallery->datatable;Gallery->search;Gallery->widgetview;Gallery->list;Gallery->sendcard;Gallery->hitlist;</numIndex>
+									</numIndex>
+
+									<numIndex index="3">
+										<numIndex index="0">Hit List</numIndex>
+										<numIndex index="1">Gallery->hitlist;Gallery->list;Gallery->search;Gallery->datatable;Gallery->widgetview;Gallery->gridview;Gallery->detailview;Gallery->sendcard;</numIndex>
+									</numIndex>
+
+									<numIndex index="4">
+										<numIndex index="0">Widget</numIndex>
+										<numIndex index="1">Gallery->widgetview;Gallery->hitlist;Gallery->list;Gallery->datatable;Gallery->gridview;Gallery->detailview;Gallery->search;Gallery->sendcard;</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<settings.detailspage>
+						<TCEforms>
+							<label>Details View Page</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.detailspage>
+					<settings.listpage>
+						<TCEforms>
+							<label>List View Page</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.listpage>
+					<settings.sortorder>
+						<TCEforms>
+							<label>LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:tx_tntbabygallery_orderby</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:byfname</numIndex>
+										<numIndex index="1">FName</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:bylname</numIndex>
+										<numIndex index="1">LName</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:bydate</numIndex>
+										<numIndex index="1">Date</numIndex>
+									</numIndex>				
+								</items>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.sortorder>
+					<settings.sortby>
+						<TCEforms>
+							<label>LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:tx_tntbabygallery_orderby:order</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:ascending</numIndex>
+										<numIndex index="1">ASC</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:descending</numIndex>
+										<numIndex index="1">DESC</numIndex>
+									</numIndex>		
+								</items>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.sortby>
+					<settings.countval>
+						<TCEforms>
+							<label>LLL:EXT:tnt_babygallery/Resources/Private/Language/locallang_db.xlf:countentry</label>
+							<config>
+								<type>input</type>
+								<size>15</size>
+								<eval>int</eval>
+								<default>9</default>									
+							</config>
+						</TCEforms>
+					</settings.countval>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

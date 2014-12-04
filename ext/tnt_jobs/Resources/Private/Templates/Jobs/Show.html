@@ -1,0 +1,70 @@
+<f:layout name="Default" />
+<f:section name="main">
+	<f:if condition="{jobdetails.title}!=''">
+		<f:then>
+			<h1 class="jobtitel sIFR-replaced inhalt_header" style="">
+				<span class="sIFR-alternate" id="sIFR_replacement_0_alternate">{jobdetails.title}</span>
+			</h1>
+			<table class="jobdetail-2">
+				<tbody>
+					<tr>
+						<td class="first-td">Arbeitsort</td>
+						<td>
+							<f:format.html>{jobdetails.name}</f:format.html>
+						</td>
+					</tr>
+					<tr class="odd">
+						<td class="first-td">Aufgaben</td>
+						<td>
+							<f:format.html>{jobdetails.job_description}</f:format.html>					
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">Anforderungen</td>
+						<td>
+							<f:format.html>{jobdetails.job_requirements}</f:format.html>
+						</td>
+					</tr>
+					<tr class="odd">
+						<td class="first-td">Arbeitspensum</td>
+						<td>
+							<f:format.html>{jobdetails.job_type}</f:format.html>
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">Stellenantritt</td>
+						<td>
+							<f:format.html>{jobdetails.experience}</f:format.html>	
+						</td>
+					</tr>
+					<tr class="odd">
+						<td class="first-td">Kontaktperson</td>
+						<td>
+							<f:format.html>{jobdetails.apply_information}</f:format.html>
+						</td>
+					</tr>
+					<tr>
+						<td class="first-td">Anschrift</td>
+						<td>
+							<f:format.html>{jobdetails.employer_description}</f:format.html>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<f:form.hidden name="onlineApproval" id="onlineApproval" value="{jobdetails.tx_tntjobs_onlinebewerbung}" />
+			<f:form.hidden name="jobID" id="jobID" value="{jobdetails.uid}" />
+		</f:then>
+		<f:else>
+			<div class="alert alert-info fade in" role="alert">
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+				<strong><f:translate key="error1">Sie haben kein Job ausgewählt</f:translate></strong> <f:translate key="error2">Bitte versuchen Sie es..</f:translate>
+			</div>
+		</f:else>
+		
+	</f:if>
+	<div class="joblinks">
+		<a class="link" onclick="window.history.back();" href="javascript:void(0);">
+			<f:translate key="backtolist">Zurück zu den Stellenangeboten</f:translate>
+		</a>
+	</div>	
+</f:section>

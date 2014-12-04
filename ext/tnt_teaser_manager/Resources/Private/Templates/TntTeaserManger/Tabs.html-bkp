@@ -1,0 +1,34 @@
+<f:layout name="Default" />
+<f:section name="main">
+	<section class="mod {f:if(condition: teaserType, then: 'generic')}">
+        <div class="mod-highlight">
+            <f:for each="{tntTeaserMangerCE}" as="singleTab" key="number2" iteration="itemIteration2">
+			<f:if condition="{teaserType}">
+					<f:then>
+						<span>{singleTab.tab_title}</span>
+					</f:then>
+					<f:else>
+					    <a href="#teaserTab-{singleTab.tab_contentId}" class="{f:if(condition: itemIteration2.isFirst, then: 'active')}"><span>{singleTab.tab_title}</span></a>
+					</f:else>
+			    </f:if>
+            </f:for>
+        </div>
+        <f:for each="{tntTeaserMangerCE}" as="singleTab" key="number2" iteration="itemIteration2">
+        <f:if condition="{teaserType}">
+					<f:then>
+						<div class="mod-details">
+                    <f:format.htmlentitiesDecode>{singleTab.tab_content}</f:format.htmlentitiesDecode>
+                </div>
+					</f:then>
+					<f:else>
+					   <div class="tab-content {f:if(condition: itemIteration2.isFirst, then: 'active')}" id="teaserTab-{singleTab.tab_contentId}">
+                <div class="mod-details {f:if(condition: itemIteration2.isLast , then: 'theme-blue')}">
+                    <f:format.htmlentitiesDecode>{singleTab.tab_content}</f:format.htmlentitiesDecode>
+                </div>
+            </div>
+					</f:else>
+			    </f:if>
+            
+        </f:for>
+   </section>
+</f:section>

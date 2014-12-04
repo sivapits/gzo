@@ -1,0 +1,46 @@
+<article class="mitarbeiter">
+	<f:form action="list">
+		<h2><f:translate key="home_head">Mitarbeiter</f:translate></h2>
+		<p><f:translate key="home_desc">Acescid ma dolorum core ducia eosae aut enda sa sae etur sandit qui quiatecatio vit esseque qui ut fugit quibearum que veribea sam eossundae dit ea doluptiossed uta dit dolorae dolent.</f:translate></p>
+			<fieldset>
+				<div class="input-group col-sm-12">
+					<f:form.textfield class="form-control bdr-rgt-none" name="searchkey" placeholder="{f:translate(key: 'searchplace',  default: 'First Name / Name')}"/><i class="icon-search"></i>
+				</div>
+			</fieldset>
+		<h3><f:translate key="function">Funktion</f:translate></h3>
+		<div class="listings">
+			<div class="row-fluid">
+				<f:for each="{data.positions}" as="position">
+					<span class="tag label label-info">
+						<span>{position.name}<a><f:form.checkbox name="position[]" class="poscheck"  value="{position.uid}" /></a></span>
+					</span>
+				</f:for>
+			</div>
+			<div class="row-fluid">
+				<div class="link-wrapper">
+					<a class="link posSelAll" target="_blank" href="#"><f:translate key="selectall">Alle auswählen</f:translate></a>
+					<a class="link posSelNone" target="_blank" href="#"><f:translate key="selectnone">Keine auswählen</f:translate></a>
+				</div>
+			</div>
+		</div>
+		<h3><f:translate key="department">Fachbereich</f:translate></h3>
+		<div class="listings">
+			<div class="row-fluid">
+				<f:for each="{data.departments}" as="depart">
+					<span class="tag label label-info">
+						<span rel="{depart.uid}">{depart.title}<a><f:form.checkbox id="{depart.uid}" name="department[]" class="depcheck"  value="{depart.uid}" /></a></span>
+					</span>
+				</f:for>
+			</div>
+			<div class="row-fluid">
+				<div class="link-wrapper">
+					<a class="link depSelAll" target="_blank" href="#"><f:translate key="selectall">Alle auswählen</f:translate></a>
+					<a class="link depSelNone" target="_blank" href="#"><f:translate key="selectnone">Keine auswählen</f:translate></a>
+				</div>
+			</div>
+		</div>
+		<f:form.hidden id="pid" name="pid" value="{data.url.pid}" />
+		<f:form.hidden id="base_url" name="baseurl" value="{data.url.baseurl}" />
+		<button class="btn btn-primary" type="submit"><f:translate key="search">Suchen</f:translate></button>
+	</f:form>
+</article>

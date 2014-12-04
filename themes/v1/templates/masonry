@@ -1,0 +1,66 @@
+  .container
+      #box.row
+        #1
+          .well.post
+            h4.text-center
+              a(href='#') Bootstrap
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #2
+          .well.post
+            h4.text-center
+              a(href='#') Isotope
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100/nature')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #3
+          .well.post
+            h4.text-center
+              a(href='#') Layout
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100/people/1')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #4
+          .well.post
+            h4.text-center
+              a(href='#') Responsive
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100/technics')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #5
+          .well.post
+            h4.text-center
+              a(href='#') Sleek
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100/transport/1')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #6
+          .well
+            h4.text-center
+              a(href='#') Mobilicious
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100/sports')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #7
+          .well.post
+            h4.text-center
+              a(href='#') Geekness
+            img.thumbnail.img-responsive(src='http://lorempixel.com/200/100/business/1')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.
+        #8
+          .well.post
+            h4.text-center
+              a(href='#') Sneaky Kitten
+            img.thumbnail.img-responsive(src='http://placekitten.com/200/100', title='Can you believe it??')
+            .info
+              p
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, explicabo, impedit, voluptatibus fugiat saepe mollitia modi ab itaque cumque perferendis aut ducimus voluptas enim.

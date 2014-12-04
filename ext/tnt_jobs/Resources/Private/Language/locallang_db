@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-21T11:03:19Z" product-name="tnt_jobs">
+		<header/>
+		<body>
+			<trans-unit id="tx_tntjobs_domain_model_jobs">
+				<source>Jobs</source>
+			</trans-unit>
+			<trans-unit id="widgetcount">
+				<source>Number of Items in Widget</source>
+			</trans-unit>
+		</body>
+	</file>
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-07-21T11:03:19Z" product-name="tnt_jobs">
+		<header/>
+		<body>
+			<trans-unit id="tx_tntjobs_domain_model_jobs">
+				<source>Jobs</source>
+			</trans-unit>
+			<trans-unit id="widgetcount">
+				<source>Anzahl der Einträge in Widget</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

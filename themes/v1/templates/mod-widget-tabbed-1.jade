@@ -1,0 +1,62 @@
+// tabbed module start
+section.mod.data-list
+	.mod-highlight
+			a(href="#quicklinks-mod")
+				span Quicklinks
+			a(href="#download-mod").active
+				span Downloads
+	.tab-content#download-mod.active
+		.mod-details
+			h2 
+				a(href="#") Downloadcenter
+				span.show-btn
+			p In unserem Downloadcenter finden Sie Informationen, Broschüren und Formulare zum GZO Spital Wetzikon.
+			form(action="#")
+				fieldset
+					select.custom-select.form-control.reset-field
+						option(value="") 1. Hauptrubrik auswählen
+						option(value="1") Another action
+						option(value="2") The Other action
+						option(value="3") Why this action not working
+					span.icon.reset-this
+				fieldset
+					select.custom-select.form-control.reset-field.disabled
+						option(value="") 1. Hauptrubrik auswählen
+						option(value="1") Another action
+						option(value="2") The Other action
+						option(value="3") Why this action not working
+					span.icon.reset-this
+				fieldset
+					input(type="text", class=" form-control text search reset-field", value="Suchbegriff" required )
+					span.icon.reset-this
+
+				input(type="submit",value="search",class="btn-search")
+	.tab-content#quicklinks-mod
+		.mod-details.theme-blue
+			h2 
+				a(href="#") Lorem title
+			.data-list.type-2
+				ul
+					li
+						a.thumb-img(href="#")
+							img(src="images/temp/img-108x73.jpg", alt="image-title")
+						div.details
+							h3: a(href="#") Lorem ipsum
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore magna
+					li
+						a.thumb-img(href="#")
+							img(src="images/temp/img-108x73-1.jpg", alt="image-title")
+						div.details
+							h3: a(href="#") Lorem ipsum
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore magna
+					li
+						a.thumb-img(href="#")
+							img(src="images/temp/img-108x73-2.jpg", alt="image-title")
+						div.details
+							h3: a(href="#") Lorem ipsum
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ut labore et dolore magna
+
+
+
+
+// Lorem module end

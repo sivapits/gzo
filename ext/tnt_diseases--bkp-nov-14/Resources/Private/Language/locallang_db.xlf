@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-08-01T09:34:18Z" product-name="tnt_diseases">
+        <header/>
+        <body>
+            <trans-unit id="tx_tntdiseases_domain_model_region">
+                <source>Region</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_pages">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_pages_title">
+                <source>Page Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_category">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_category_title">
+                <source>Category Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_region_title">
+                <source>Region Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases">
+                <source>Diseases</source>
+            </trans-unit>           
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_title_dropdown">
+                <source>Title Dropdown</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_link_title">
+                <source>Link Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_gender">
+                <source>Gender</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_male">
+                <source>Male</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_female">
+                <source>Female</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_region">
+                <source>Region</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_pages">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_category_type">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_teaser_text">
+                <source>Teaser Text</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_start_image">
+                <source>Start Image</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_start_image_text">
+                <source>Start Image Text</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_gallery">
+                <source>Gallery</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_gallery_text">
+                <source>Gallery Text</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_video_title">
+                <source>Video Title</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_video_videocode">
+                <source>Video Code</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_seo_title_tag">
+                <source>SEO Title Tag</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_seo_description_tag">
+                <source>SEO Description Tag</source>
+            </trans-unit>
+            
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_config">
+                <source>Plugin Configurations</source>
+            </trans-unit>
+            <trans-unit id="tx_tntdiseases_domain_model_diseases_config_viewType">
+                <source>View Type</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

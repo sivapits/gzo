@@ -1,0 +1,73 @@
+
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <display>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:tnt_download_module/Resources/Private/Language/locallang_db.xml:head_line
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el> 
+                    <settings.headerText>
+                        <TCEforms>
+                            <label>LLL:EXT:tnt_download_module/Resources/Private/Language/locallang_db.xml:headerText</label>
+                            <config>
+                                <type>input</type>
+                            </config>
+                        </TCEforms>
+                    </settings.headerText>
+                    <settings.view_type>
+                        <TCEforms>
+                            <label>View Select</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">Select View</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">Main View</numIndex>
+                                        <numIndex index="1">main</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">Widget View</numIndex>
+                                        <numIndex index="1">widget</numIndex>
+                                    </numIndex>
+                                </items>
+                                <minitems>1</minitems>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </settings.view_type>
+                    <settings.main_page>
+                        <TCEforms>
+                            <label>Main View Page</label>
+                            <config>
+                                <type>input</type>,
+                                <size>50</size>,
+                                <max>256</max>,
+                                <eval>trim</eval>,
+                                <wizards> 
+                                    <link> 
+                                        <type>popup</type>
+                                        <title>LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel</title>
+                                        <icon>link_popup.gif</icon>
+                                        <script>browse_links.php?mode=wizard</script>
+                                        <JSopenParams>height=300,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link> 
+                                </wizards>
+                                <softref>typolink</softref>
+                            </config>
+                        </TCEforms>
+                    </settings.main_page>                                                        
+                </el>
+            </ROOT>
+        </display>
+    </sheets>
+</T3DataStructure>

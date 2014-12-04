@@ -1,0 +1,26 @@
+h2.basicSlider Hier der Titel zur Galerie
+#carousel-example-generic.carousel.slide.basicslides(data-ride='carousel')
+      //
+      //-    Indicators 
+      //- ol.carousel-indicators
+      //-   li.active(data-target='#carousel-example-generic', data-slide-to='0')
+      //-   li(data-target='#carousel-example-generic', data-slide-to='1')
+      //- //
+         Wrapper for slides 
+      .carousel-inner
+        .item.active
+          img(src='images/temp/sliderImg1.jpg', alt='Slide-1')
+          .carousel-caption
+            h3 First slide
+            p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+        .item
+          img(src='images/temp/sliderImg1.jpg', alt='Slide-2')
+          .carousel-caption
+            h3 Second slide
+            p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+      //
+         Controls 
+      a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right

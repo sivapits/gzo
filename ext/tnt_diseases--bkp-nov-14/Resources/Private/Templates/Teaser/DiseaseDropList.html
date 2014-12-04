@@ -1,0 +1,7 @@
+<f:layout name="AjaxDropList" />
+<f:section name="main">
+      <option value="0"><f:translate key="tx_tntdiseases_domain_model_diseases_empty_disease">Select</f:translate></option>
+        <f:for each="{diseases}" as="single" iteration="itemIteration">
+            <option value="{single.uid}|{single.diseaseName}">{single.title_dropdown}</option>
+        </f:for>
+</f:section>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-08-01T09:34:18Z" product-name="tnt_diseases">
+        <header/>
+        <body>
+            <trans-unit id="flex_sheetHeading">
+                <source>Configuarations</source>
+            </trans-unit>
+            <trans-unit id="flex_label">
+                <source>Heading</source>
+            </trans-unit>
+            <trans-unit id="flex_files">
+                <source>Files</source>
+            </trans-unit>
+            <trans-unit id="flex_addNew">
+                <source>Add New Files</source>
+            </trans-unit>
+            
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,9 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+<section class="mod generic">
+        <f:for each="{tntTeaserMangerCE}" as="singleData" key="number" iteration="itemIteration">
+                <div id = 'teaser-{number}' class="teaser-content"> <f:format.htmlentitiesDecode>{singleData}</f:format.htmlentitiesDecode></div>
+        </f:for>
+</section>
+</f:section>

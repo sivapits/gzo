@@ -1,0 +1,30 @@
+include mixin
+doctype
+html.no-js
+	include header
+	body
+		#wrapper
+			//- include header-info
+			.container
+				.col-md-9.col-sm-6
+					include quick-link
+				.pull-right
+					a(href="#").logo
+						img(src="images/logo.png", title="GZO" alt="")
+
+			//- var navSelect =2;
+			include navbar-fixed
+			//- include spotlight
+			.container
+				.content-wrapper.clearfix
+					.col-md-12
+						+breadcrumb({items:["GZO ","Über uns","Downloadcenter"],print:"Seite drucken"})
+					.col-md-8
+						include mod-downloads
+						include mod-widget-documents
+					.col-md-4
+						include mod-generic-6
+						include mod-generic-5
+
+			include footer-innerpage
+			include footer-script

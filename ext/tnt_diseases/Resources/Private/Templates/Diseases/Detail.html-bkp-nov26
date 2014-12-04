@@ -1,0 +1,71 @@
+
+<f:layout name="Default" />
+<f:section name="main">
+    <article>
+        <f:if condition="{diseases.data.title}">
+            <h1 class="inhalt_header">{diseases.data.title}</h1>
+        </f:if>   
+        <f:if condition="{diseases.images.start_image.start_image_identifier}">
+            <p class='lightbox-img'>
+                <span class="align-left">
+                    <a class="lightbox" href="{diseases.images.start_image.start_image_identifier}" data-title ='{diseases.images.start_image.start_image_description}' data-lightbox="example-set" >
+                        <f:image src="{diseases.images.start_image.start_image_identifier}" width="330" alt="{diseases.images.start_image.start_image_title}" title="{diseases.images.start_image.start_image_title}"/>
+                    </a>
+                    <f:if condition="{diseases.images.start_image.start_image_description}">
+                        <span class="imgcaption">{diseases.images.start_image.start_image_description}</span> 
+                    </f:if>
+
+                </span>           
+            </p>
+        </f:if>
+        <f:if condition="{diseases.data.text}">
+            <f:format.html>{diseases.data.text}</f:format.html> 
+        </f:if>
+    </article><div class="clear"></div>
+    <f:if condition="{diseases.data.video_title}">
+
+    </f:if>
+    <f:if condition="{diseases.data.video_videocode}">
+        <h2 class="videohdg">{diseases.data.video_title}</h2>
+        <f:format.html parseFuncTSPath="">{diseases.data.video_videocode}</f:format.html> 
+    </f:if>
+    <f:if condition="{diseases.data.gallery_text}">
+        <h2 class="basicSlider"><f:format.html parseFuncTSPath="">{diseases.data.gallery_text}</f:format.html></h2>
+    </f:if>        
+    <f:if condition="{diseases.images.gallery_image}">
+        <div class="carousel slide basicslides" data-ride="carousel" id="carousel-example-generic">
+            <!---->
+            <div class="carousel-inner">
+                <f:for each="{diseases.images.gallery_image}" as="singleImage" iteration="itemIteration">
+                    <f:if condition="{itemIteration.isFirst}">
+                        <f:then>
+                            <div class="item active">
+                                <f:image src="{singleImage.image_identifier}" alt="Slide-{itemIteration.cycle}" />
+                                <div class="carousel-caption">
+                                    <h3>Foto {itemIteration.cycle} vor {itemIteration.total}</h3>
+                                    <p>{singleImage.image_description}</p>
+                                </div>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="item">
+                                <f:image src="{singleImage.image_identifier}" alt="Slide-{itemIteration.cycle}" />
+                                <div class="carousel-caption">
+                                    <h3>Foto {itemIteration.cycle} vor {itemIteration.total}</h3>
+                                    <p>{singleImage.image_description}</p>
+                                </div>
+                            </div>
+                        </f:else>
+                    </f:if>
+                </f:for> 
+            </div>
+            <!--Controls 
+            --><a class="left carousel-control" data-slide="prev" role="button" href="#carousel-example-generic">
+                <span class="glyphicon glyphicon-chevron-left"></span><span class="rem">&lt;</span></a>
+            <a class="right carousel-control" data-slide="next" role="button" href="#carousel-example-generic">
+                <span class="glyphicon glyphicon-chevron-right"></span><span class="rem">&gt;</span></a>
+        </div>
+    </f:if>        
+
+    <input type="button" class="btn btn-primary VidBtn" value="Zurück" onclick="goBack()">
+</f:section>
